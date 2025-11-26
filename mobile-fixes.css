@@ -1,24 +1,30 @@
 /* Mobile layout tweaks for interactive atlas */
 @media (max-width: 768px) {
   .app {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
   }
   .sidebar {
     order: 1;
-    width: 100%;
-    max-height: 40vh;
-    overflow-y: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+    width: 100% !important;
+    max-height: 40vh !important;
+    overflow-y: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
   }
   #map {
     order: 2;
-    height: calc(100vh - 40vh);
-    width: 100%;
+    width: 100% !important;
+    height: calc(100vh - 40vh) !important;
   }
+  .search,
+  .results,
   .search input,
   .results {
-    width: 100%;
+    width: 100% !important;
+  }
+  .results {
+    max-height: none !important;
   }
 }
