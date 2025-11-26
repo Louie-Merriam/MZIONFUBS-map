@@ -42789,23 +42789,22 @@
   const INDEX = PEOPLE.map(p => ({ name:p.name, norm:norm(p.name) }));
 
 // Create the map and allow zooming from level 0 (global) up to 18.
+// Create a map that will never go outside the Earth’s extent
 const map = L.map('map', {
     preferCanvas: true,
     zoomControl: true,
-    minZoom: 0,                  // allow zooming out to the whole world
     bounceAtZoomLimits: false,
-    maxBounds: [[-90, -180], [90, 180]], // keep the view inside the world
-    maxBoundsViscosity: 0.9      // make panning near the edge resistant
-}).setView([38.9072, -77.0369], 2); // start at a world‑scale zoom (e.g. 2)
+    maxBounds: [[-85, -180], [85, 180]], // clamp to Mercator projection limits
+    maxBoundsViscosity: 1.0              // make the clamp “hard” (no dragging beyond bounds)
+}).setView([38.9072, -77.0369], 2);       // start at a world-scale zoom
 
-// Add your tile layer; its minZoom should match the map’s minZoom
+// Add a tile layer that actually has global coverage
 const tiles = L.tileLayer('https://{s}.example.com/tiles/{z}/{x}/{y}.png', {
-    minZoom: 0,
+    // Omit minZoom so Leaflet can go all the way down to z=0.
     maxZoom: 18,
-    noWrap: true                 // prevent wrapping horizontally
+    noWrap: true
 });
 tiles.addTo(map);
-
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OpenStreetMap'}).addTo(map);
 
