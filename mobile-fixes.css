@@ -1,0 +1,24 @@
+/* Mobile layout tweaks for interactive atlas */
+@media (max-width: 768px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar {
+    order: 1;
+    width: 100%;
+    max-height: 40vh;
+    overflow-y: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  #map {
+    order: 2;
+    height: calc(100vh - 40vh);
+    width: 100%;
+  }
+  .search input,
+  .results {
+    width: 100%;
+  }
+}
