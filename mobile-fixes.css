@@ -8,7 +8,7 @@
   .sidebar {
     order: 1;
     width: 100% !important;
-    max-height: 40vh !important;
+    max-height: 25vh !important;
     overflow-y: auto !important;
     border-right: none !important;
     border-bottom: 1px solid var(--border) !important;
@@ -16,7 +16,7 @@
   #map {
     order: 2;
     width: 100% !important;
-    height: calc(100vh - 40vh) !important;
+    height: calc(100vh - 25vh) !important;
   }
   .search,
   .results,
