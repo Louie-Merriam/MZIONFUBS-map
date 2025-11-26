@@ -42790,19 +42790,16 @@
 
   // Create the map and set the initial view as before
 // Create the map with a minZoom
+const washingtonBounds = [[38.7916, -77.1198], [39.0030, -76.8702]]; // SW and NE corners
 const map = L.map('map', {
     preferCanvas: true,
     zoomControl: true,
     minZoom: 12,
-    bounceAtZoomLimits: false
+    bounceAtZoomLimits: false,
+    maxBounds: washingtonBounds,
+    maxBoundsViscosity: 1.0
 }).setView([38.9072, -77.0369], 12);
 
-// When you add your tile layer, specify the same minZoom
-const tiles = L.tileLayer('https://{s}.example.com/tiles/{z}/{x}/{y}.png', {
-    minZoom: 12,
-    maxZoom: 18        // or whatever your highest zoom is
-});
-tiles.addTo(map);
 
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OpenStreetMap'}).addTo(map);
