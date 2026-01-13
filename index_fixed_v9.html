@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mount Zion & Female Union Band Cemeteries — Atlas</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#0b1220;
+      --muted:#475569;
+      --border:#e2e8f0;
+      --btn:#0b1220;
+      --btnHover:#111827;
+      --focus:rgba(59,130,246,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      height:100%;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-text-size-adjust:100%;
+    }
+    .wrap{
+      min-height:100%;
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+    .hero{
+      width:min(980px, 100%);
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:clamp(20px, 4vw, 40px);
+      box-shadow:0 1px 2px rgba(0,0,0,.06);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(28px, 5vw, 50px);
+      line-height:1.1;
+      font-weight:750;
+      letter-spacing:-0.02em;
+    }
+    p{
+      margin:0;
+      color:var(--muted);
+      font-size:clamp(16px, 2.1vw, 19px);
+      line-height:1.6;
+      max-width:72ch;
+    }
+    .actions{
+      margin-top:20px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      padding:12px 16px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:650;
+      transition:background .15s ease, border-color .15s ease, transform .05s ease;
+    }
+    .btn:hover{background:#f8fafc; border-color:#cbd5e1}
+    .btn:active{transform:translateY(1px)}
+    .btn:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+    .btn.primary{
+      border-color:var(--btn);
+      background:var(--btn);
+      color:#fff;
+    }
+    .btn.primary:hover{
+      background:var(--btnHover);
+      border-color:var(--btnHover);
+    }
+
+    .meta{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="hero">
+      <h1>Mount Zion &amp; Female Union Band Cemeteries</h1>
+      <p id="blurb">This is an interactive map of the Mount Zion &amp; Female Union Band Cemeteries. Click the button to enter the Interactive Atlas. The map has several key features. The interactive contains a search bar for specific individuals. The map also contains layer buttons for deathplace, birthplace, residence, enslavement, and place of worship addresses. When these buttons are clicked, the map highlights all the addresses of the specific category</p>
+
+      <div class="actions">
+        <a class="btn primary" href="./atlas_fixed_v8.html">Enter the Interactive Atlas</a>
+      </div>
+
+      <div class="meta">Basemap © OpenStreetMap</div>
+    </main>
+  </div>
+</body>
+</html>
