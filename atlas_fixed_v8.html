@@ -470,6 +470,42 @@ label{font-weight:650; color:var(--muted)}
 
     const COLORS = { birth:'--birth', residence:'--res', enslavement:'--enslave', worship:'--worship', death:'--death' };
 
+    /*
+     * Fix state-level locations that can geocode to Washington, DC.
+     * Example: "MD" should map to Maryland state centroid, not DC.
+     */
+    const stateCentroids = {
+      MD: { lat: 39.0458, lon: -76.6413 },
+    };
+
+    const DC_COORD = { lat: 38.9072, lon: -77.0369 };
+
+    function isNearDC(lat, lon){
+      return Math.abs(lat - DC_COORD.lat) < 0.5 && Math.abs(lon - DC_COORD.lon) < 0.5;
+    }
+
+    // Approximate polygons for state-level highlighting.
+    const statePolygons = {
+      MD: [
+        [39.7220, -79.4870], [39.2236, -77.4560], [38.4510, -75.9450],
+        [37.9560, -75.0000], [38.5000, -75.0500], [39.7220, -79.4870]
+      ],
+    };
+
+    const stateLayer = L.layerGroup().addTo(map);
+
+    function highlightState(code){
+      stateLayer.clearLayers();
+      const coords = statePolygons[code];
+      if(!coords) return;
+      const latLngs = coords.map(([lat, lon]) => [lat, lon]);
+      L.polygon(latLngs, {
+        color: colorVar('--birth'),
+        weight: 2,
+        fillOpacity: 0.2,
+      }).addTo(stateLayer);
+    }
+
     function clusterOpts(cssVar){
       return {
         showCoverageOnHover:false,
@@ -511,7 +547,14 @@ label{font-weight:650; color:var(--muted)}
         ['birth','residence','enslavement','worship','death'].forEach(k=>{
           const s = p[k];
           if(!s) return;
-          const lat = Number(s.lat), lon = Number(s.lon);
+          let lat = Number(s.lat), lon = Number(s.lon);
+          if(s.address && /\bMD\b/.test(s.address) && isFinite(lat) && isFinite(lon) && isNearDC(lat, lon)){
+            const cent = stateCentroids.MD;
+            if(cent){
+              lat = cent.lat;
+              lon = cent.lon;
+            }
+          }
           if(!isFinite(lat) || lat<-90 || lat>90 || !isFinite(lon) || lon<-180 || lon>180){
             out[k] = null;
           } else {
@@ -606,6 +649,7 @@ label{font-weight:650; color:var(--muted)}
     function enterAllMode(){
       personLayer.clearLayers();
       pathLayer.clearLayers();
+      stateLayer.clearLayers();
       setDetails(null);
 
       document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = false);
@@ -627,6 +671,7 @@ label{font-weight:650; color:var(--muted)}
 
       personLayer.clearLayers();
       pathLayer.clearLayers();
+      stateLayer.clearLayers();
       setDetails(person);
 
       const order = ['birth','residence','enslavement','worship','death'];
@@ -635,11 +680,15 @@ label{font-weight:650; color:var(--muted)}
       order.forEach(k=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null) return;
-        personLayer.addLayer(
-          dot(s.lat, s.lon, colorVar(COLORS[k]),
-            '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
-          )
-        );
+        if(s.address && /^[A-Z]{2}$/.test(s.address.trim()) && statePolygons[s.address.trim()]){
+          highlightState(s.address.trim());
+        } else {
+          personLayer.addLayer(
+            dot(s.lat, s.lon, colorVar(COLORS[k]),
+              '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
+            )
+          );
+        }
         coords.push([s.lat, s.lon]);
       });
 
