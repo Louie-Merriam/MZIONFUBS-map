@@ -484,6 +484,15 @@ label{font-weight:650; color:var(--muted)}
       return Math.abs(lat - DC_COORD.lat) < 0.5 && Math.abs(lon - DC_COORD.lon) < 0.5;
     }
 
+    function stateCodeFromAddress(address){
+      const raw = (address || '').trim();
+      if(!raw) return null;
+      const upper = raw.toUpperCase();
+      if(/^[A-Z]{2}$/.test(upper)) return upper;
+      const m = upper.match(/^([A-Z]{2})\s*,\s*UNITED STATES$/);
+      return m ? m[1] : null;
+    }
+
     // Approximate polygons for state-level highlighting.
     const statePolygons = {
       MD: [
@@ -494,16 +503,16 @@ label{font-weight:650; color:var(--muted)}
 
     const stateLayer = L.layerGroup().addTo(map);
 
-    function highlightState(code){
-      stateLayer.clearLayers();
+    function drawStatePolygon(code){
       const coords = statePolygons[code];
-      if(!coords) return;
+      if(!coords) return null;
       const latLngs = coords.map(([lat, lon]) => [lat, lon]);
-      L.polygon(latLngs, {
+      const poly = L.polygon(latLngs, {
         color: colorVar('--birth'),
         weight: 2,
         fillOpacity: 0.2,
       }).addTo(stateLayer);
+      return poly.getBounds();
     }
 
     function clusterOpts(cssVar){
@@ -548,7 +557,8 @@ label{font-weight:650; color:var(--muted)}
           const s = p[k];
           if(!s) return;
           let lat = Number(s.lat), lon = Number(s.lon);
-          if(s.address && /\bMD\b/.test(s.address) && isFinite(lat) && isFinite(lon) && isNearDC(lat, lon)){
+          const stateCode = stateCodeFromAddress(s.address);
+          if(stateCode === 'MD' && isFinite(lat) && isFinite(lon) && isNearDC(lat, lon)){
             const cent = stateCentroids.MD;
             if(cent){
               lat = cent.lat;
@@ -676,12 +686,14 @@ label{font-weight:650; color:var(--muted)}
 
       const order = ['birth','residence','enslavement','worship','death'];
       const coords = [];
+      const stateCodes = new Set();
 
       order.forEach(k=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null) return;
-        if(s.address && /^[A-Z]{2}$/.test(s.address.trim()) && statePolygons[s.address.trim()]){
-          highlightState(s.address.trim());
+        const stateCode = stateCodeFromAddress(s.address);
+        if(stateCode && statePolygons[stateCode]){
+          stateCodes.add(stateCode);
         } else {
           personLayer.addLayer(
             dot(s.lat, s.lon, colorVar(COLORS[k]),
@@ -695,8 +707,14 @@ label{font-weight:650; color:var(--muted)}
       if(coords.length >= 2){
         L.polyline(coords, { weight:3, opacity:.85, color:'#8aa0b5', dashArray:'4 6' }).addTo(pathLayer);
       }
-      if(coords.length){
-        map.fitBounds(L.latLngBounds(coords).pad(0.20), { maxZoom: 12 });
+      const bounds = L.latLngBounds([]);
+      coords.forEach(c => bounds.extend(c));
+      stateCodes.forEach(code => {
+        const b = drawStatePolygon(code);
+        if(b && b.isValid()) bounds.extend(b);
+      });
+      if(bounds.isValid()){
+        map.fitBounds(bounds.pad(0.20), { maxZoom: 12 });
       }
 
       // On phones, auto-close the panel so the map is visible.
