@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>MZ &amp; FUBS — Atlas</title>
+  <title>MZ &amp; FUBS — Atlas (Final)</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
@@ -417,6 +417,7 @@ label{font-weight:650; color:var(--muted)}
     const badge = document.getElementById('badge');
     const who = document.getElementById('who');
     const fields = { birth:'birthAddr', residence:'resAddr', enslavement:'enslavementAddr', worship:'worshipAddr', death:'deathAddr' };
+    const LOCATION_KEYS = ['birth','residence','enslavement','worship','death'];
 
     // Allow zooming out to a single-world view (no Washington-DC-only bounds).
     const WORLD_BOUNDS = L.latLngBounds([[-85.0511, -180], [85.0511, 180]]);
@@ -470,49 +471,83 @@ label{font-weight:650; color:var(--muted)}
 
     const COLORS = { birth:'--birth', residence:'--res', enslavement:'--enslave', worship:'--worship', death:'--death' };
 
-    /*
-     * Fix state-level locations that can geocode to Washington, DC.
-     * Example: "MD" should map to Maryland state centroid, not DC.
-     */
-    const stateCentroids = {
-      MD: { lat: 39.0458, lon: -76.6413 },
+    // State centroid fallback for records that are state-level only and were geocoded to DC.
+    const US_STATE_CENTROIDS = {
+      AL:{ lat:32.806671, lon:-86.79113 }, AK:{ lat:61.370716, lon:-152.404419 },
+      AZ:{ lat:33.729759, lon:-111.431221 }, AR:{ lat:34.969704, lon:-92.373123 },
+      CA:{ lat:36.116203, lon:-119.681564 }, CO:{ lat:39.059811, lon:-105.311104 },
+      CT:{ lat:41.597782, lon:-72.755371 }, DE:{ lat:39.318523, lon:-75.507141 },
+      DC:{ lat:38.9072, lon:-77.0369 }, FL:{ lat:27.766279, lon:-81.686783 },
+      GA:{ lat:33.040619, lon:-83.643074 }, HI:{ lat:21.094318, lon:-157.498337 },
+      ID:{ lat:44.240459, lon:-114.478828 }, IL:{ lat:40.349457, lon:-88.986137 },
+      IN:{ lat:39.849426, lon:-86.258278 }, IA:{ lat:42.011539, lon:-93.210526 },
+      KS:{ lat:38.5266, lon:-96.726486 }, KY:{ lat:37.66814, lon:-84.670067 },
+      LA:{ lat:31.169546, lon:-91.867805 }, ME:{ lat:44.693947, lon:-69.381927 },
+      MD:{ lat:39.045755, lon:-76.641271 }, MA:{ lat:42.230171, lon:-71.530106 },
+      MI:{ lat:43.326618, lon:-84.536095 }, MN:{ lat:45.694454, lon:-93.900192 },
+      MS:{ lat:32.741646, lon:-89.678696 }, MO:{ lat:38.456085, lon:-92.288368 },
+      MT:{ lat:46.921925, lon:-110.454353 }, NE:{ lat:41.12537, lon:-98.268082 },
+      NV:{ lat:38.313515, lon:-117.055374 }, NH:{ lat:43.452492, lon:-71.563896 },
+      NJ:{ lat:40.298904, lon:-74.521011 }, NM:{ lat:34.840515, lon:-106.248482 },
+      NY:{ lat:42.165726, lon:-74.948051 }, NC:{ lat:35.630066, lon:-79.806419 },
+      ND:{ lat:47.528912, lon:-99.784012 }, OH:{ lat:40.388783, lon:-82.764915 },
+      OK:{ lat:35.565342, lon:-96.928917 }, OR:{ lat:44.572021, lon:-122.070938 },
+      PA:{ lat:40.590752, lon:-77.209755 }, RI:{ lat:41.680893, lon:-71.51178 },
+      SC:{ lat:33.856892, lon:-80.945007 }, SD:{ lat:44.299782, lon:-99.438828 },
+      TN:{ lat:35.747845, lon:-86.692345 }, TX:{ lat:31.054487, lon:-97.563461 },
+      UT:{ lat:40.150032, lon:-111.862434 }, VT:{ lat:44.045876, lon:-72.710686 },
+      VA:{ lat:37.769337, lon:-78.169968 }, WA:{ lat:47.400902, lon:-121.490494 },
+      WV:{ lat:38.491226, lon:-80.954453 }, WI:{ lat:44.268543, lon:-89.616508 },
+      WY:{ lat:42.755966, lon:-107.30249 }
     };
 
-    const DC_COORD = { lat: 38.9072, lon: -77.0369 };
+    const US_STATE_NAME_TO_CODE = {
+      ALABAMA:'AL', ALASKA:'AK', ARIZONA:'AZ', ARKANSAS:'AR', CALIFORNIA:'CA', COLORADO:'CO',
+      CONNECTICUT:'CT', DELAWARE:'DE', 'DISTRICT OF COLUMBIA':'DC', FLORIDA:'FL', GEORGIA:'GA',
+      HAWAII:'HI', IDAHO:'ID', ILLINOIS:'IL', INDIANA:'IN', IOWA:'IA', KANSAS:'KS', KENTUCKY:'KY',
+      LOUISIANA:'LA', MAINE:'ME', MARYLAND:'MD', MASSACHUSETTS:'MA', MICHIGAN:'MI', MINNESOTA:'MN',
+      MISSISSIPPI:'MS', MISSOURI:'MO', MONTANA:'MT', NEBRASKA:'NE', NEVADA:'NV', 'NEW HAMPSHIRE':'NH',
+      'NEW JERSEY':'NJ', 'NEW MEXICO':'NM', 'NEW YORK':'NY', 'NORTH CAROLINA':'NC',
+      'NORTH DAKOTA':'ND', OHIO:'OH', OKLAHOMA:'OK', OREGON:'OR', PENNSYLVANIA:'PA',
+      'RHODE ISLAND':'RI', 'SOUTH CAROLINA':'SC', 'SOUTH DAKOTA':'SD', TENNESSEE:'TN',
+      TEXAS:'TX', UTAH:'UT', VERMONT:'VT', VIRGINIA:'VA', WASHINGTON:'WA', 'WEST VIRGINIA':'WV',
+      WISCONSIN:'WI', WYOMING:'WY'
+    };
 
-    function isNearDC(lat, lon){
-      return Math.abs(lat - DC_COORD.lat) < 0.5 && Math.abs(lon - DC_COORD.lon) < 0.5;
+    const COUNTRY_TOKENS = new Set(['UNITED STATES', 'UNITED STATES OF AMERICA', 'USA', 'US']);
+    const DC_GEOCENTER = { lat: 38.9072, lon: -77.0369 };
+
+    function isNearDcGeocenter(lat, lon){
+      return Math.abs(lat - DC_GEOCENTER.lat) < 0.5 && Math.abs(lon - DC_GEOCENTER.lon) < 0.5;
     }
 
+    function normalizeToken(v){
+      return String(v || '').toUpperCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+    }
+
+    function codeFromStateToken(token){
+      const cleaned = normalizeToken(token).replace(/^STATE OF\s+/, '').trim();
+      if(!cleaned) return null;
+      if(/^[A-Z]{2}$/.test(cleaned) && US_STATE_CENTROIDS[cleaned]) return cleaned;
+      return US_STATE_NAME_TO_CODE[cleaned] || null;
+    }
+
+    // Restrict to explicit state-level addresses (e.g., "MD", "MD, United States", "Maryland").
     function stateCodeFromAddress(address){
-      const raw = (address || '').trim();
-      if(!raw) return null;
-      const upper = raw.toUpperCase();
-      if(/^[A-Z]{2}$/.test(upper)) return upper;
-      const m = upper.match(/^([A-Z]{2})\s*,\s*UNITED STATES$/);
-      return m ? m[1] : null;
-    }
+      const normalized = normalizeToken(address);
+      if(!normalized) return null;
 
-    // Approximate polygons for state-level highlighting.
-    const statePolygons = {
-      MD: [
-        [39.7220, -79.4870], [39.2236, -77.4560], [38.4510, -75.9450],
-        [37.9560, -75.0000], [38.5000, -75.0500], [39.7220, -79.4870]
-      ],
-    };
-
-    const stateLayer = L.layerGroup().addTo(map);
-
-    function drawStatePolygon(code){
-      const coords = statePolygons[code];
-      if(!coords) return null;
-      const latLngs = coords.map(([lat, lon]) => [lat, lon]);
-      const poly = L.polygon(latLngs, {
-        color: colorVar('--birth'),
-        weight: 2,
-        fillOpacity: 0.2,
-      }).addTo(stateLayer);
-      return poly.getBounds();
+      const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
+      if(parts.length === 1){
+        return codeFromStateToken(parts[0]);
+      }
+      if(parts.length === 2){
+        const a = parts[0];
+        const b = parts[1];
+        if(COUNTRY_TOKENS.has(a)) return codeFromStateToken(b);
+        if(COUNTRY_TOKENS.has(b)) return codeFromStateToken(a);
+      }
+      return null;
     }
 
     function clusterOpts(cssVar){
@@ -549,21 +584,29 @@ label{font-weight:650; color:var(--muted)}
 
     let PEOPLE = [];
     let INDEX = [];
+    let geocodeFixCount = 0;
+    const geocodeFixByState = {};
 
     function normalizePeople(raw){
+      geocodeFixCount = 0;
+      Object.keys(geocodeFixByState).forEach(k => delete geocodeFixByState[k]);
+
       return (raw||[]).map(p => {
         const out = { name: p.name };
-        ['birth','residence','enslavement','worship','death'].forEach(k=>{
+        LOCATION_KEYS.forEach(k=>{
           const s = p[k];
           if(!s) return;
           let lat = Number(s.lat), lon = Number(s.lon);
           const stateCode = stateCodeFromAddress(s.address);
-          if(stateCode === 'MD' && isFinite(lat) && isFinite(lon) && isNearDC(lat, lon)){
-            const cent = stateCentroids.MD;
-            if(cent){
-              lat = cent.lat;
-              lon = cent.lon;
-            }
+          const centroid = stateCode ? US_STATE_CENTROIDS[stateCode] : null;
+          if(
+            stateCode && stateCode !== 'DC' && centroid &&
+            isFinite(lat) && isFinite(lon) && isNearDcGeocenter(lat, lon)
+          ){
+            lat = centroid.lat;
+            lon = centroid.lon;
+            geocodeFixCount += 1;
+            geocodeFixByState[stateCode] = (geocodeFixByState[stateCode] || 0) + 1;
           }
           if(!isFinite(lat) || lat<-90 || lat>90 || !isFinite(lon) || lon<-180 || lon>180){
             out[k] = null;
@@ -621,17 +664,8 @@ label{font-weight:650; color:var(--muted)}
 
     function buildGlobal(){
       Object.values(clusters).forEach(c => c.clearLayers());
-
-      const sets = {
-        birth: allPoints('birth'),
-        residence: allPoints('residence'),
-        enslavement: allPoints('enslavement'),
-        worship: allPoints('worship'),
-        death: allPoints('death')
-      };
-
-      Object.entries(sets).forEach(([k, arr])=>{
-        arr.forEach(pt => clusters[k].addLayer(toMarker(pt, k)));
+      LOCATION_KEYS.forEach(k => {
+        allPoints(k).forEach(pt => clusters[k].addLayer(toMarker(pt, k)));
       });
 
       fitToAllPoints();
@@ -659,7 +693,6 @@ label{font-weight:650; color:var(--muted)}
     function enterAllMode(){
       personLayer.clearLayers();
       pathLayer.clearLayers();
-      stateLayer.clearLayers();
       setDetails(null);
 
       document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = false);
@@ -681,40 +714,27 @@ label{font-weight:650; color:var(--muted)}
 
       personLayer.clearLayers();
       pathLayer.clearLayers();
-      stateLayer.clearLayers();
       setDetails(person);
 
-      const order = ['birth','residence','enslavement','worship','death'];
+      const order = LOCATION_KEYS;
       const coords = [];
-      const stateCodes = new Set();
 
       order.forEach(k=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null) return;
-        const stateCode = stateCodeFromAddress(s.address);
-        if(stateCode && statePolygons[stateCode]){
-          stateCodes.add(stateCode);
-        } else {
-          personLayer.addLayer(
-            dot(s.lat, s.lon, colorVar(COLORS[k]),
-              '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
-            )
-          );
-        }
+        personLayer.addLayer(
+          dot(s.lat, s.lon, colorVar(COLORS[k]),
+            '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
+          )
+        );
         coords.push([s.lat, s.lon]);
       });
 
       if(coords.length >= 2){
         L.polyline(coords, { weight:3, opacity:.85, color:'#8aa0b5', dashArray:'4 6' }).addTo(pathLayer);
       }
-      const bounds = L.latLngBounds([]);
-      coords.forEach(c => bounds.extend(c));
-      stateCodes.forEach(code => {
-        const b = drawStatePolygon(code);
-        if(b && b.isValid()) bounds.extend(b);
-      });
-      if(bounds.isValid()){
-        map.fitBounds(bounds.pad(0.20), { maxZoom: 12 });
+      if(coords.length){
+        map.fitBounds(L.latLngBounds(coords).pad(0.20), { maxZoom: 12 });
       }
 
       // On phones, auto-close the panel so the map is visible.
@@ -819,7 +839,11 @@ label{font-weight:650; color:var(--muted)}
         buildGlobal();
         enterAllMode();
 
-        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people';
+        const fixSuffix = geocodeFixCount ? (' | state fixes: ' + geocodeFixCount) : '';
+        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people' + fixSuffix;
+        if(geocodeFixCount){
+          console.info('State geocode fixes applied:', geocodeFixByState);
+        }
       }catch(err){
         console.error(err);
         badge.textContent = 'Failed to load data';
