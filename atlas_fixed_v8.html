@@ -513,6 +513,9 @@ label{font-weight:650; color:var(--muted)}
       TEXAS:'TX', UTAH:'UT', VERMONT:'VT', VIRGINIA:'VA', WASHINGTON:'WA', 'WEST VIRGINIA':'WV',
       WISCONSIN:'WI', WYOMING:'WY'
     };
+    const US_STATE_CODE_TO_NAME = Object.fromEntries(
+      Object.entries(US_STATE_NAME_TO_CODE).map(([name, code]) => [code, name])
+    );
 
     const COUNTRY_TOKENS = new Set(['UNITED STATES', 'UNITED STATES OF AMERICA', 'USA', 'US']);
     const DC_GEOCENTER = { lat: 38.9072, lon: -77.0369 };
@@ -581,16 +584,88 @@ label{font-weight:650; color:var(--muted)}
 
     const personLayer = L.layerGroup().addTo(map);
     const pathLayer = L.layerGroup().addTo(map);
+    const regionLayer = L.layerGroup().addTo(map);
+
+    // Broad-region overlays for coarse addresses.
+    let STATE_POLYGONS = {};
+    const BROAD_REGION_BOUNDS = {
+      WASHINGTON_DC: { label:'Washington, DC', bounds:[[38.79, -77.12], [38.995, -76.91]] },
+      GEORGETOWN_DC: { label:'Georgetown, DC', bounds:[[38.895, -77.085], [38.922, -77.045]] },
+    };
 
     let PEOPLE = [];
     let INDEX = [];
-    let geocodeFixCount = 0;
-    const geocodeFixByState = {};
+
+    async function loadStatePolygons(){
+      try{
+        const res = await fetch('./state_polygons_simplified.json');
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        const raw = await res.json();
+        STATE_POLYGONS = (raw && typeof raw === 'object') ? raw : {};
+      }catch(err){
+        console.warn('State polygon overlays unavailable:', err);
+        STATE_POLYGONS = {};
+      }
+    }
+
+    function broadRegionFromAddress(address){
+      const normalized = normalizeToken(address);
+      if(!normalized) return null;
+      const stateCode = stateCodeFromAddress(normalized);
+      if(stateCode && STATE_POLYGONS[stateCode]) return 'STATE:' + stateCode;
+
+      const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
+      if(parts.length && COUNTRY_TOKENS.has(parts[parts.length - 1])) parts.pop();
+
+      if(parts.length === 1){
+        if(parts[0] === 'DC' || parts[0] === 'DISTRICT OF COLUMBIA'){
+          return STATE_POLYGONS.DC ? 'STATE:DC' : 'WASHINGTON_DC';
+        }
+      } else if(parts.length === 2){
+        const a = parts[0];
+        const b = parts[1];
+        if(
+          (a === 'WASHINGTON' && (b === 'DC' || b === 'DISTRICT OF COLUMBIA')) ||
+          ((a === 'DC' || a === 'DISTRICT OF COLUMBIA') && b === 'WASHINGTON')
+        ){
+          return STATE_POLYGONS.DC ? 'STATE:DC' : 'WASHINGTON_DC';
+        }
+        if(a === 'GEORGETOWN' && (b === 'DC' || b === 'DISTRICT OF COLUMBIA')){
+          return 'GEORGETOWN_DC';
+        }
+      }
+      return null;
+    }
+
+    function drawBroadRegion(regionId){
+      if(regionId.startsWith('STATE:')){
+        const code = regionId.slice(6);
+        const polygons = STATE_POLYGONS[code];
+        if(!polygons || !polygons.length) return null;
+        const stateName = US_STATE_CODE_TO_NAME[code] || code;
+        const stateLayerShape = L.polygon(polygons, {
+          color:'#334155',
+          weight:2,
+          fillOpacity:0.12
+        });
+        stateLayerShape.addTo(regionLayer);
+        stateLayerShape.bindPopup('<b>Broad region</b><br/>' + escapeHtml(stateName));
+        return stateLayerShape.getBounds();
+      }
+
+      const region = BROAD_REGION_BOUNDS[regionId];
+      if(!region) return null;
+      const rect = L.rectangle(region.bounds, {
+        color:'#334155',
+        weight:2,
+        fillOpacity:0.12,
+        dashArray:'4 6'
+      }).addTo(regionLayer);
+      rect.bindPopup('<b>Broad region</b><br/>' + escapeHtml(region.label));
+      return rect.getBounds();
+    }
 
     function normalizePeople(raw){
-      geocodeFixCount = 0;
-      Object.keys(geocodeFixByState).forEach(k => delete geocodeFixByState[k]);
-
       return (raw||[]).map(p => {
         const out = { name: p.name };
         LOCATION_KEYS.forEach(k=>{
@@ -605,8 +680,6 @@ label{font-weight:650; color:var(--muted)}
           ){
             lat = centroid.lat;
             lon = centroid.lon;
-            geocodeFixCount += 1;
-            geocodeFixByState[stateCode] = (geocodeFixByState[stateCode] || 0) + 1;
           }
           if(!isFinite(lat) || lat<-90 || lat>90 || !isFinite(lon) || lon<-180 || lon>180){
             out[k] = null;
@@ -693,6 +766,7 @@ label{font-weight:650; color:var(--muted)}
     function enterAllMode(){
       personLayer.clearLayers();
       pathLayer.clearLayers();
+      regionLayer.clearLayers();
       setDetails(null);
 
       document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = false);
@@ -714,14 +788,18 @@ label{font-weight:650; color:var(--muted)}
 
       personLayer.clearLayers();
       pathLayer.clearLayers();
+      regionLayer.clearLayers();
       setDetails(person);
 
       const order = LOCATION_KEYS;
       const coords = [];
+      const regions = new Set();
 
       order.forEach(k=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null) return;
+        const regionId = broadRegionFromAddress(s.address);
+        if(regionId) regions.add(regionId);
         personLayer.addLayer(
           dot(s.lat, s.lon, colorVar(COLORS[k]),
             '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
@@ -733,8 +811,14 @@ label{font-weight:650; color:var(--muted)}
       if(coords.length >= 2){
         L.polyline(coords, { weight:3, opacity:.85, color:'#8aa0b5', dashArray:'4 6' }).addTo(pathLayer);
       }
-      if(coords.length){
-        map.fitBounds(L.latLngBounds(coords).pad(0.20), { maxZoom: 12 });
+      const bounds = L.latLngBounds([]);
+      coords.forEach(c => bounds.extend(c));
+      regions.forEach(regionId => {
+        const b = drawBroadRegion(regionId);
+        if(b && b.isValid()) bounds.extend(b);
+      });
+      if(bounds.isValid()){
+        map.fitBounds(bounds.pad(0.20), { maxZoom: 12 });
       }
 
       // On phones, auto-close the panel so the map is visible.
@@ -829,6 +913,7 @@ label{font-weight:650; color:var(--muted)}
     async function loadData(){
       badge.textContent = 'Loading data…';
       try{
+        await loadStatePolygons();
         const res = await fetch('./mz_data_v4.json');
         if(!res.ok) throw new Error('HTTP ' + res.status);
 
@@ -842,7 +927,11 @@ label{font-weight:650; color:var(--muted)}
         badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people';
       }catch(err){
         console.error(err);
-        badge.textContent = 'Failed to load data';
+        if(window.location.protocol === 'file:'){
+          badge.textContent = 'Failed to load data (open via localhost or GitHub Pages)';
+        } else {
+          badge.textContent = 'Failed to load data';
+        }
       }
     }
     loadData();
