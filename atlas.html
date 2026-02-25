@@ -846,7 +846,11 @@ label{font-weight:650; color:var(--muted)}
         }
       }catch(err){
         console.error(err);
-        badge.textContent = 'Failed to load data';
+        if(window.location.protocol === 'file:'){
+          badge.textContent = 'Failed to load data (open via localhost or GitHub Pages)';
+        } else {
+          badge.textContent = 'Failed to load data';
+        }
       }
     }
     loadData();

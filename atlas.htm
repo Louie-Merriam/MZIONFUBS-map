@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting to atlas.html</title>
+  <meta http-equiv="refresh" content="0; url=./atlas.html" />
+</head>
+<body>
+  <script>
+    // Preserve query/hash when redirecting from legacy .htm link.
+    window.location.replace('./atlas.html' + window.location.search + window.location.hash);
+  </script>
+  <p>Redirecting to <a href="./atlas.html">atlas.html</a>…</p>
+</body>
+</html>
