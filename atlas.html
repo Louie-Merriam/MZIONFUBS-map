@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>MZ &amp; FUBS — Atlas (Final)</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+
+  <style>
+:root{
+  --headerH:56px;
+
+  /* Simple light UI */
+  --bg:#f6f7f9;
+  --panel:#ffffff;
+  --panel2:#f3f4f6;
+  --ink:#0b1220;
+  --muted:#475569;
+  --border:#e2e8f0;
+  --radius:14px;
+  --focus:rgba(59,130,246,.45);
+
+  /* Category colors */
+  --birth:#2563eb;
+  --res:#059669;
+  --worship:#7c3aed;
+  --death:#dc2626;
+  --enslave:#f97316;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app{
+  height:100dvh;
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(280px,360px) 1fr;
+  grid-template-rows:var(--headerH) 1fr;
+  gap:10px;
+  padding:10px;
+  align-items:stretch;
+}
+
+header{
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:10px 12px;
+  position:relative;
+  z-index:20;
+}
+header b{
+  font-weight:700;
+  letter-spacing:-0.01em;
+  white-space:nowrap;
+}
+header .right{
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+#badge{
+  color:var(--res);
+  font-size:12px;
+  font-weight:650;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  background:var(--panel2);
+  border-radius:999px;
+}
+
+.btn{
+  padding:8px 10px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--panel);
+  color:var(--ink);
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:650;
+  font-size:13px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  user-select:none;
+  transition:background .15s ease, border-color .15s ease, transform .05s ease;
+}
+.btn:hover{background:var(--panel2); border-color:#cbd5e1}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+.sidebar{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:12px;
+  overflow:auto;
+  min-height:0; /* important for grid overflow */
+}
+
+.sidebarHeader{
+  display:none; /* shows on mobile */
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.search{display:grid; gap:8px}
+
+.muted{color:var(--muted); font-size:12px; line-height:1.35}
+label{font-weight:650; color:var(--muted)}
+
+.search input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--ink);
+  outline:none;
+}
+.search input:focus{
+  border-color:rgba(59,130,246,.45);
+  box-shadow:0 0 0 3px rgba(59,130,246,.12);
+}
+
+#results{
+  margin-top:6px;
+  max-height:min(320px, 40vh);
+  overflow:auto;
+  border:1px solid var(--border);
+  border-radius:12px;
+  display:none;
+  background:var(--panel);
+}
+#results button{
+  display:block;
+  width:100%;
+  text-align:left;
+  background:transparent;
+  color:var(--ink);
+  border:none;
+  padding:10px 10px;
+  cursor:pointer;
+  font-weight:650;
+}
+#results button:hover{background:#f8fafc}
+#results button:focus-visible{outline:2px solid var(--focus); outline-offset:-2px}
+
+.row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+
+/* Legend pills (flattened) */
+.pill{
+  border:0;
+  padding:0;
+  background:transparent;
+  font-size:12px;
+  color:var(--muted);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:650;
+}
+
+.dotKey{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  display:inline-block;
+}
+.dotKey.birth{background:var(--birth)}
+.dotKey.residence{background:var(--res)}
+.dotKey.worship{background:var(--worship)}
+.dotKey.death{background:var(--death)}
+.dotKey.enslavement{background:var(--enslave)}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px;
+  margin-top:10px;
+}
+.card b{font-weight:700}
+.card a{color:#2563eb; text-decoration:underline;}
+
+/* Map */
+#map{
+  width:100%;
+  height:100%;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:#aad3df; /* matches OSM "ocean" tone */
+  min-height:0;
+}
+.leaflet-container{background:#aad3df;}
+
+/* Cluster icons (simpler) */
+.mz-cluster { border-radius:50%; }
+.mz-cluster .mz-cluster-circle {
+  display:flex; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:50%;
+  border:1px solid rgba(2,6,23,0.25);
+}
+.mz-cluster.md .mz-cluster-circle { width:34px; height:34px; }
+.mz-cluster.lg .mz-cluster-circle { width:40px; height:40px; }
+.mz-cluster span{ color:#ffffff; font-weight:800; line-height:1; text-shadow:0 1px 0 rgba(0,0,0,.22); }
+
+/* Mobile drawer */
+.mobileOnly{display:none;}
+.backdrop{display:none;}
+
+@media (max-width: 900px){
+  .app{
+    grid-template-columns:1fr;
+    grid-template-rows:var(--headerH) 1fr;
+    gap:0;
+    padding:0;
+    height:100dvh;
+  }
+  header{
+    border-radius:0;
+    border-left:0; border-right:0; border-top:0;
+  }
+  #map{
+    border-radius:0;
+    border:none;
+  }
+  .mobileOnly{display:inline-flex;}
+
+  /* Turn sidebar into a slide-in panel */
+  .sidebar{
+    position:fixed;
+    top:var(--headerH);
+    left:0;
+    bottom:0;
+    width:min(380px, 92vw);
+    z-index:30;
+    border-radius:0 16px 16px 0;
+    transform:translateX(-105%);
+    transition:transform .18s ease;
+  }
+  .sidebar.open{transform:translateX(0);}
+  .sidebarHeader{display:flex;}
+
+  .backdrop{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(2,6,23,.22);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .18s ease;
+    z-index:25;
+  }
+  .backdrop.show{opacity:1; pointer-events:auto;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .btn, .sidebar, .backdrop{transition:none}
+}
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <b>Interactive Atlas — MZ &amp; FUBS</b>
+
+      <div class="right">
+        <span id="badge">Loading…</span>
+        <button class="btn mobileOnly" id="openPanel" type="button" aria-controls="sidebar" aria-expanded="false">
+          ☰ Search &amp; layers
+        </button>
+        <button class="btn" id="zoomAll" type="button">Zoom to All</button>
+        <a class="btn" href="./index.html" rel="nofollow">← Cover</a>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar" aria-label="Search and layers panel">
+      <div class="sidebarHeader">
+        <b>Search &amp; layers</b>
+        <button class="btn" id="closePanel" type="button">Close</button>
+      </div>
+
+      <div class="search">
+        <label class="muted" for="q">Search by name</label>
+        <input id="q" type="text" autocomplete="off" placeholder="Type at least 2 letters (name or surname)"/>
+        <div id="results" aria-live="polite"></div>
+
+        <div class="row">
+          <button class="btn" id="clearBtn" type="button">Clear search</button>
+        </div>
+
+        <div class="row" style="margin-top:8px">
+          <span class="pill"><span class="dotKey birth"></span>Birthplace</span>
+          <span class="pill"><span class="dotKey residence"></span>Residence</span>
+          <span class="pill"><span class="dotKey worship"></span>Worship</span>
+          <span class="pill"><span class="dotKey death"></span>Deathplace</span>
+          <span class="pill"><span class="dotKey enslavement"></span>Enslavement</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <b>Layer toggles (All mode only)</b>
+        <div class="row" style="margin-top:8px">
+          <label><input checked class="layerToggle" data-layer="birth" type="checkbox"/> Birthplaces</label>
+        </div>
+        <div class="row">
+          <label><input checked class="layerToggle" data-layer="residence" type="checkbox"/> Residences</label>
+        </div>
+        <div class="row">
+          <label><input checked class="layerToggle" data-layer="worship" type="checkbox"/> Places of Worship</label>
+        </div>
+        <div class="row">
+          <label><input checked class="layerToggle" data-layer="death" type="checkbox"/> Deathplaces</label>
+        </div>
+        <div class="row">
+          <label><input checked class="layerToggle" data-layer="enslavement" type="checkbox"/> Enslavement</label>
+        </div>
+        <div class="muted" style="margin-top:8px">
+          When you select a person, the map switches to <b>Person mode</b> and shows only that individual.
+        </div>
+      </div>
+
+      <div class="card"><b id="who">All mode</b><div class="muted">Use toggles to show global layers, or search for a person.</div></div>
+      <div class="card"><b>Birthplace</b><div class="muted" id="birthAddr">—</div></div>
+      <div class="card"><b>Residence</b><div class="muted" id="resAddr">—</div></div>
+      <div class="card"><b>Place of Worship</b><div class="muted" id="worshipAddr">—</div></div>
+      <div class="card"><b>Enslavement</b><div class="muted" id="enslavementAddr">—</div></div>
+      <div class="card"><b>Deathplace</b><div class="muted" id="deathAddr">—</div></div>
+    </aside>
+
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+    <main id="map" aria-label="Interactive map"></main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    // ---------- Small helpers ----------
+    function escapeHtml(s){
+      s = (s==null ? '' : String(s));
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+    function norm(s){
+      return (s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    }
+    function gmaps(lat, lon, addr){
+      return 'https://www.google.com/maps?q=' + encodeURIComponent(lat + ',' + lon) + (addr ? ('%20(' + encodeURIComponent(addr) + ')') : '');
+    }
+    function colorVar(name){
+      try{ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+      catch(e){ return ''; }
+    }
+
+    // ---------- UI: mobile drawer ----------
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+    const openPanelBtn = document.getElementById('openPanel');
+    const closePanelBtn = document.getElementById('closePanel');
+
+    const headerEl = document.querySelector('header');
+    function updateHeaderHeight(){
+      if(!headerEl) return;
+      document.documentElement.style.setProperty('--headerH', headerEl.offsetHeight + 'px');
+    }
+    // Run once now and again after layout changes (resize/orientation).
+    updateHeaderHeight();
+
+
+    function panelIsMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+    function setPanel(open){
+      if(!panelIsMobile()) return; // desktop keeps sidebar visible
+      sidebar.classList.toggle('open', !!open);
+      backdrop.classList.toggle('show', !!open);
+      openPanelBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    openPanelBtn.addEventListener('click', ()=> setPanel(!sidebar.classList.contains('open')));
+    closePanelBtn.addEventListener('click', ()=> setPanel(false));
+    backdrop.addEventListener('click', ()=> setPanel(false));
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') setPanel(false); });
+    window.addEventListener('resize', ()=>{
+      updateHeaderHeight();
+      // If you rotate into desktop, make sure the drawer state doesn't hide the sidebar.
+      if(!panelIsMobile()){
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('show');
+        openPanelBtn.setAttribute('aria-expanded','false');
+      }
+    });
+
+    // ---------- Map ----------
+    const badge = document.getElementById('badge');
+    const who = document.getElementById('who');
+    const fields = { birth:'birthAddr', residence:'resAddr', enslavement:'enslavementAddr', worship:'worshipAddr', death:'deathAddr' };
+    const LOCATION_KEYS = ['birth','residence','enslavement','worship','death'];
+
+    // Allow zooming out to a single-world view (no Washington-DC-only bounds).
+    const WORLD_BOUNDS = L.latLngBounds([[-85.0511, -180], [85.0511, 180]]);
+
+    const map = L.map('map', {
+      preferCanvas:true,
+      zoomControl:false,
+      minZoom:1,
+      maxZoom:18,
+      worldCopyJump:true,
+      maxBounds: WORLD_BOUNDS,
+      maxBoundsViscosity:0.9
+    }).setView([20,0], 2);
+
+    L.control.zoom({ position:'topright' }).addTo(map);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:'© OpenStreetMap',
+      noWrap:true
+    }).addTo(map);
+
+    // Prevent zooming out far enough that you see the map container "background"
+    // around the world (common on wide screens when `noWrap:true`).
+    function computeNoBlankMinZoom(){
+      const size = map.getSize();        // px
+      const tileSize = 256;              // Leaflet default
+      const maxDim = Math.max(size.x, size.y);
+      const z = Math.ceil(Math.log2(maxDim / tileSize));
+      return Math.max(1, z);
+    }
+
+    let _noBlankMinZoom = 1;
+    function enforceNoBlankMinZoom(){
+      const z = computeNoBlankMinZoom();
+      if(z !== _noBlankMinZoom){
+        _noBlankMinZoom = z;
+        map.setMinZoom(z);
+      }
+      if(map.getZoom() < z) map.setZoom(z);
+    }
+
+    map.whenReady(enforceNoBlankMinZoom);
+    window.addEventListener('resize', ()=>{
+      // Let layout settle (e.g., address bar / orientation changes) then recompute.
+      setTimeout(()=>{
+        map.invalidateSize();
+        enforceNoBlankMinZoom();
+      }, 150);
+    });
+
+
+    const COLORS = { birth:'--birth', residence:'--res', enslavement:'--enslave', worship:'--worship', death:'--death' };
+
+    // State centroid fallback for records that are state-level only and were geocoded to DC.
+    const US_STATE_CENTROIDS = {
+      AL:{ lat:32.806671, lon:-86.79113 }, AK:{ lat:61.370716, lon:-152.404419 },
+      AZ:{ lat:33.729759, lon:-111.431221 }, AR:{ lat:34.969704, lon:-92.373123 },
+      CA:{ lat:36.116203, lon:-119.681564 }, CO:{ lat:39.059811, lon:-105.311104 },
+      CT:{ lat:41.597782, lon:-72.755371 }, DE:{ lat:39.318523, lon:-75.507141 },
+      DC:{ lat:38.9072, lon:-77.0369 }, FL:{ lat:27.766279, lon:-81.686783 },
+      GA:{ lat:33.040619, lon:-83.643074 }, HI:{ lat:21.094318, lon:-157.498337 },
+      ID:{ lat:44.240459, lon:-114.478828 }, IL:{ lat:40.349457, lon:-88.986137 },
+      IN:{ lat:39.849426, lon:-86.258278 }, IA:{ lat:42.011539, lon:-93.210526 },
+      KS:{ lat:38.5266, lon:-96.726486 }, KY:{ lat:37.66814, lon:-84.670067 },
+      LA:{ lat:31.169546, lon:-91.867805 }, ME:{ lat:44.693947, lon:-69.381927 },
+      MD:{ lat:39.045755, lon:-76.641271 }, MA:{ lat:42.230171, lon:-71.530106 },
+      MI:{ lat:43.326618, lon:-84.536095 }, MN:{ lat:45.694454, lon:-93.900192 },
+      MS:{ lat:32.741646, lon:-89.678696 }, MO:{ lat:38.456085, lon:-92.288368 },
+      MT:{ lat:46.921925, lon:-110.454353 }, NE:{ lat:41.12537, lon:-98.268082 },
+      NV:{ lat:38.313515, lon:-117.055374 }, NH:{ lat:43.452492, lon:-71.563896 },
+      NJ:{ lat:40.298904, lon:-74.521011 }, NM:{ lat:34.840515, lon:-106.248482 },
+      NY:{ lat:42.165726, lon:-74.948051 }, NC:{ lat:35.630066, lon:-79.806419 },
+      ND:{ lat:47.528912, lon:-99.784012 }, OH:{ lat:40.388783, lon:-82.764915 },
+      OK:{ lat:35.565342, lon:-96.928917 }, OR:{ lat:44.572021, lon:-122.070938 },
+      PA:{ lat:40.590752, lon:-77.209755 }, RI:{ lat:41.680893, lon:-71.51178 },
+      SC:{ lat:33.856892, lon:-80.945007 }, SD:{ lat:44.299782, lon:-99.438828 },
+      TN:{ lat:35.747845, lon:-86.692345 }, TX:{ lat:31.054487, lon:-97.563461 },
+      UT:{ lat:40.150032, lon:-111.862434 }, VT:{ lat:44.045876, lon:-72.710686 },
+      VA:{ lat:37.769337, lon:-78.169968 }, WA:{ lat:47.400902, lon:-121.490494 },
+      WV:{ lat:38.491226, lon:-80.954453 }, WI:{ lat:44.268543, lon:-89.616508 },
+      WY:{ lat:42.755966, lon:-107.30249 }
+    };
+
+    const US_STATE_NAME_TO_CODE = {
+      ALABAMA:'AL', ALASKA:'AK', ARIZONA:'AZ', ARKANSAS:'AR', CALIFORNIA:'CA', COLORADO:'CO',
+      CONNECTICUT:'CT', DELAWARE:'DE', 'DISTRICT OF COLUMBIA':'DC', FLORIDA:'FL', GEORGIA:'GA',
+      HAWAII:'HI', IDAHO:'ID', ILLINOIS:'IL', INDIANA:'IN', IOWA:'IA', KANSAS:'KS', KENTUCKY:'KY',
+      LOUISIANA:'LA', MAINE:'ME', MARYLAND:'MD', MASSACHUSETTS:'MA', MICHIGAN:'MI', MINNESOTA:'MN',
+      MISSISSIPPI:'MS', MISSOURI:'MO', MONTANA:'MT', NEBRASKA:'NE', NEVADA:'NV', 'NEW HAMPSHIRE':'NH',
+      'NEW JERSEY':'NJ', 'NEW MEXICO':'NM', 'NEW YORK':'NY', 'NORTH CAROLINA':'NC',
+      'NORTH DAKOTA':'ND', OHIO:'OH', OKLAHOMA:'OK', OREGON:'OR', PENNSYLVANIA:'PA',
+      'RHODE ISLAND':'RI', 'SOUTH CAROLINA':'SC', 'SOUTH DAKOTA':'SD', TENNESSEE:'TN',
+      TEXAS:'TX', UTAH:'UT', VERMONT:'VT', VIRGINIA:'VA', WASHINGTON:'WA', 'WEST VIRGINIA':'WV',
+      WISCONSIN:'WI', WYOMING:'WY'
+    };
+
+    const COUNTRY_TOKENS = new Set(['UNITED STATES', 'UNITED STATES OF AMERICA', 'USA', 'US']);
+    const DC_GEOCENTER = { lat: 38.9072, lon: -77.0369 };
+
+    function isNearDcGeocenter(lat, lon){
+      return Math.abs(lat - DC_GEOCENTER.lat) < 0.5 && Math.abs(lon - DC_GEOCENTER.lon) < 0.5;
+    }
+
+    function normalizeToken(v){
+      return String(v || '').toUpperCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+    }
+
+    function codeFromStateToken(token){
+      const cleaned = normalizeToken(token).replace(/^STATE OF\s+/, '').trim();
+      if(!cleaned) return null;
+      if(/^[A-Z]{2}$/.test(cleaned) && US_STATE_CENTROIDS[cleaned]) return cleaned;
+      return US_STATE_NAME_TO_CODE[cleaned] || null;
+    }
+
+    // Restrict to explicit state-level addresses (e.g., "MD", "MD, United States", "Maryland").
+    function stateCodeFromAddress(address){
+      const normalized = normalizeToken(address);
+      if(!normalized) return null;
+
+      const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
+      if(parts.length === 1){
+        return codeFromStateToken(parts[0]);
+      }
+      if(parts.length === 2){
+        const a = parts[0];
+        const b = parts[1];
+        if(COUNTRY_TOKENS.has(a)) return codeFromStateToken(b);
+        if(COUNTRY_TOKENS.has(b)) return codeFromStateToken(a);
+      }
+      return null;
+    }
+
+    function clusterOpts(cssVar){
+      return {
+        showCoverageOnHover:false,
+        zoomToBoundsOnClick:true,
+        spiderfyOnMaxZoom:true,
+        maxClusterRadius:50,
+        iconCreateFunction:function(cluster){
+          const n = cluster.getChildCount();
+          let size='sm'; if(n>=100) size='lg'; else if(n>=20) size='md';
+          const c = colorVar(cssVar) || '#888';
+          return L.divIcon({
+            html: '<div class="mz-cluster-circle" style="background:'+c+'"><span>'+n+'</span></div>',
+            className: 'mz-cluster ' + size,
+            iconSize: L.point(32,32)
+          });
+        }
+      };
+    }
+
+    const clusters = {
+      birth: L.markerClusterGroup(clusterOpts('--birth')),
+      residence: L.markerClusterGroup(clusterOpts('--res')),
+      enslavement: L.markerClusterGroup(clusterOpts('--enslave')),
+      worship: L.markerClusterGroup(clusterOpts('--worship')),
+      death: L.markerClusterGroup(clusterOpts('--death'))
+    };
+
+    Object.values(clusters).forEach(c => c.addTo(map));
+
+    const personLayer = L.layerGroup().addTo(map);
+    const pathLayer = L.layerGroup().addTo(map);
+
+    let PEOPLE = [];
+    let INDEX = [];
+    let geocodeFixCount = 0;
+    const geocodeFixByState = {};
+
+    function normalizePeople(raw){
+      geocodeFixCount = 0;
+      Object.keys(geocodeFixByState).forEach(k => delete geocodeFixByState[k]);
+
+      return (raw||[]).map(p => {
+        const out = { name: p.name };
+        LOCATION_KEYS.forEach(k=>{
+          const s = p[k];
+          if(!s) return;
+          let lat = Number(s.lat), lon = Number(s.lon);
+          const stateCode = stateCodeFromAddress(s.address);
+          const centroid = stateCode ? US_STATE_CENTROIDS[stateCode] : null;
+          if(
+            stateCode && stateCode !== 'DC' && centroid &&
+            isFinite(lat) && isFinite(lon) && isNearDcGeocenter(lat, lon)
+          ){
+            lat = centroid.lat;
+            lon = centroid.lon;
+            geocodeFixCount += 1;
+            geocodeFixByState[stateCode] = (geocodeFixByState[stateCode] || 0) + 1;
+          }
+          if(!isFinite(lat) || lat<-90 || lat>90 || !isFinite(lon) || lon<-180 || lon>180){
+            out[k] = null;
+          } else {
+            out[k] = { address: s.address || null, lat: lat, lon: lon };
+          }
+        });
+        return out;
+      });
+    }
+
+    function dot(lat, lon, color, html){
+      return L.circleMarker([lat,lon], {
+        radius: 6,
+        fillColor: color,
+        color: '#0b0f14',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: .95
+      }).bindPopup(html);
+    }
+
+    function toMarker(pt, kind){
+      const title = kind.charAt(0).toUpperCase() + kind.slice(1);
+      return dot(pt.lat, pt.lon, colorVar(COLORS[kind]),
+        '<b>' + title + '</b><br/><i>' + escapeHtml(pt.name) + '</i><br/>' + escapeHtml(pt.address||'')
+      );
+    }
+
+    function allPoints(kind){
+      const out = [];
+      PEOPLE.forEach(p=>{
+        const s = p[kind];
+        if(s && s.lat!=null && s.lon!=null) out.push({ name:p.name, address:s.address, lat:s.lat, lon:s.lon });
+      });
+      return out;
+    }
+
+    function fitToAllPoints(){
+      const bounds = L.latLngBounds([]);
+      Object.values(clusters).forEach(c=>{
+        try{
+          const b = c.getBounds();
+          if(b && b.isValid()) bounds.extend(b);
+        }catch(e){}
+      });
+
+      if(bounds.isValid()){
+        map.fitBounds(bounds.pad(0.20), { maxZoom: 12 });
+      } else {
+        // If there are no points, keep a world view.
+        map.setView([20,0], 2);
+      }
+    }
+
+    function buildGlobal(){
+      Object.values(clusters).forEach(c => c.clearLayers());
+      LOCATION_KEYS.forEach(k => {
+        allPoints(k).forEach(pt => clusters[k].addLayer(toMarker(pt, k)));
+      });
+
+      fitToAllPoints();
+    }
+
+    function setDetails(person){
+      if(!person){
+        who.textContent = 'All mode';
+        Object.values(fields).forEach(id => document.getElementById(id).textContent = '—');
+        return;
+      }
+      who.textContent = person.name;
+      Object.entries(fields).forEach(([k,id])=>{
+        const s = person[k];
+        if(!s || s.lat==null || s.lon==null){
+          document.getElementById(id).textContent = '—';
+        } else {
+          document.getElementById(id).innerHTML =
+            escapeHtml(s.address||'') +
+            '<br/><a target="_blank" rel="noopener" href="' + gmaps(s.lat, s.lon, s.address) + '">Open in Google Maps</a>';
+        }
+      });
+    }
+
+    function enterAllMode(){
+      personLayer.clearLayers();
+      pathLayer.clearLayers();
+      setDetails(null);
+
+      document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = false);
+
+      Object.entries(clusters).forEach(([kind, layer])=>{
+        const t = document.querySelector('.layerToggle[data-layer="' + kind + '"]');
+        const shouldShow = !t || t.checked;
+        if(shouldShow){
+          if(!map.hasLayer(layer)) layer.addTo(map);
+        } else {
+          if(map.hasLayer(layer)) map.removeLayer(layer);
+        }
+      });
+    }
+
+    function enterPersonMode(person){
+      document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = true);
+      Object.values(clusters).forEach(c => { if(map.hasLayer(c)) map.removeLayer(c); });
+
+      personLayer.clearLayers();
+      pathLayer.clearLayers();
+      setDetails(person);
+
+      const order = LOCATION_KEYS;
+      const coords = [];
+
+      order.forEach(k=>{
+        const s = person[k];
+        if(!s || s.lat==null || s.lon==null) return;
+        personLayer.addLayer(
+          dot(s.lat, s.lon, colorVar(COLORS[k]),
+            '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
+          )
+        );
+        coords.push([s.lat, s.lon]);
+      });
+
+      if(coords.length >= 2){
+        L.polyline(coords, { weight:3, opacity:.85, color:'#8aa0b5', dashArray:'4 6' }).addTo(pathLayer);
+      }
+      if(coords.length){
+        map.fitBounds(L.latLngBounds(coords).pad(0.20), { maxZoom: 12 });
+      }
+
+      // On phones, auto-close the panel so the map is visible.
+      setPanel(false);
+    }
+
+    document.addEventListener('change', (e)=>{
+      const t = e.target;
+      if(!t.classList.contains('layerToggle')) return;
+      if(t.disabled) return;
+
+      const kind = t.dataset.layer;
+      const layer = clusters[kind];
+      if(!layer) return;
+
+      if(t.checked){
+        if(!map.hasLayer(layer)) layer.addTo(map);
+      } else {
+        if(map.hasLayer(layer)) map.removeLayer(layer);
+      }
+    });
+
+    // ---------- Search ----------
+    const q = document.getElementById('q');
+    const results = document.getElementById('results');
+
+    function searchNames(qs){
+      const v = norm(qs).trim();
+      if(v.length < 2){
+        results.style.display = 'none';
+        results.innerHTML = '';
+        return [];
+      }
+
+      const parts = v.split(/\s+/).filter(Boolean);
+      const hits = [];
+
+      for(const row of INDEX){
+        if(!row.norm) continue;
+        let ok = true;
+        for(const p of parts){
+          if(row.norm.indexOf(p) === -1){ ok = false; break; }
+        }
+        if(ok) hits.push(row.name);
+        if(hits.length >= 50) break;
+      }
+
+      results.innerHTML = hits.map(n =>
+        '<button type="button" data-name="' + n.replace(/"/g,'&quot;') + '">' + escapeHtml(n) + '</button>'
+      ).join('');
+
+      results.style.display = hits.length ? 'block' : 'none';
+      return hits;
+    }
+
+    q.addEventListener('input', (e)=> searchNames(e.target.value));
+
+    q.addEventListener('keydown', (e)=>{
+      if(e.key !== 'Enter') return;
+      const name = q.value.trim().toLowerCase();
+      const p = PEOPLE.find(x => x.name.toLowerCase() === name) || PEOPLE.find(x => x.name.toLowerCase().includes(name));
+      if(p){
+        enterPersonMode(p);
+        results.style.display = 'none';
+      }
+    });
+
+    results.addEventListener('click', (e)=>{
+      if(e.target.tagName !== 'BUTTON') return;
+      const name = e.target.getAttribute('data-name') || '';
+      const p = PEOPLE.find(x => x.name.toLowerCase() === name.toLowerCase()) || PEOPLE.find(x => x.name.toLowerCase().includes(name.toLowerCase()));
+      if(p){
+        enterPersonMode(p);
+        results.style.display = 'none';
+      }
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', ()=>{
+      q.value = '';
+      results.style.display = 'none';
+      enterAllMode();
+      setPanel(false);
+    });
+
+    document.getElementById('zoomAll').addEventListener('click', ()=>{
+      enterAllMode();
+      fitToAllPoints();
+      setPanel(false);
+    });
+
+    // ---------- Data ----------
+    async function loadData(){
+      badge.textContent = 'Loading data…';
+      try{
+        const res = await fetch('./mz_data_v4.json');
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+
+        const raw = await res.json();
+        PEOPLE = normalizePeople(raw.people || []);
+        INDEX = PEOPLE.map(p => ({ name: p.name, norm: norm(p.name) }));
+
+        buildGlobal();
+        enterAllMode();
+
+        const fixSuffix = geocodeFixCount ? (' | state fixes: ' + geocodeFixCount) : '';
+        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people' + fixSuffix;
+        if(geocodeFixCount){
+          console.info('State geocode fixes applied:', geocodeFixByState);
+        }
+      }catch(err){
+        console.error(err);
+        badge.textContent = 'Failed to load data';
+      }
+    }
+    loadData();
+  </script>
+</body>
+</html>
