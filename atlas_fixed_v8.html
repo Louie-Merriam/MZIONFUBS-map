@@ -839,11 +839,7 @@ label{font-weight:650; color:var(--muted)}
         buildGlobal();
         enterAllMode();
 
-        const fixSuffix = geocodeFixCount ? (' | state fixes: ' + geocodeFixCount) : '';
-        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people' + fixSuffix;
-        if(geocodeFixCount){
-          console.info('State geocode fixes applied:', geocodeFixByState);
-        }
+        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people';
       }catch(err){
         console.error(err);
         badge.textContent = 'Failed to load data';

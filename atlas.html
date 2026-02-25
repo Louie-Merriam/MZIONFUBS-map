@@ -581,16 +581,59 @@ label{font-weight:650; color:var(--muted)}
 
     const personLayer = L.layerGroup().addTo(map);
     const pathLayer = L.layerGroup().addTo(map);
+    const regionLayer = L.layerGroup().addTo(map);
+
+    // Broad-region overlays for coarse addresses.
+    const BROAD_REGION_BOUNDS = {
+      MD: { label:'Maryland', bounds:[[37.88, -79.60], [39.80, -74.95]] },
+      WASHINGTON_DC: { label:'Washington, DC', bounds:[[38.79, -77.12], [38.995, -76.91]] },
+      GEORGETOWN_DC: { label:'Georgetown, DC', bounds:[[38.895, -77.085], [38.922, -77.045]] },
+    };
 
     let PEOPLE = [];
     let INDEX = [];
-    let geocodeFixCount = 0;
-    const geocodeFixByState = {};
+
+    function broadRegionFromAddress(address){
+      const normalized = normalizeToken(address);
+      if(!normalized) return null;
+      const stateCode = stateCodeFromAddress(normalized);
+      if(stateCode === 'MD') return 'MD';
+
+      const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
+      if(parts.length && COUNTRY_TOKENS.has(parts[parts.length - 1])) parts.pop();
+
+      if(parts.length === 1){
+        if(parts[0] === 'DC' || parts[0] === 'DISTRICT OF COLUMBIA') return 'WASHINGTON_DC';
+      } else if(parts.length === 2){
+        const a = parts[0];
+        const b = parts[1];
+        if(
+          (a === 'WASHINGTON' && (b === 'DC' || b === 'DISTRICT OF COLUMBIA')) ||
+          ((a === 'DC' || a === 'DISTRICT OF COLUMBIA') && b === 'WASHINGTON')
+        ){
+          return 'WASHINGTON_DC';
+        }
+        if(a === 'GEORGETOWN' && (b === 'DC' || b === 'DISTRICT OF COLUMBIA')){
+          return 'GEORGETOWN_DC';
+        }
+      }
+      return null;
+    }
+
+    function drawBroadRegion(regionId){
+      const region = BROAD_REGION_BOUNDS[regionId];
+      if(!region) return null;
+      const rect = L.rectangle(region.bounds, {
+        color:'#334155',
+        weight:2,
+        fillOpacity:0.12,
+        dashArray:'4 6'
+      }).addTo(regionLayer);
+      rect.bindPopup('<b>Broad region</b><br/>' + escapeHtml(region.label));
+      return rect.getBounds();
+    }
 
     function normalizePeople(raw){
-      geocodeFixCount = 0;
-      Object.keys(geocodeFixByState).forEach(k => delete geocodeFixByState[k]);
-
       return (raw||[]).map(p => {
         const out = { name: p.name };
         LOCATION_KEYS.forEach(k=>{
@@ -605,8 +648,6 @@ label{font-weight:650; color:var(--muted)}
           ){
             lat = centroid.lat;
             lon = centroid.lon;
-            geocodeFixCount += 1;
-            geocodeFixByState[stateCode] = (geocodeFixByState[stateCode] || 0) + 1;
           }
           if(!isFinite(lat) || lat<-90 || lat>90 || !isFinite(lon) || lon<-180 || lon>180){
             out[k] = null;
@@ -693,6 +734,7 @@ label{font-weight:650; color:var(--muted)}
     function enterAllMode(){
       personLayer.clearLayers();
       pathLayer.clearLayers();
+      regionLayer.clearLayers();
       setDetails(null);
 
       document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = false);
@@ -714,14 +756,18 @@ label{font-weight:650; color:var(--muted)}
 
       personLayer.clearLayers();
       pathLayer.clearLayers();
+      regionLayer.clearLayers();
       setDetails(person);
 
       const order = LOCATION_KEYS;
       const coords = [];
+      const regions = new Set();
 
       order.forEach(k=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null) return;
+        const regionId = broadRegionFromAddress(s.address);
+        if(regionId) regions.add(regionId);
         personLayer.addLayer(
           dot(s.lat, s.lon, colorVar(COLORS[k]),
             '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
@@ -733,8 +779,14 @@ label{font-weight:650; color:var(--muted)}
       if(coords.length >= 2){
         L.polyline(coords, { weight:3, opacity:.85, color:'#8aa0b5', dashArray:'4 6' }).addTo(pathLayer);
       }
-      if(coords.length){
-        map.fitBounds(L.latLngBounds(coords).pad(0.20), { maxZoom: 12 });
+      const bounds = L.latLngBounds([]);
+      coords.forEach(c => bounds.extend(c));
+      regions.forEach(regionId => {
+        const b = drawBroadRegion(regionId);
+        if(b && b.isValid()) bounds.extend(b);
+      });
+      if(bounds.isValid()){
+        map.fitBounds(bounds.pad(0.20), { maxZoom: 12 });
       }
 
       // On phones, auto-close the panel so the map is visible.
@@ -839,11 +891,7 @@ label{font-weight:650; color:var(--muted)}
         buildGlobal();
         enterAllMode();
 
-        const fixSuffix = geocodeFixCount ? (' | state fixes: ' + geocodeFixCount) : '';
-        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people' + fixSuffix;
-        if(geocodeFixCount){
-          console.info('State geocode fixes applied:', geocodeFixByState);
-        }
+        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people';
       }catch(err){
         console.error(err);
         if(window.location.protocol === 'file:'){
