@@ -418,6 +418,13 @@ label{font-weight:650; color:var(--muted)}
     const who = document.getElementById('who');
     const fields = { birth:'birthAddr', residence:'resAddr', enslavement:'enslavementAddr', worship:'worshipAddr', death:'deathAddr' };
     const LOCATION_KEYS = ['birth','residence','enslavement','worship','death'];
+    const KIND_LABELS = {
+      birth:'Birthplace',
+      residence:'Residence',
+      enslavement:'Enslavement',
+      worship:'Worship',
+      death:'Deathplace'
+    };
 
     // Allow zooming out to a single-world view (no Washington-DC-only bounds).
     const WORLD_BOUNDS = L.latLngBounds([[-85.0511, -180], [85.0511, 180]]);
@@ -535,6 +542,26 @@ label{font-weight:650; color:var(--muted)}
       return US_STATE_NAME_TO_CODE[cleaned] || null;
     }
 
+    function codeFromStateTextLoose(token){
+      const cleaned = normalizeToken(token).replace(/^STATE OF\s+/, '').trim();
+      if(!cleaned) return null;
+      const strict = codeFromStateToken(cleaned);
+      if(strict) return strict;
+
+      const codeMatches = cleaned.match(/\b[A-Z]{2}\b/g);
+      if(codeMatches){
+        for(let i = codeMatches.length - 1; i >= 0; i -= 1){
+          const code = codeMatches[i];
+          if(US_STATE_CENTROIDS[code]) return code;
+        }
+      }
+
+      for(const [name, code] of Object.entries(US_STATE_NAME_TO_CODE)){
+        if(cleaned.includes(name)) return code;
+      }
+      return null;
+    }
+
     // Restrict to explicit state-level addresses (e.g., "MD", "MD, United States", "Maryland").
     function stateCodeFromAddress(address){
       const normalized = normalizeToken(address);
@@ -608,14 +635,29 @@ label{font-weight:650; color:var(--muted)}
       }
     }
 
-    function broadRegionFromAddress(address){
-      const normalized = normalizeToken(address);
+    function broadRegionFromPlace(place){
+      const normalized = normalizeToken(place && place.address);
       if(!normalized) return null;
+
+      const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
+      while(parts.length && COUNTRY_TOKENS.has(parts[parts.length - 1])) parts.pop();
+
+      if(parts.length === 2){
+        const a = parts[0];
+        const b = parts[1];
+        if(a === 'GEORGETOWN' && (b === 'DC' || b === 'DISTRICT OF COLUMBIA')){
+          return 'GEORGETOWN_DC';
+        }
+      }
+
       const stateCode = stateCodeFromAddress(normalized);
       if(stateCode && STATE_POLYGONS[stateCode]) return 'STATE:' + stateCode;
 
-      const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
-      if(parts.length && COUNTRY_TOKENS.has(parts[parts.length - 1])) parts.pop();
+      // City/state-style coarse addresses (e.g. "Harpers Ferry, WV").
+      if(parts.length >= 1 && parts.length <= 2){
+        const looseState = codeFromStateTextLoose(parts[parts.length - 1]);
+        if(looseState && STATE_POLYGONS[looseState]) return 'STATE:' + looseState;
+      }
 
       if(parts.length === 1){
         if(parts[0] === 'DC' || parts[0] === 'DISTRICT OF COLUMBIA'){
@@ -637,31 +679,39 @@ label{font-weight:650; color:var(--muted)}
       return null;
     }
 
-    function drawBroadRegion(regionId){
+    function drawBroadRegion(regionId, kinds){
+      const kindList = Array.isArray(kinds) ? kinds : Array.from(kinds || []);
+      const primaryKind = LOCATION_KEYS.find(k => kindList.includes(k));
+      const shade = primaryKind ? colorVar(COLORS[primaryKind]) : '#334155';
+      const categories = kindList.map(k => KIND_LABELS[k] || k);
+      const subtitle = categories.length ? ('<br/><i>' + escapeHtml(categories.join(', ')) + '</i>') : '';
+
       if(regionId.startsWith('STATE:')){
         const code = regionId.slice(6);
         const polygons = STATE_POLYGONS[code];
         if(!polygons || !polygons.length) return null;
         const stateName = US_STATE_CODE_TO_NAME[code] || code;
         const stateLayerShape = L.polygon(polygons, {
-          color:'#334155',
+          color: shade,
           weight:2,
-          fillOpacity:0.12
+          fillColor: shade,
+          fillOpacity:0.18
         });
         stateLayerShape.addTo(regionLayer);
-        stateLayerShape.bindPopup('<b>Broad region</b><br/>' + escapeHtml(stateName));
+        stateLayerShape.bindPopup('<b>Broad region</b><br/>' + escapeHtml(stateName) + subtitle);
         return stateLayerShape.getBounds();
       }
 
       const region = BROAD_REGION_BOUNDS[regionId];
       if(!region) return null;
       const rect = L.rectangle(region.bounds, {
-        color:'#334155',
+        color: shade,
         weight:2,
-        fillOpacity:0.12,
+        fillColor: shade,
+        fillOpacity:0.18,
         dashArray:'4 6'
       }).addTo(regionLayer);
-      rect.bindPopup('<b>Broad region</b><br/>' + escapeHtml(region.label));
+      rect.bindPopup('<b>Broad region</b><br/>' + escapeHtml(region.label) + subtitle);
       return rect.getBounds();
     }
 
@@ -793,13 +843,16 @@ label{font-weight:650; color:var(--muted)}
 
       const order = LOCATION_KEYS;
       const coords = [];
-      const regions = new Set();
+      const regions = new Map();
 
       order.forEach(k=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null) return;
-        const regionId = broadRegionFromAddress(s.address);
-        if(regionId) regions.add(regionId);
+        const regionId = broadRegionFromPlace(s);
+        if(regionId){
+          if(!regions.has(regionId)) regions.set(regionId, new Set());
+          regions.get(regionId).add(k);
+        }
         personLayer.addLayer(
           dot(s.lat, s.lon, colorVar(COLORS[k]),
             '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
@@ -813,8 +866,8 @@ label{font-weight:650; color:var(--muted)}
       }
       const bounds = L.latLngBounds([]);
       coords.forEach(c => bounds.extend(c));
-      regions.forEach(regionId => {
-        const b = drawBroadRegion(regionId);
+      regions.forEach((kinds, regionId) => {
+        const b = drawBroadRegion(regionId, Array.from(kinds));
         if(b && b.isValid()) bounds.extend(b);
       });
       if(bounds.isValid()){
