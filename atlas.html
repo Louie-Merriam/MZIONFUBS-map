@@ -288,7 +288,6 @@ label{font-weight:650; color:var(--muted)}
       <b>Interactive Atlas — MZ &amp; FUBS</b>
 
       <div class="right">
-        <span id="badge">Loading… (build 2026-02-28c)</span>
         <button class="btn mobileOnly" id="openPanel" type="button" aria-controls="sidebar" aria-expanded="false">
           ☰ Search &amp; layers
         </button>
@@ -414,8 +413,6 @@ label{font-weight:650; color:var(--muted)}
     });
 
     // ---------- Map ----------
-    const BUILD_ID = '2026-02-28c';
-    const badge = document.getElementById('badge');
     const who = document.getElementById('who');
     const fields = { birth:'birthAddr', residence:'resAddr', enslavement:'enslavementAddr', worship:'worshipAddr', death:'deathAddr' };
     const LOCATION_KEYS = ['birth','residence','enslavement','worship','death'];
@@ -457,7 +454,7 @@ label{font-weight:650; color:var(--muted)}
     map.createPane(PERSON_POINT_PANE);
     map.getPane(PERSON_POINT_PANE).style.zIndex = 650;
     map.getPane(PERSON_POINT_PANE).style.pointerEvents = 'auto';
-    const ENABLE_BROAD_REGIONS = false;
+    const ENABLE_BROAD_REGIONS = true;
 
     // Prevent zooming out far enough that you see the map container "background"
     // around the world (common on wide screens when `noWrap:true`).
@@ -1031,7 +1028,6 @@ label{font-weight:650; color:var(--muted)}
 
     // ---------- Data ----------
     async function loadData(){
-      badge.textContent = 'Loading data… (build ' + BUILD_ID + ')';
       try{
         await loadStatePolygons();
         const res = await fetch('./mz_data_v4.json');
@@ -1043,15 +1039,8 @@ label{font-weight:650; color:var(--muted)}
 
         buildGlobal();
         enterAllMode();
-
-        badge.textContent = 'Data loaded: ' + PEOPLE.length + ' people (build ' + BUILD_ID + ')';
       }catch(err){
         console.error(err);
-        if(window.location.protocol === 'file:'){
-          badge.textContent = 'Failed to load data (open via localhost or GitHub Pages) (build ' + BUILD_ID + ')';
-        } else {
-          badge.textContent = 'Failed to load data (build ' + BUILD_ID + ')';
-        }
       }
     }
     loadData();
