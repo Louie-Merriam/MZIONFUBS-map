@@ -1,5 +1,5 @@
 {
-  "changed_locations": 29,
+  "changed_locations": 8,
   "dropped_locations": 0,
   "input_json": "/Users/lmerriam27/MZIONFUBS-map/mz_data_v5.json",
   "issue_counts": {
@@ -14,8 +14,7 @@
     "worship": 2117
   },
   "notes_counts": {
-    "applied_georgetown_outlier_override": 6,
-    "applied_verified_override": 23,
+    "applied_verified_override": 8,
     "filled_us_country_from_state": 17,
     "fixed_country_washington_suffix": 2,
     "inferred_locality_from_peer_address": 23,
