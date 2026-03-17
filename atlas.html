@@ -1030,7 +1030,7 @@ label{font-weight:650; color:var(--muted)}
     async function loadData(){
       try{
         await loadStatePolygons();
-        const res = await fetch('./mz_data_v4.json');
+        const res = await fetch('./mz_data_v5.json');
         if(!res.ok) throw new Error('HTTP ' + res.status);
 
         const raw = await res.json();

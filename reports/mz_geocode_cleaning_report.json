@@ -1,0 +1,29 @@
+{
+  "changed_locations": 29,
+  "dropped_locations": 0,
+  "input_json": "/Users/lmerriam27/MZIONFUBS-map/mz_data_v5.json",
+  "issue_counts": {
+    "georgetown_historical_outlier": 6,
+    "street_at_city_centroid": 9
+  },
+  "location_counts": {
+    "birth": 2800,
+    "death": 2550,
+    "enslavement": 3,
+    "residence": 348,
+    "worship": 2117
+  },
+  "notes_counts": {
+    "applied_georgetown_outlier_override": 6,
+    "applied_verified_override": 23,
+    "filled_us_country_from_state": 17,
+    "fixed_country_washington_suffix": 2,
+    "inferred_locality_from_peer_address": 23,
+    "normalized_state_code": 21,
+    "normalized_us_country_variant": 6
+  },
+  "output_json": "/Users/lmerriam27/MZIONFUBS-map/mz_data_v5.json",
+  "people_count": 3233,
+  "query_stats": {},
+  "source_workbook": "/Users/lmerriam27/Downloads/MZFUBS_tbl_DECEDENT_2026-Jan-12_1822/MZFUBS_tbl_DECEDENT_2026-Jan-12_1822.xlsx"
+}
