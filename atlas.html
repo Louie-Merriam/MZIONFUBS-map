@@ -629,6 +629,41 @@ label{font-weight:650; color:var(--muted)}
       WASHINGTON_DC: { label:'Washington, DC', bounds:[[38.79, -77.12], [38.995, -76.91]] },
       GEORGETOWN_DC: { label:'Georgetown, DC', bounds:[[38.895, -77.085], [38.922, -77.045]] },
     };
+    const GEORGETOWN_CENTER = { lat: 38.9051994, lon: -77.062785 };
+    const GEORGETOWN_HISTORICAL_RENAMES = [
+      [/\bNorth St(?:reet)?(?:\s+NW)?\b/gi, '26th Street NW'],
+      [/\bMonroe St(?:reet)?(?:\s+NW)?\b/gi, '27th Street NW'],
+      [/\bMontgomery St(?:reet)?(?:\s+NW)?\b/gi, '28th Street NW'],
+      [/\bGreene St(?:reet)?(?:\s+NW)?\b/gi, '29th Street NW'],
+      [/\bWashington St(?:reet)?(?:\s+NW)?\b/gi, '30th Street NW'],
+      [/\bCongress St(?:reet)?(?:\s+NW)?\b/gi, '31st Street NW'],
+      [/\bValley St(?:reet)?(?:\s+NW)?\b/gi, '32nd Street NW'],
+      [/\bHigh St(?:reet)?(?:\s+NW)?\b/gi, 'Wisconsin Avenue NW'],
+      [/\bMarket St(?:reet)?(?:\s+NW)?\b/gi, '33rd Street NW'],
+      [/\bFrederick St(?:reet)?(?:\s+NW)?\b/gi, '34th Street NW'],
+      [/\bFayette St(?:reet)?(?:\s+NW)?\b/gi, '35th Street NW'],
+      [/\bLingan St(?:reet)?(?:\s+NW)?\b/gi, '36th Street NW'],
+      [/\bWarren St(?:reet)?(?:\s+NW)?\b/gi, '37th Street NW'],
+      [/\bWater St(?:reet)?(?:\s+NW)?\b/gi, 'K Street NW'],
+      [/\bBridge St(?:reet)?(?:\s+NW)?\b/gi, 'M Street NW'],
+      [/\bFalls St(?:reet)?(?:\s+NW)?\b/gi, 'M Street NW'],
+      [/\bOlive St(?:reet)?(?:\s+NW)?\b/gi, 'Prospect Street NW'],
+      [/\bGay(?:\s*\([^)]*\))?\s+Street(?:\s+NW)?\b/gi, 'N Street NW'],
+      [/\bGay(?:\s*\([^)]*\))?\s+St(?:reet)?(?:\s+NW)?\b/gi, 'N Street NW'],
+      [/\bFirst St(?:reet)?(?:\s+NW)?\b/gi, 'N Street NW'],
+      [/\bBeall(?:\s+St(?:reet)?)?(?:\s*\([^)]*\))?(?:\s+NW)?\b/gi, 'O Street NW'],
+      [/\bSecond St(?:reet)?(?:\s+NW)?\b/gi, 'O Street NW'],
+      [/\bWest St(?:reet)?(?:\s+NW)?\b/gi, 'P Street NW'],
+      [/\bThird St(?:reet)?(?:\s+NW)?\b/gi, 'P Street NW'],
+      [/\b4th St(?:reet)?(?:\s+NW)?(?:\s*\([^)]*\))?\b/gi, 'Volta Place NW'],
+      [/\bStodd(?:a|e)rt St(?:reet)?(?:\s+NW)?\b/gi, 'Q Street NW'],
+      [/\bFifth St(?:reet)?(?:\s+NW)?\b/gi, 'Q Street NW'],
+      [/\bSixth St(?:reet)?(?:\s+NW)?\b/gi, 'Dent Place NW'],
+      [/\bSeventh St(?:reet)?(?:\s+NW)?\b/gi, 'Reservoir Road NW'],
+      [/\bRoad St(?:reet)?(?:\s+NW)?\b/gi, 'R Street NW'],
+      [/\b8th St(?:reet)?(?:\s+NW)?\b/gi, 'R Street NW'],
+      [/\bJefferson (?:St|Street|Ave|Avenue)(?:\s+NW)?\b/gi, 'Thomas Jefferson Street NW']
+    ];
 
     let PEOPLE = [];
     let INDEX = [];
@@ -691,6 +726,95 @@ label{font-weight:650; color:var(--muted)}
       return null;
     }
 
+    function haversineMeters(lat1, lon1, lat2, lon2){
+      const toRad = deg => deg * Math.PI / 180;
+      const r = 6371000;
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+      const p1 = toRad(lat1);
+      const p2 = toRad(lat2);
+      const a = Math.sin(dLat / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dLon / 2) ** 2;
+      return 2 * r * Math.asin(Math.sqrt(a));
+    }
+
+    function historicAddressFor(place){
+      if(!place) return '';
+      return String(place.historicAddress || place.historic_address || place.address || '').trim();
+    }
+
+    function looksLikeAddressFragment(text){
+      const normalized = normalizeToken(text);
+      if(!normalized) return false;
+      return (
+        /^\d+/.test(normalized) ||
+        /\b(NW|NE|SW|SE)\b/.test(normalized) ||
+        /\b(BETWEEN|BTW|CORNER|ALLEY|COURT|CT|PLACE|PL|AVE|AVENUE|ROAD|RD|LANE|LN)\b/.test(normalized) ||
+        /\b(?:\d+(?:ST|ND|RD|TH)|[A-Z])\s+(?:AND|&)\s+(?:\d+(?:ST|ND|RD|TH)|[A-Z])\b/.test(normalized) ||
+        /\b\d+\s+[A-Z0-9'.-]+\s+(ST|STREET|AVE|AVENUE|ROAD|RD|LANE|LN|COURT|CT|PLACE|PL)\b/.test(normalized)
+      );
+    }
+
+    function isGeorgetownHistoricalContext(place){
+      const historic = historicAddressFor(place);
+      const normalized = normalizeToken(historic);
+      if(!normalized) return false;
+      if(normalized.includes('GEORGETOWN')) return true;
+      if(place && isFinite(place.lat) && isFinite(place.lon)){
+        return haversineMeters(place.lat, place.lon, GEORGETOWN_CENTER.lat, GEORGETOWN_CENTER.lon) <= 2500;
+      }
+      return false;
+    }
+
+    function modernAddressFor(place){
+      if(!place) return '';
+      const explicit = String(place.modernAddress || place.modern_address || '').trim();
+      if(explicit) return explicit;
+      const historic = historicAddressFor(place);
+      if(!historic) return '';
+      if(!isGeorgetownHistoricalContext(place)) return historic;
+      const parts = historic.split(',').map(part => part.trim()).filter(Boolean);
+      let prefix = '';
+      let modern = historic;
+      if(parts.length > 1 && !looksLikeAddressFragment(parts[0])){
+        prefix = parts.shift();
+        modern = parts.join(', ');
+      }
+      GEORGETOWN_HISTORICAL_RENAMES.forEach(([pattern, replacement])=>{
+        modern = modern.replace(pattern, replacement);
+      });
+      modern = modern.replace(/\s+,/g, ',').replace(/\s{2,}/g, ' ').trim();
+      return prefix ? (prefix + ', ' + modern) : modern;
+    }
+
+    function addressBlockHtml(place){
+      const historic = historicAddressFor(place);
+      const modern = modernAddressFor(place);
+      const lines = [];
+      if(historic) lines.push('<b>Historic address:</b> ' + escapeHtml(historic));
+      if(modern) lines.push('<b>Modern address:</b> ' + escapeHtml(modern));
+      return lines.join('<br/>');
+    }
+
+    function locationPopupHtml(title, place, name){
+      const addressHtml = addressBlockHtml(place);
+      return (
+        '<b>' + escapeHtml(title) + '</b><br/>' +
+        '<i>' + escapeHtml(name || '') + '</i>' +
+        (addressHtml ? '<br/>' + addressHtml : '')
+      );
+    }
+
+    function locationDetailsHtml(place){
+      const addressHtml = addressBlockHtml(place);
+      const mapsQuery = modernAddressFor(place) || historicAddressFor(place);
+      const mapsLink = (
+        place && place.lat!=null && place.lon!=null
+          ? '<a target="_blank" rel="noopener" href="' + gmaps(place.lat, place.lon, mapsQuery) + '">Open in Google Maps</a>'
+          : ''
+      );
+      return [addressHtml, mapsLink].filter(Boolean).join('<br/>');
+    }
+
     function drawBroadRegion(regionId, kinds){
       const kindList = Array.isArray(kinds) ? kinds : Array.from(kinds || []);
       const primaryKind = LOCATION_KEYS.find(k => kindList.includes(k));
@@ -750,7 +874,13 @@ label{font-weight:650; color:var(--muted)}
           if(!isFinite(lat) || lat<-90 || lat>90 || !isFinite(lon) || lon<-180 || lon>180){
             out[k] = null;
           } else {
-            out[k] = { address: s.address || null, lat: lat, lon: lon };
+            out[k] = {
+              address: s.address || null,
+              historicAddress: s.historic_address || s.address || null,
+              modernAddress: s.modern_address || null,
+              lat: lat,
+              lon: lon
+            };
           }
         });
         return out;
@@ -772,16 +902,23 @@ label{font-weight:650; color:var(--muted)}
 
     function toMarker(pt, kind){
       const title = kind.charAt(0).toUpperCase() + kind.slice(1);
-      return dot(pt.lat, pt.lon, colorVar(COLORS[kind]),
-        '<b>' + title + '</b><br/><i>' + escapeHtml(pt.name) + '</i><br/>' + escapeHtml(pt.address||'')
-      );
+      return dot(pt.lat, pt.lon, colorVar(COLORS[kind]), locationPopupHtml(title, pt, pt.name));
     }
 
     function allPoints(kind){
       const out = [];
       PEOPLE.forEach(p=>{
         const s = p[kind];
-        if(s && s.lat!=null && s.lon!=null) out.push({ name:p.name, address:s.address, lat:s.lat, lon:s.lon });
+        if(s && s.lat!=null && s.lon!=null){
+          out.push({
+            name:p.name,
+            address:s.address,
+            historicAddress:s.historicAddress || s.historic_address || s.address,
+            modernAddress:s.modernAddress || s.modern_address || null,
+            lat:s.lat,
+            lon:s.lon
+          });
+        }
       });
       return out;
     }
@@ -824,9 +961,7 @@ label{font-weight:650; color:var(--muted)}
         if(!s || s.lat==null || s.lon==null){
           document.getElementById(id).textContent = '—';
         } else {
-          document.getElementById(id).innerHTML =
-            escapeHtml(s.address||'') +
-            '<br/><a target="_blank" rel="noopener" href="' + gmaps(s.lat, s.lon, s.address) + '">Open in Google Maps</a>';
+          document.getElementById(id).innerHTML = locationDetailsHtml(s);
         }
       });
     }
@@ -875,9 +1010,13 @@ label{font-weight:650; color:var(--muted)}
           if(!regions.has(regionId)) regions.set(regionId, new Set());
           regions.get(regionId).add(k);
         }
-        const personDot = dot(s.lat, s.lon, colorVar(COLORS[k]),
-          '<b>' + (k.charAt(0).toUpperCase() + k.slice(1)) + '</b><br/>' + escapeHtml(s.address||'')
-        , PERSON_POINT_PANE);
+        const personDot = dot(
+          s.lat,
+          s.lon,
+          colorVar(COLORS[k]),
+          locationPopupHtml(k.charAt(0).toUpperCase() + k.slice(1), s, person.name),
+          PERSON_POINT_PANE
+        );
         personLayer.addLayer(personDot);
         personPoints.push(personDot);
         coords.push([s.lat, s.lon]);
