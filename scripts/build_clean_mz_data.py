@@ -10,6 +10,7 @@ import urllib.parse
 import urllib.request
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -708,6 +709,91 @@ def parse_float(value: Any) -> float | None:
         return None
 
 
+def clean_date_text(value: Any) -> str:
+    if value in (None, ""):
+        return ""
+    if isinstance(value, datetime):
+        return value.date().isoformat()
+    if isinstance(value, date):
+        return value.isoformat()
+    return clean_text(value)
+
+
+def parse_year_value(value: Any) -> int | None:
+    if value in (None, ""):
+        return None
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return int(value)
+    text = clean_text(value)
+    if text.isdigit():
+        return int(text)
+    match = re.search(r"\b(\d{4})\b", text)
+    if match:
+        return int(match.group(1))
+    return None
+
+
+def parse_age_years(value: Any) -> int | None:
+    if value in (None, ""):
+        return None
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return int(value)
+    text = clean_text(value)
+    match = re.search(r"(\d+)", text)
+    if match:
+        return int(match.group(1))
+    return None
+
+
+def build_timeline(row: tuple[Any, ...], idx: dict[str, int]) -> dict[str, Any] | None:
+    birth_year = parse_year_value(row[idx["BirthYear"]])
+    death_year = parse_year_value(row[idx["DeathYear"]])
+    birth_date = clean_date_text(row[idx["BirthDate"]])
+    death_date = clean_date_text(row[idx["DeathDate"]])
+    age_at_death_years = parse_age_years(row[idx["AgeDeathYrs"]])
+
+    start_year = birth_year
+    start_source = "birth_year" if birth_year is not None else None
+    if start_year is None and death_year is not None and age_at_death_years is not None and 0 <= age_at_death_years <= 120:
+        estimated = death_year - age_at_death_years
+        if estimated <= death_year:
+            start_year = estimated
+            start_source = "estimated_from_age_at_death"
+
+    if start_year is not None and death_year is not None and start_year > death_year:
+        start_year = None
+        start_source = None
+
+    if all(value in (None, "") for value in [birth_year, death_year, birth_date, death_date, start_year]):
+        return None
+
+    label = ""
+    if start_year is not None and death_year is not None:
+        prefix = "c. " if start_source == "estimated_from_age_at_death" and birth_year is None else ""
+        label = f"{prefix}{start_year}-{death_year}"
+    elif birth_year is not None:
+        label = f"b. {birth_year}"
+    elif death_year is not None:
+        label = f"d. {death_year}"
+
+    payload = {
+        "birthYear": birth_year,
+        "birthDate": birth_date or None,
+        "deathYear": death_year,
+        "deathDate": death_date or None,
+        "startYear": start_year,
+        "endYear": death_year,
+        "startYearSource": start_source,
+        "estimatedBirthYear": bool(start_source == "estimated_from_age_at_death"),
+        "ageAtDeathYears": age_at_death_years,
+        "filterable": bool(start_year is not None),
+        "label": label or None,
+    }
+    if payload["endYear"] is not None and payload["startYear"] is not None:
+        payload["filterable"] = True
+    return payload
+
+
 def coords_equal(a: tuple[float, float] | None, b: tuple[float, float] | None, tolerance: float = 1e-6) -> bool:
     if not a or not b:
         return False
@@ -1382,6 +1468,7 @@ def build_clean_dataset(
         "issue_counts": Counter(),
         "notes_counts": Counter(),
         "query_stats": dict(query_stats),
+        "timeline_counts": Counter(),
     }
     manual_review: list[dict[str, Any]] = []
 
@@ -1394,6 +1481,22 @@ def build_clean_dataset(
     for row_number, row, current_person in rows:
         key = (row_number, normalize_name(row[idx["FullName"]]))
         person = {"name": normalize_name(row[idx["FullName"]])}
+        timeline = build_timeline(row, idx)
+        if timeline is not None:
+            person["timeline"] = timeline
+            report["timeline_counts"]["with_any_timeline"] += 1
+            if timeline.get("birthYear") is not None:
+                report["timeline_counts"]["with_birth_year"] += 1
+            if timeline.get("deathYear") is not None:
+                report["timeline_counts"]["with_death_year"] += 1
+            if timeline.get("startYear") is not None:
+                report["timeline_counts"]["with_start_year"] += 1
+            if timeline.get("endYear") is not None:
+                report["timeline_counts"]["with_end_year"] += 1
+            if timeline.get("startYear") is not None and timeline.get("endYear") is not None:
+                report["timeline_counts"]["with_lifespan_range"] += 1
+            if timeline.get("estimatedBirthYear"):
+                report["timeline_counts"]["estimated_birth_year"] += 1
         for loc in all_locations_by_person[key]:
             report["location_counts"].setdefault(loc.kind, 0)
             if (
@@ -1463,6 +1566,27 @@ def build_clean_dataset(
 
     report["issue_counts"] = dict(report["issue_counts"])
     report["notes_counts"] = dict(report["notes_counts"])
+    report["timeline_counts"] = dict(report["timeline_counts"])
+
+    timeline_stats = {
+        "min_year": None,
+        "max_year": None,
+        "people_with_any_timeline": report["timeline_counts"].get("with_any_timeline", 0),
+        "people_with_start_year": report["timeline_counts"].get("with_start_year", 0),
+        "people_with_lifespan_range": report["timeline_counts"].get("with_lifespan_range", 0),
+        "estimated_birth_year": report["timeline_counts"].get("estimated_birth_year", 0),
+    }
+    for person in output_people:
+        timeline = person.get("timeline")
+        if not timeline:
+            continue
+        for year in [timeline.get("startYear"), timeline.get("endYear"), timeline.get("birthYear"), timeline.get("deathYear")]:
+            if year is None:
+                continue
+            if timeline_stats["min_year"] is None or year < timeline_stats["min_year"]:
+                timeline_stats["min_year"] = year
+            if timeline_stats["max_year"] is None or year > timeline_stats["max_year"]:
+                timeline_stats["max_year"] = year
 
     dataset = {
         "people": output_people,
@@ -1472,6 +1596,7 @@ def build_clean_dataset(
             "script": str(Path(__file__).name),
             "live_geocode": geocode_live,
         },
+        "timeline": timeline_stats,
     }
     return dataset, report, manual_review
 
@@ -1521,6 +1646,7 @@ def main() -> None:
         "changed_locations": report["changed_locations"],
         "dropped_locations": report["dropped_locations"],
         "query_stats": report["query_stats"],
+        "timeline": dataset.get("timeline", {}),
         "manual_review_rows": len(manual_review),
     }, indent=2))
 

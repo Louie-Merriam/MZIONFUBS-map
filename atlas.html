@@ -143,6 +143,11 @@ label{font-weight:650; color:var(--muted)}
   border-color:rgba(59,130,246,.45);
   box-shadow:0 0 0 3px rgba(59,130,246,.12);
 }
+.timelineControl{display:grid; gap:10px; margin-top:10px}
+.timelineHead{display:flex; align-items:center; justify-content:space-between; gap:10px}
+.timelineYearLabel{font-variant-numeric:tabular-nums; font-weight:700}
+.timelineRange{font-variant-numeric:tabular-nums}
+.timelineControl input[type="range"]{width:100%}
 
 #results{
   margin-top:6px;
@@ -342,7 +347,26 @@ label{font-weight:650; color:var(--muted)}
         </div>
       </div>
 
-      <div class="card"><b id="who">All mode</b><div class="muted">Use toggles to show global layers, or search for a person.</div></div>
+      <div class="card">
+        <b>Timeline filter (All mode only)</b>
+        <div class="muted" id="timelineHelp">Show people whose recorded or estimated lifespan includes the selected year.</div>
+        <div class="row" style="margin-top:8px">
+          <label><input id="timelineEnabled" type="checkbox" disabled/> Filter map by year</label>
+        </div>
+        <div class="timelineControl">
+          <div class="timelineHead">
+            <span class="timelineYearLabel" id="timelineYearLabel">All years</span>
+            <span class="muted timelineRange" id="timelineRangeLabel">—</span>
+          </div>
+          <input id="timelineYear" type="range" min="1753" max="2005" step="1" value="1900" disabled/>
+          <div class="row">
+            <button class="btn" id="timelineReset" type="button" disabled>Reset timeline</button>
+          </div>
+          <div class="muted" id="timelineSummary">Timeline metadata loading…</div>
+        </div>
+      </div>
+
+      <div class="card"><b id="who">All mode</b><div class="muted" id="whoMeta">Use toggles to show global layers, or search for a person.</div></div>
       <div class="card"><b>Birthplace</b><div class="muted" id="birthAddr">—</div></div>
       <div class="card"><b>Residence</b><div class="muted" id="resAddr">—</div></div>
       <div class="card"><b>Place of Worship</b><div class="muted" id="worshipAddr">—</div></div>
@@ -414,7 +438,14 @@ label{font-weight:650; color:var(--muted)}
 
     // ---------- Map ----------
     const who = document.getElementById('who');
+    const whoMeta = document.getElementById('whoMeta');
     const fields = { birth:'birthAddr', residence:'resAddr', enslavement:'enslavementAddr', worship:'worshipAddr', death:'deathAddr' };
+    const timelineEnabled = document.getElementById('timelineEnabled');
+    const timelineYear = document.getElementById('timelineYear');
+    const timelineYearLabel = document.getElementById('timelineYearLabel');
+    const timelineRangeLabel = document.getElementById('timelineRangeLabel');
+    const timelineSummary = document.getElementById('timelineSummary');
+    const timelineReset = document.getElementById('timelineReset');
     const LOCATION_KEYS = ['birth','residence','enslavement','worship','death'];
     const KIND_LABELS = {
       birth:'Birthplace',
@@ -669,6 +700,16 @@ label{font-weight:650; color:var(--muted)}
     let INDEX = [];
     let PERSON_MODE = false;
     let personPoints = [];
+    let TIMELINE_META = {
+      minYear:null,
+      maxYear:null,
+      peopleWithAnyTimeline:0,
+      peopleWithStartYear:0,
+      peopleWithLifespanRange:0,
+      estimatedBirthYear:0
+    };
+    let TIMELINE_ACTIVE = false;
+    let TIMELINE_YEAR = null;
 
     async function loadStatePolygons(){
       try{
@@ -795,12 +836,25 @@ label{font-weight:650; color:var(--muted)}
       return lines.join('<br/>');
     }
 
-    function locationPopupHtml(title, place, name){
+    function timelineLabelFor(timeline){
+      if(!timeline || !timeline.label) return '';
+      return timeline.label;
+    }
+
+    function timelineLineHtml(timeline){
+      const label = timelineLabelFor(timeline);
+      if(!label) return '';
+      const suffix = timeline && timeline.estimatedBirthYear ? ' (birth year partly estimated)' : '';
+      return '<br/><b>Lifespan:</b> ' + escapeHtml(label + suffix);
+    }
+
+    function locationPopupHtml(title, place, name, timeline){
       const addressHtml = addressBlockHtml(place);
       return (
         '<b>' + escapeHtml(title) + '</b><br/>' +
         '<i>' + escapeHtml(name || '') + '</i>' +
-        (addressHtml ? '<br/>' + addressHtml : '')
+        (addressHtml ? '<br/>' + addressHtml : '') +
+        timelineLineHtml(timeline)
       );
     }
 
@@ -813,6 +867,140 @@ label{font-weight:650; color:var(--muted)}
           : ''
       );
       return [addressHtml, mapsLink].filter(Boolean).join('<br/>');
+    }
+
+    function toYear(value){
+      if(value == null || value === '') return null;
+      const n = Number(value);
+      return Number.isFinite(n) ? Math.round(n) : null;
+    }
+
+    function normalizeTimeline(raw){
+      if(!raw || typeof raw !== 'object') return null;
+      const timeline = {
+        birthYear: toYear(raw.birthYear),
+        birthDate: raw.birthDate || null,
+        deathYear: toYear(raw.deathYear),
+        deathDate: raw.deathDate || null,
+        startYear: toYear(raw.startYear),
+        endYear: toYear(raw.endYear),
+        startYearSource: raw.startYearSource || null,
+        estimatedBirthYear: Boolean(raw.estimatedBirthYear),
+        ageAtDeathYears: toYear(raw.ageAtDeathYears),
+        filterable: Boolean(raw.filterable),
+        label: raw.label || null
+      };
+      if(timeline.startYear == null && timeline.birthYear != null) timeline.startYear = timeline.birthYear;
+      if(timeline.endYear == null && timeline.deathYear != null) timeline.endYear = timeline.deathYear;
+      timeline.filterable = Boolean(timeline.startYear != null);
+      return timeline;
+    }
+
+    function fallbackTimelineMeta(people){
+      const meta = {
+        minYear:null,
+        maxYear:null,
+        peopleWithAnyTimeline:0,
+        peopleWithStartYear:0,
+        peopleWithLifespanRange:0,
+        estimatedBirthYear:0
+      };
+      people.forEach(person => {
+        const timeline = person.timeline;
+        if(!timeline) return;
+        meta.peopleWithAnyTimeline += 1;
+        if(timeline.startYear != null) meta.peopleWithStartYear += 1;
+        if(timeline.startYear != null && timeline.endYear != null) meta.peopleWithLifespanRange += 1;
+        if(timeline.estimatedBirthYear) meta.estimatedBirthYear += 1;
+        [timeline.startYear, timeline.endYear, timeline.birthYear, timeline.deathYear].forEach(year => {
+          if(year == null) return;
+          if(meta.minYear == null || year < meta.minYear) meta.minYear = year;
+          if(meta.maxYear == null || year > meta.maxYear) meta.maxYear = year;
+        });
+      });
+      return meta;
+    }
+
+    function applyTimelineMeta(rawMeta){
+      const meta = rawMeta && typeof rawMeta === 'object' ? rawMeta : {};
+      TIMELINE_META = {
+        minYear: toYear(meta.min_year ?? meta.minYear),
+        maxYear: toYear(meta.max_year ?? meta.maxYear),
+        peopleWithAnyTimeline: toYear(meta.people_with_any_timeline ?? meta.peopleWithAnyTimeline) || 0,
+        peopleWithStartYear: toYear(meta.people_with_start_year ?? meta.peopleWithStartYear) || 0,
+        peopleWithLifespanRange: toYear(meta.people_with_lifespan_range ?? meta.peopleWithLifespanRange) || 0,
+        estimatedBirthYear: toYear(meta.estimated_birth_year ?? meta.estimatedBirthYear) || 0
+      };
+      if(TIMELINE_META.minYear != null && TIMELINE_META.maxYear != null){
+        timelineYear.min = String(TIMELINE_META.minYear);
+        timelineYear.max = String(TIMELINE_META.maxYear);
+        if(TIMELINE_YEAR == null || TIMELINE_YEAR < TIMELINE_META.minYear || TIMELINE_YEAR > TIMELINE_META.maxYear){
+          TIMELINE_YEAR = TIMELINE_META.maxYear;
+        }
+        timelineYear.value = String(TIMELINE_YEAR);
+        timelineRangeLabel.textContent = TIMELINE_META.minYear + '–' + TIMELINE_META.maxYear;
+      } else {
+        timelineRangeLabel.textContent = 'No dated records';
+      }
+    }
+
+    function personMatchesTimeline(person){
+      if(!TIMELINE_ACTIVE || TIMELINE_YEAR == null) return true;
+      const timeline = person && person.timeline;
+      if(!timeline || !timeline.filterable || timeline.startYear == null) return false;
+      const endYear = timeline.endYear != null ? timeline.endYear : TIMELINE_META.maxYear;
+      if(endYear == null) return TIMELINE_YEAR >= timeline.startYear;
+      return TIMELINE_YEAR >= timeline.startYear && TIMELINE_YEAR <= endYear;
+    }
+
+    function activePeople(){
+      if(!TIMELINE_ACTIVE) return PEOPLE;
+      return PEOPLE.filter(personMatchesTimeline);
+    }
+
+    function setTimelineControlsDisabled(disabled){
+      const noTimeline = TIMELINE_META.minYear == null || TIMELINE_META.maxYear == null;
+      timelineEnabled.disabled = disabled || noTimeline;
+      timelineYear.disabled = disabled || noTimeline || !TIMELINE_ACTIVE;
+      timelineReset.disabled = disabled || noTimeline;
+    }
+
+    function updateTimelineUi(visiblePeopleCount){
+      const noTimeline = TIMELINE_META.minYear == null || TIMELINE_META.maxYear == null;
+      timelineEnabled.checked = TIMELINE_ACTIVE;
+      if(noTimeline){
+        timelineYearLabel.textContent = 'All years';
+        timelineRangeLabel.textContent = 'No dated records';
+        timelineSummary.textContent = 'Timeline metadata is unavailable for the current dataset.';
+        setTimelineControlsDisabled(PERSON_MODE);
+        return;
+      }
+
+      if(TIMELINE_YEAR == null) TIMELINE_YEAR = TIMELINE_META.maxYear;
+      timelineYear.value = String(TIMELINE_YEAR);
+      timelineRangeLabel.textContent = TIMELINE_META.minYear + '–' + TIMELINE_META.maxYear;
+      timelineYearLabel.textContent = TIMELINE_ACTIVE ? String(TIMELINE_YEAR) : 'All years';
+
+      if(PERSON_MODE){
+        timelineSummary.textContent = TIMELINE_ACTIVE
+          ? 'Timeline filter is paused in Person mode. Return to All mode to see year ' + TIMELINE_YEAR + '.'
+          : 'Timeline filter applies in All mode.';
+      } else if(!TIMELINE_ACTIVE){
+        const estimated = TIMELINE_META.estimatedBirthYear
+          ? ' ' + TIMELINE_META.estimatedBirthYear.toLocaleString() + ' of those start years are estimated from age at death.'
+          : '';
+        timelineSummary.textContent =
+          TIMELINE_META.peopleWithStartYear.toLocaleString() +
+          ' mapped people have a usable start year between ' +
+          TIMELINE_META.minYear + ' and ' + TIMELINE_META.maxYear + '.' + estimated;
+      } else {
+        const hiddenUndated = Math.max(0, PEOPLE.length - TIMELINE_META.peopleWithStartYear);
+        timelineSummary.textContent =
+          'Showing ' + visiblePeopleCount.toLocaleString() +
+          ' mapped people active in ' + TIMELINE_YEAR + '.' +
+          (hiddenUndated ? ' ' + hiddenUndated.toLocaleString() + ' people lack enough date data for the filter.' : '');
+      }
+      setTimelineControlsDisabled(PERSON_MODE);
     }
 
     function drawBroadRegion(regionId, kinds){
@@ -857,7 +1045,7 @@ label{font-weight:650; color:var(--muted)}
 
     function normalizePeople(raw){
       return (raw||[]).map(p => {
-        const out = { name: p.name };
+        const out = { name: p.name, timeline: normalizeTimeline(p.timeline) };
         LOCATION_KEYS.forEach(k=>{
           const s = p[k];
           if(!s) return;
@@ -902,16 +1090,17 @@ label{font-weight:650; color:var(--muted)}
 
     function toMarker(pt, kind){
       const title = kind.charAt(0).toUpperCase() + kind.slice(1);
-      return dot(pt.lat, pt.lon, colorVar(COLORS[kind]), locationPopupHtml(title, pt, pt.name));
+      return dot(pt.lat, pt.lon, colorVar(COLORS[kind]), locationPopupHtml(title, pt, pt.name, pt.timeline));
     }
 
-    function allPoints(kind){
+    function allPoints(kind, people){
       const out = [];
-      PEOPLE.forEach(p=>{
+      (people || PEOPLE).forEach(p=>{
         const s = p[kind];
         if(s && s.lat!=null && s.lon!=null){
           out.push({
             name:p.name,
+            timeline:p.timeline || null,
             address:s.address,
             historicAddress:s.historicAddress || s.historic_address || s.address,
             modernAddress:s.modernAddress || s.modern_address || null,
@@ -940,22 +1129,30 @@ label{font-weight:650; color:var(--muted)}
       }
     }
 
-    function buildGlobal(){
+    function buildGlobal(refit = true){
+      const visiblePeople = activePeople();
       Object.values(clusters).forEach(c => c.clearLayers());
       LOCATION_KEYS.forEach(k => {
-        allPoints(k).forEach(pt => clusters[k].addLayer(toMarker(pt, k)));
+        allPoints(k, visiblePeople).forEach(pt => clusters[k].addLayer(toMarker(pt, k)));
       });
 
-      fitToAllPoints();
+      updateTimelineUi(visiblePeople.length);
+      if(refit) fitToAllPoints();
     }
 
     function setDetails(person){
       if(!person){
         who.textContent = 'All mode';
+        whoMeta.textContent = 'Use toggles to show global layers, or search for a person.';
         Object.values(fields).forEach(id => document.getElementById(id).textContent = '—');
         return;
       }
       who.textContent = person.name;
+      if(person.timeline && person.timeline.label){
+        whoMeta.textContent = 'Recorded lifespan: ' + person.timeline.label + (person.timeline.estimatedBirthYear ? ' (birth year partly estimated).' : '.');
+      } else {
+        whoMeta.textContent = 'No usable lifespan range is recorded for this person.';
+      }
       Object.entries(fields).forEach(([k,id])=>{
         const s = person[k];
         if(!s || s.lat==null || s.lon==null){
@@ -973,6 +1170,8 @@ label{font-weight:650; color:var(--muted)}
       pathLayer.clearLayers();
       regionLayer.clearLayers();
       setDetails(null);
+      setTimelineControlsDisabled(false);
+      updateTimelineUi(activePeople().length);
 
       document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = false);
 
@@ -991,6 +1190,8 @@ label{font-weight:650; color:var(--muted)}
       PERSON_MODE = true;
       personPoints = [];
       document.querySelectorAll('.layerToggle').forEach(cb => cb.disabled = true);
+      setTimelineControlsDisabled(true);
+      updateTimelineUi(activePeople().length);
       Object.values(clusters).forEach(c => { if(map.hasLayer(c)) map.removeLayer(c); });
 
       personLayer.clearLayers();
@@ -1014,7 +1215,7 @@ label{font-weight:650; color:var(--muted)}
           s.lat,
           s.lon,
           colorVar(COLORS[k]),
-          locationPopupHtml(k.charAt(0).toUpperCase() + k.slice(1), s, person.name),
+          locationPopupHtml(k.charAt(0).toUpperCase() + k.slice(1), s, person.name, person.timeline),
           PERSON_POINT_PANE
         );
         personLayer.addLayer(personDot);
@@ -1097,6 +1298,38 @@ label{font-weight:650; color:var(--muted)}
       }
     });
 
+    timelineEnabled.addEventListener('change', ()=>{
+      TIMELINE_ACTIVE = !!timelineEnabled.checked;
+      if(TIMELINE_META.maxYear != null && TIMELINE_YEAR == null) TIMELINE_YEAR = TIMELINE_META.maxYear;
+      if(!PERSON_MODE){
+        buildGlobal(false);
+      } else {
+        updateTimelineUi(activePeople().length);
+      }
+    });
+
+    timelineYear.addEventListener('input', ()=>{
+      TIMELINE_YEAR = toYear(timelineYear.value);
+      if(!PERSON_MODE){
+        buildGlobal(false);
+      } else {
+        updateTimelineUi(activePeople().length);
+      }
+    });
+
+    timelineReset.addEventListener('click', ()=>{
+      TIMELINE_ACTIVE = false;
+      if(TIMELINE_META.maxYear != null){
+        TIMELINE_YEAR = TIMELINE_META.maxYear;
+        timelineYear.value = String(TIMELINE_YEAR);
+      }
+      if(!PERSON_MODE){
+        buildGlobal(false);
+      } else {
+        updateTimelineUi(activePeople().length);
+      }
+    });
+
     // ---------- Search ----------
     const q = document.getElementById('q');
     const results = document.getElementById('results');
@@ -1155,13 +1388,14 @@ label{font-weight:650; color:var(--muted)}
     document.getElementById('clearBtn').addEventListener('click', ()=>{
       q.value = '';
       results.style.display = 'none';
+      buildGlobal(true);
       enterAllMode();
       setPanel(false);
     });
 
     document.getElementById('zoomAll').addEventListener('click', ()=>{
+      buildGlobal(true);
       enterAllMode();
-      fitToAllPoints();
       setPanel(false);
     });
 
@@ -1174,9 +1408,10 @@ label{font-weight:650; color:var(--muted)}
 
         const raw = await res.json();
         PEOPLE = normalizePeople(raw.people || []);
+        applyTimelineMeta(raw.timeline || fallbackTimelineMeta(PEOPLE));
         INDEX = PEOPLE.map(p => ({ name: p.name, norm: norm(p.name) }));
 
-        buildGlobal();
+        buildGlobal(true);
         enterAllMode();
       }catch(err){
         console.error(err);
