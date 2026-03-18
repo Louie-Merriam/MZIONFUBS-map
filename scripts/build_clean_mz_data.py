@@ -24,6 +24,7 @@ DEFAULT_STATE_POLYGONS = ROOT / "state_polygons_simplified.json"
 DEFAULT_CACHE = ROOT / "reports" / "geocode_cache.json"
 DEFAULT_REPORT = ROOT / "reports" / "mz_geocode_cleaning_report.json"
 DEFAULT_MANUAL_REVIEW = ROOT / "reports" / "mz_manual_review.csv"
+DEFAULT_EXACT_VALIDATION_OVERRIDES = ROOT / "reports" / "mz_exact_validation_overrides.json"
 
 LOCATION_KEYS = ["birth", "residence", "enslavement", "worship", "death"]
 
@@ -476,7 +477,91 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.9063466,
         "lon": -77.0478530,
     },
+    "1100 ALABAMA AND MASSACHUSETTS AVE SE": {
+        "lat": 38.844385231633,
+        "lon": -76.990537696818,
+    },
+    "1348 28TH ST BTW O AND DUMBARTON ST": {
+        "lat": 38.907982257271,
+        "lon": -77.057145561288,
+    },
+    "1728 17TH STREET R AND S": {
+        "lat": 38.913446204915,
+        "lon": -77.038554839343,
+    },
+    "21ST AND P ST": {
+        "lat": 38.909638212524,
+        "lon": -77.046635201353,
+    },
+    "CONNECTICUT AVE AND M ST": {
+        "lat": 38.90566021312,
+        "lon": -77.041127203311,
+    },
 }
+
+HISTORICAL_FACILITY_OVERRIDES = [
+    (
+        re.compile(r"CHILDREN'?S HOSPITAL.*13TH AND V STREET NW"),
+        {
+            "lat": 38.918647210073,
+            "lon": -77.029620706132,
+        },
+    ),
+    (
+        re.compile(r"TUBERCULOSIS HOSPITAL.*(?:13TH|14TH) AND UPSHUR"),
+        {
+            "lat": 38.941867205454,
+            "lon": -77.031215954182,
+        },
+    ),
+    (
+        re.compile(r"REAR LAWN OF THE WHITE HOUSE.*1600 PENNSYLVANIA AVENUE"),
+        {
+            "lat": 38.8976997,
+            "lon": -77.03655315,
+        },
+    ),
+    (
+        re.compile(r"FREEDMEN'?S HOSPITAL.*13TH AND R STREETS NW"),
+        {
+            "lat": 38.91260821129,
+            "lon": -77.029620706469,
+        },
+    ),
+    (
+        re.compile(r"FREEDMEN'?S HOSPITAL.*BRYANT AND 6TH STREETS NW"),
+        {
+            "lat": 38.920096209449,
+            "lon": -77.020724208782,
+        },
+    ),
+    (
+        re.compile(r"GALLINGER MUNICIPAL HOSPITAL"),
+        {
+            "lat": 38.884555214996,
+            "lon": -76.977258724488,
+        },
+    ),
+    (
+        re.compile(r"^19TH AND C ST(?:REET)?S? SE, WASHINGTON, DC, UNITED STATES$"),
+        {
+            "lat": 38.885347214837,
+            "lon": -76.977263224438,
+        },
+    ),
+    (
+        re.compile(r"SAINT ELIZABETH'?S(?: HOSPITAL)?.*(?:2700 AND 2701 MARTIN LUTHER KING JR|1100 ALABAMASSACHUSETTS AVENUE SE|NICHOLS AVENUE)"),
+        {
+            "lat": 38.848418338288,
+            "lon": -76.996067557514,
+        },
+    ),
+]
+
+if DEFAULT_EXACT_VALIDATION_OVERRIDES.exists():
+    EXTERNAL_VERIFIED_ADDRESS_FIXES = json.loads(DEFAULT_EXACT_VALIDATION_OVERRIDES.read_text())
+else:
+    EXTERNAL_VERIFIED_ADDRESS_FIXES = {}
 
 
 @dataclass
@@ -983,9 +1068,21 @@ def geocode_candidates(loc: Location) -> list[dict[str, Any]]:
 
 
 def apply_verified_location_fix(loc: Location) -> bool:
+    display_key = norm_key(loc.display_address() or "")
+    for pattern, fix in HISTORICAL_FACILITY_OVERRIDES:
+        if pattern.search(display_key):
+            target_coords = (fix["lat"], fix["lon"])
+            if loc.lat is None or loc.lon is None or not coords_equal((loc.lat, loc.lon), target_coords):
+                loc.lat, loc.lon = target_coords
+                loc.changed = True
+                loc.notes.append("applied_historical_facility_override")
+            return True
+
     fix = VERIFIED_DISPLAY_FIXES.get(norm_key(loc.display_address() or ""))
     if fix is None and loc.address:
         fix = VERIFIED_ADDRESS_FIXES.get(loc.address_key())
+    if fix is None and loc.address:
+        fix = EXTERNAL_VERIFIED_ADDRESS_FIXES.get(loc.address_key())
     if fix is None:
         return False
 

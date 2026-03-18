@@ -1,0 +1,20 @@
+{
+  "exact_query_count": 1368,
+  "fix_distance_locations": 84,
+  "fix_distance_threshold_meters": 250.0,
+  "input_json": "/Users/lmerriam27/MZIONFUBS-map/mz_data_v5.json",
+  "review_distance_locations": 97,
+  "review_distance_threshold_meters": 100.0,
+  "stats": {
+    "direct_intersection_no_match": 29,
+    "direct_intersection_validated": 82,
+    "fix_distance_locations": 84,
+    "numbered_address_no_match": 2708,
+    "numbered_address_validated": 1006,
+    "review_distance_locations": 97,
+    "validated_locations": 1088
+  },
+  "suggested_override_count": 78,
+  "trusted_override_count": 0,
+  "validated_location_count": 1088
+}
