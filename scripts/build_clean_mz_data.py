@@ -767,8 +767,8 @@ def build_timeline(row: tuple[Any, ...], idx: dict[str, int]) -> dict[str, Any] 
     end_year = death_year
     end_source = "death_year" if death_year is not None else None
     if end_year is None and start_year is not None:
-        end_year = start_year + 100
-        end_source = "approximate_100_year_cap"
+        end_year = start_year + 50
+        end_source = "approximate_50_year_cap"
 
     if all(value in (None, "") for value in [birth_year, death_year, birth_date, death_date, start_year]):
         return None
@@ -777,7 +777,7 @@ def build_timeline(row: tuple[Any, ...], idx: dict[str, int]) -> dict[str, Any] 
     if start_year is not None and death_year is not None:
         prefix = "c. " if start_source == "estimated_from_age_at_death" and birth_year is None else ""
         label = f"{prefix}{start_year}-{death_year}"
-    elif start_year is not None and end_source == "approximate_100_year_cap":
+    elif start_year is not None and end_source == "approximate_50_year_cap":
         prefix = "c. " if start_source == "estimated_from_age_at_death" and birth_year is None else ""
         label = f"{prefix}{start_year}-c. {end_year}"
     elif birth_year is not None:
@@ -795,7 +795,7 @@ def build_timeline(row: tuple[Any, ...], idx: dict[str, int]) -> dict[str, Any] 
         "startYearSource": start_source,
         "endYearSource": end_source,
         "estimatedBirthYear": bool(start_source == "estimated_from_age_at_death"),
-        "estimatedDeathYear": bool(end_source == "approximate_100_year_cap"),
+        "estimatedDeathYear": bool(end_source == "approximate_50_year_cap"),
         "ageAtDeathYears": age_at_death_years,
         "filterable": bool(start_year is not None),
         "label": label or None,

@@ -1155,7 +1155,7 @@ label{font-weight:650; color:var(--muted)}
       if(person.timeline && person.timeline.label){
         let suffix = '.';
         if(person.timeline.estimatedBirthYear) suffix = ' (birth year partly estimated).';
-        else if(person.timeline.estimatedDeathYear) suffix = ' (death year capped at 100 years for timeline filtering).';
+        else if(person.timeline.estimatedDeathYear) suffix = ' (death year capped at 50 years for timeline filtering).';
         whoMeta.textContent = 'Recorded lifespan: ' + person.timeline.label + suffix;
       } else {
         whoMeta.textContent = 'No usable lifespan range is recorded for this person.';

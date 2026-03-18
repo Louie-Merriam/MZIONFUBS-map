@@ -2171,14 +2171,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1800,
-        "endYear": 1900,
+        "endYear": 1850,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1800-c. 1900"
+        "label": "1800-c. 1850"
       },
       "birth": {
         "address": "MD, United States",
@@ -18725,14 +18725,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1865,
-        "endYear": 1965,
+        "endYear": 1915,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1865-c. 1965"
+        "label": "1865-c. 1915"
       },
       "birth": {
         "address": "Washington, DC, United States",
@@ -27260,14 +27260,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1869,
-        "endYear": 1969,
+        "endYear": 1919,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1869-c. 1969"
+        "label": "1869-c. 1919"
       },
       "birth": {
         "address": "Washinton, DC, United States",
@@ -32249,14 +32249,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1906,
-        "endYear": 2006,
+        "endYear": 1956,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1906-c. 2006"
+        "label": "1906-c. 1956"
       },
       "birth": {
         "address": "Washington, DC, United States",
@@ -35251,14 +35251,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1913,
-        "endYear": 2013,
+        "endYear": 1963,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1913-c. 2013"
+        "label": "1913-c. 1963"
       },
       "birth": {
         "address": "Washington, DC, United States",
@@ -45367,14 +45367,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1875,
-        "endYear": 1975,
+        "endYear": 1925,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1875-c. 1975"
+        "label": "1875-c. 1925"
       },
       "birth": {
         "address": "Washington, DC, United States",
@@ -47070,14 +47070,14 @@
         "deathYear": null,
         "deathDate": "3/6/1920",
         "startYear": 1860,
-        "endYear": 1960,
+        "endYear": 1910,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": 60,
         "filterable": true,
-        "label": "1860-c. 1960"
+        "label": "1860-c. 1910"
       },
       "birth": {
         "address": "MD, United States",
@@ -47218,14 +47218,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1779,
-        "endYear": 1879,
+        "endYear": 1829,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1779-c. 1879"
+        "label": "1779-c. 1829"
       },
       "birth": {
         "address": "Springfield Farm, MD, United States",
@@ -60537,14 +60537,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1881,
-        "endYear": 1981,
+        "endYear": 1931,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1881-c. 1981"
+        "label": "1881-c. 1931"
       },
       "birth": {
         "address": "Washington, DC, United States",
@@ -75044,14 +75044,14 @@
         "deathYear": null,
         "deathDate": null,
         "startYear": 1841,
-        "endYear": 1941,
+        "endYear": 1891,
         "startYearSource": "birth_year",
-        "endYearSource": "approximate_100_year_cap",
+        "endYearSource": "approximate_50_year_cap",
         "estimatedBirthYear": false,
         "estimatedDeathYear": true,
         "ageAtDeathYears": null,
         "filterable": true,
-        "label": "1841-c. 1941"
+        "label": "1841-c. 1891"
       },
       "residence": {
         "address": "Georgetown, DC, United States",
@@ -95553,7 +95553,7 @@
   },
   "timeline": {
     "min_year": 1753,
-    "max_year": 2013,
+    "max_year": 2005,
     "people_with_any_timeline": 3117,
     "people_with_start_year": 2468,
     "people_with_lifespan_range": 2468,
