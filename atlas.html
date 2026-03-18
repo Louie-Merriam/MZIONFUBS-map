@@ -844,7 +844,9 @@ label{font-weight:650; color:var(--muted)}
     function timelineLineHtml(timeline){
       const label = timelineLabelFor(timeline);
       if(!label) return '';
-      const suffix = timeline && timeline.estimatedBirthYear ? ' (birth year partly estimated)' : '';
+      let suffix = '';
+      if(timeline && timeline.estimatedBirthYear) suffix = ' (birth year partly estimated)';
+      else if(timeline && timeline.estimatedDeathYear) suffix = ' (death year capped for timeline)';
       return '<br/><b>Lifespan:</b> ' + escapeHtml(label + suffix);
     }
 
@@ -885,7 +887,9 @@ label{font-weight:650; color:var(--muted)}
         startYear: toYear(raw.startYear),
         endYear: toYear(raw.endYear),
         startYearSource: raw.startYearSource || null,
+        endYearSource: raw.endYearSource || null,
         estimatedBirthYear: Boolean(raw.estimatedBirthYear),
+        estimatedDeathYear: Boolean(raw.estimatedDeathYear),
         ageAtDeathYears: toYear(raw.ageAtDeathYears),
         filterable: Boolean(raw.filterable),
         label: raw.label || null
@@ -1149,7 +1153,10 @@ label{font-weight:650; color:var(--muted)}
       }
       who.textContent = person.name;
       if(person.timeline && person.timeline.label){
-        whoMeta.textContent = 'Recorded lifespan: ' + person.timeline.label + (person.timeline.estimatedBirthYear ? ' (birth year partly estimated).' : '.');
+        let suffix = '.';
+        if(person.timeline.estimatedBirthYear) suffix = ' (birth year partly estimated).';
+        else if(person.timeline.estimatedDeathYear) suffix = ' (death year capped at 100 years for timeline filtering).';
+        whoMeta.textContent = 'Recorded lifespan: ' + person.timeline.label + suffix;
       } else {
         whoMeta.textContent = 'No usable lifespan range is recorded for this person.';
       }
