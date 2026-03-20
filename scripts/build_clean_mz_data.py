@@ -356,6 +356,10 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.9099569,
         "lon": -77.0546221,
     },
+    "1615 33RD ST NW": {
+        "lat": 38.910937123693,
+        "lon": -77.066039845123,
+    },
     "1626 VALLEY STREET": {
         "lat": 38.9111636,
         "lon": -77.0640726,
@@ -368,9 +372,23 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.9047017134,
         "lon": -77.043453702645,
     },
+    "14 STODDARD ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105206,
+        "lon": -77.0599388,
+    },
     "21ST ST BTW L AND M STREETS": {
         "lat": 38.9047167,
         "lon": -77.0466399,
+    },
+    "21 STODDARD ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105206,
+        "lon": -77.0599388,
     },
     "23RD ST BETWEEN H AND I STREETS": {
         "lat": 38.9001387145695,
@@ -430,6 +448,13 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.9097718,
         "lon": -77.0668751,
     },
+    "5 STODDARD ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105206,
+        "lon": -77.0599388,
+    },
     "514 RICKETTS COURT": {
         "lat": 38.8987855412,
         "lon": -77.050777885,
@@ -441,6 +466,34 @@ VERIFIED_ADDRESS_FIXES = {
     "6TH AND H STREETS, NW": {
         "lat": 38.8997458,
         "lon": -77.0201773,
+    },
+    "8 STODDARD ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105206,
+        "lon": -77.0599388,
+    },
+    "STODDARD REAR OF MONROE": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105208,
+        "lon": -77.0551813,
+    },
+    "STODDARD ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105206,
+        "lon": -77.0599388,
+    },
+    "STODDARD ST NEAR NORTH ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.910574212646,
+        "lon": -77.054964698702,
     },
     "ALLEY BTW 24TH AND 25TH, M AND N STREETS NW, DC": {
         "lat": 38.906215963427,
