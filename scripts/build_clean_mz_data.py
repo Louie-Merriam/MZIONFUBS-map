@@ -290,11 +290,14 @@ GEORGETOWN_OUTLIER_OVERRIDES = [
     (r"\bNORTH ST(?:REET)?\b", (38.9108837, -77.0547912)),
     (r"\bMONROE ST(?:REET)?\b", (38.9095985, -77.0554969)),
     (r"\bMONTGOMERY ST(?:REET)?\b", (38.9087494, -77.0572017)),
+    (r"\bGREENE ST(?:REET)?\b", (38.9083288, -77.0581586)),
     (r"\bWASHINGTON ST(?:REET)?\b", (38.905219213882, -77.059167697721)),
     (r"\bCONGRESS ST(?:REET)?\b", (38.905192213963, -77.061183697095)),
     (r"\bVALLEY ST(?:REET)?\b", (38.911758, -77.0641446)),
     (r"\bMARKET ST(?:REET)?\b", (38.9096445, -77.0661012)),
     (r"\bHIGH ST(?:REET)?\b", (38.9158362, -77.0678491)),
+    (r"\bBRIDGE ST(?:REET)?\b", (38.9052340, -77.0586415)),
+    (r"\bFAYETTE ST(?:REET)?\b", (38.9140819, -77.0693050)),
     (r"\bFREDERICK ST(?:REET)?\b", (38.9104643, -77.0678609)),
     (r"\bGAY(?:\s*\([^)]*\))?\s+ST(?:REET)?\b", (38.9068107, -77.0624425)),
     (r"\b8TH ST(?:REET)?\b", (38.9135422, -77.0638911)),
@@ -333,6 +336,14 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.906762459644,
         "lon": -77.048730572348,
     },
+    "1002 18TH ST": {
+        "lat": 38.9026688,
+        "lon": -77.0417897,
+    },
+    "1064 30TH ST": {
+        "lat": 38.9044221,
+        "lon": -77.0593105,
+    },
     "12ST AND M STREET NW": {
         "lat": 38.905642212637,
         "lon": -77.028081707374,
@@ -348,6 +359,18 @@ VERIFIED_ADDRESS_FIXES = {
     "1418 MONTGOMERY STREET, NEAR BEALL STREET": {
         "lat": 38.9087494,
         "lon": -77.0572017,
+    },
+    "1414 27TH ST": {
+        "lat": 38.9089277,
+        "lon": -77.0559980,
+    },
+    "1417 WEST 28TH STREET": {
+        "lat": 38.9090582,
+        "lon": -77.0569383,
+    },
+    "1515 27TH ST": {
+        "lat": 38.9097018,
+        "lon": -77.0553133,
     },
     "1523 26TH ST NW": {
         "city": "Washington",
@@ -371,6 +394,10 @@ VERIFIED_ADDRESS_FIXES = {
     "19TH ST BTW L AND M STREETS": {
         "lat": 38.9047017134,
         "lon": -77.043453702645,
+    },
+    "231 MASSACHUSETTS AVE NW": {
+        "lat": 38.8992228,
+        "lon": -77.0138840,
     },
     "14 STODDARD ST": {
         "city": "Georgetown",
@@ -401,6 +428,22 @@ VERIFIED_ADDRESS_FIXES = {
     "2117 N DENINDDY STREET": {
         "lat": 38.8954480,
         "lon": -77.1283933,
+    },
+    "2018 E ST NW": {
+        "lat": 38.8960988,
+        "lon": -77.0453161,
+    },
+    "2040 E ST NW": {
+        "lat": 38.8961061,
+        "lon": -77.0456399,
+    },
+    "2108 E ST NW": {
+        "lat": 38.8961019,
+        "lon": -77.0468999,
+    },
+    "2122 E ST NW": {
+        "lat": 38.8961017,
+        "lon": -77.0470478,
     },
     "24 4TH STREET (VOLTA STREET / PLACE)": {
         "lat": 38.9097718,
@@ -443,6 +486,10 @@ VERIFIED_ADDRESS_FIXES = {
     "2910 O (BEALL) STREET NW": {
         "lat": 38.9084139,
         "lon": -77.0583925,
+    },
+    "816 G ST SW": {
+        "lat": 38.8813580,
+        "lon": -77.0234348,
     },
     "41 4TH STREET NW": {
         "lat": 38.9097718,
@@ -488,12 +535,54 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.9105206,
         "lon": -77.0599388,
     },
+    "STODDARD ST BTW MILL AND ROCK STS": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105208,
+        "lon": -77.0551813,
+    },
+    "STODDARD ST NEAR MILL ST": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105208,
+        "lon": -77.0551813,
+    },
     "STODDARD ST NEAR NORTH ST": {
         "city": "Georgetown",
         "state": "DC",
         "country": "United States",
         "lat": 38.910574212646,
         "lon": -77.054964698702,
+    },
+    "STODDARD ST NEAR ROCK CREEK": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105208,
+        "lon": -77.0551813,
+    },
+    "EAST STODDARD ST BTW MILL AND MONROE STS": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9105208,
+        "lon": -77.0551813,
+    },
+    "VALLEY ST BTW ROAD AND STODDARD STS": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9120502,
+        "lon": -77.0640322,
+    },
+    "VALLEY ST BTW STODDARD AND 8TH": {
+        "city": "Georgetown",
+        "state": "DC",
+        "country": "United States",
+        "lat": 38.9120502,
+        "lon": -77.0640322,
     },
     "ALLEY BTW 24TH AND 25TH, M AND N STREETS NW, DC": {
         "lat": 38.906215963427,
@@ -531,6 +620,18 @@ VERIFIED_ADDRESS_FIXES = {
         "lat": 38.9063466,
         "lon": -77.0478530,
     },
+    "1314 28TH ST": {
+        "lat": 38.9073553,
+        "lon": -77.0571750,
+    },
+    "1324 27TH": {
+        "lat": 38.9074874,
+        "lon": -77.0559623,
+    },
+    "1326 27TH ST": {
+        "lat": 38.9075734,
+        "lon": -77.0559367,
+    },
     "1100 ALABAMA AND MASSACHUSETTS AVE SE": {
         "lat": 38.844385231633,
         "lon": -76.990537696818,
@@ -550,6 +651,10 @@ VERIFIED_ADDRESS_FIXES = {
     "CONNECTICUT AVE AND M ST": {
         "lat": 38.90566021312,
         "lon": -77.041127203311,
+    },
+    "CHERRY ALLEY AND CISSEL ALLEY (NOW CECILY PLACE, NEAR THE CANAL)": {
+        "lat": 38.9032953,
+        "lon": -77.0659997,
     },
 }
 

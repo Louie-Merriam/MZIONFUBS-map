@@ -198,18 +198,85 @@ def geocode_census(query: str, cache: dict[str, Any], sleep_seconds: float) -> d
     return payload
 
 
-def best_match(payload: dict[str, Any], expected_state: str) -> dict[str, Any] | None:
+def average_row_coords(rows: list[dict[str, Any]]) -> tuple[float, float] | None:
+    coords = [(float(row["lat"]), float(row["lon"])) for row in rows if row.get("lat") is not None and row.get("lon") is not None]
+    if not coords:
+        return None
+    lat = sum(point[0] for point in coords) / len(coords)
+    lon = sum(point[1] for point in coords) / len(coords)
+    return lat, lon
+
+
+def match_distance_to_rows(clean, match: dict[str, Any], rows: list[dict[str, Any]]) -> float:
+    center = average_row_coords(rows)
+    if center is None:
+        return float("inf")
+    try:
+        matched = (float(match["coordinates"]["y"]), float(match["coordinates"]["x"]))
+    except (KeyError, TypeError, ValueError):
+        return float("inf")
+    return clean.haversine_meters(center, matched)
+
+
+def candidate_score(query: str, query_kind: str, matched_address: str) -> int:
+    if query_kind == "numbered_address":
+        query_match = parse_numbered_address(query)
+        matched_match = parse_numbered_address(matched_address)
+        if not query_match or not matched_match:
+            return -10
+        if not same_numbered_address_family(query_match, matched_match):
+            return -10
+        score = 100
+        if query_match["quad"] and matched_match["quad"]:
+            if query_match["quad"] == matched_match["quad"]:
+                score += 20
+            else:
+                score -= 100
+        return score
+
+    if query_kind == "direct_intersection":
+        query_parts = normalized_intersection(query)
+        matched_parts = normalized_intersection(matched_address)
+        if query_parts is None or matched_parts is None:
+            return -10
+        if query_parts == matched_parts:
+            return 100
+        query_core = [tuple(token for token in arm.split() if token not in {"NW", "NE", "SW", "SE"}) for arm in query_parts]
+        matched_core = [tuple(token for token in arm.split() if token not in {"NW", "NE", "SW", "SE"}) for arm in matched_parts]
+        if sorted(query_core) == sorted(matched_core):
+            return 60
+        return -10
+
+    return 0
+
+
+def best_match(
+    clean,
+    payload: dict[str, Any],
+    expected_state: str,
+    query: str,
+    query_kind: str,
+    rows: list[dict[str, Any]],
+) -> dict[str, Any] | None:
     matches = payload.get("result", {}).get("addressMatches", [])
     if expected_state:
-        for match in matches:
-            state = str(match.get("addressComponents", {}).get("state") or "")
-            if state == expected_state:
-                return match
+        matches = [match for match in matches if str(match.get("addressComponents", {}).get("state") or "") == expected_state]
+    if not matches:
         return None
-    for match in matches:
-        state = str(match.get("addressComponents", {}).get("state") or "")
-        return match
-    return matches[0] if matches else None
+
+    ranked = sorted(
+        matches,
+        key=lambda match: (
+            candidate_score(query, query_kind, str(match.get("matchedAddress") or "")),
+            -match_distance_to_rows(clean, match, rows),
+        ),
+        reverse=True,
+    )
+    top = ranked[0]
+    top_score = candidate_score(query, query_kind, str(top.get("matchedAddress") or ""))
+    if top_score < 0:
+        return None
+    return top
 
 
 def build_targets(clean, locations: list[Any]) -> dict[str, ValidationTarget]:
@@ -443,7 +510,7 @@ def main() -> None:
             stats["query_errors"] += len(target.rows)
             continue
 
-        match = best_match(payload, target.state)
+        match = best_match(clean, payload, target.state, target.query, target.query_kind, target.rows)
         if match is None:
             stats[f"{target.query_kind}_no_match"] += len(target.rows)
             continue
