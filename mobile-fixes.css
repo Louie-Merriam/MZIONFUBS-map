@@ -1,20 +1,50 @@
-/* Mobile enhancements for the interactive atlas.
-   Works WITH the existing inline @media (max-width:900px) drawer design. */
+/* Mobile fixes for the interactive atlas.
+   Overrides the inline drawer pattern to show the sidebar
+   as a visible, scrollable strip above the map. */
 
 @media (max-width: 900px) {
-  /* Bigger, easier-to-tap toggle button */
-  .mobileOnly {
-    font-size: 15px !important;
-    padding: 8px 14px !important;
-    min-height: 44px;
+  /* Keep sidebar in normal flow instead of hidden off-screen */
+  .sidebar {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-height: 35vh !important;
+    overflow-y: auto !important;
+    border-radius: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border, #e2e8f0) !important;
+    z-index: auto !important;
+    padding: 10px !important;
   }
 
-  /* Better spacing inside open drawer */
-  .sidebar.open {
-    padding: 14px !important;
+  /* Hide the drawer toggle since sidebar is always visible */
+  .mobileOnly { display: none !important; }
+  .sidebarHeader { display: none !important; }
+
+  /* Hide backdrop overlay */
+  .backdrop { display: none !important; }
+
+  /* Map fills remaining space */
+  #map {
+    min-height: 50vh !important;
+    border-radius: 0 !important;
+    border: none !important;
   }
 
-  /* Make search inputs fill the drawer width */
+  /* Header adjustments */
+  header {
+    flex-wrap: wrap;
+    gap: 6px;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+  }
+  header h1 {
+    font-size: clamp(14px, 4vw, 18px) !important;
+  }
+
+  /* Search inputs full width */
   .sidebar .search,
   .sidebar .search input,
   .sidebar .results {
@@ -23,13 +53,13 @@
     box-sizing: border-box !important;
   }
 
-  /* Tighter fieldsets */
+  /* Compact fieldsets */
   .sidebar fieldset {
     padding: 8px !important;
-    margin: 6px 0 !important;
+    margin: 4px 0 !important;
   }
 
-  /* Constrain popups so they don't overflow the screen */
+  /* Constrain popups */
   .leaflet-popup-content-wrapper {
     max-width: 280px !important;
   }
@@ -38,28 +68,12 @@
     font-size: 13px !important;
     overflow-wrap: break-word;
   }
-
-  /* Ensure map fills available space */
-  #map {
-    min-height: calc(100dvh - var(--headerH, 56px)) !important;
-  }
-
-  /* Header wrapping on small screens */
-  header {
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  header h1 {
-    font-size: clamp(14px, 4vw, 18px) !important;
-  }
 }
 
 /* Extra-small phones */
 @media (max-width: 480px) {
   .sidebar {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    border-radius: 0 !important;
+    max-height: 30vh !important;
   }
   header h1 {
     font-size: 14px !important;
