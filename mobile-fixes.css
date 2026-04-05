@@ -3,6 +3,11 @@
    as a visible, scrollable strip above the map. */
 
 @media (max-width: 900px) {
+  /* Fix grid so rows are: header=auto, sidebar=auto, map=1fr */
+  .app {
+    grid-template-rows: auto auto 1fr !important;
+  }
+
   /* Keep sidebar in normal flow instead of hidden off-screen */
   .sidebar {
     position: static !important;
@@ -16,22 +21,14 @@
     z-index: auto !important;
     padding: 10px !important;
   }
-
-  /* Hide the drawer toggle since sidebar is always visible */
   .mobileOnly { display: none !important; }
   .sidebarHeader { display: none !important; }
-
-  /* Hide backdrop overlay */
   .backdrop { display: none !important; }
-
-  /* Map fills remaining space */
   #map {
     min-height: 50vh !important;
     border-radius: 0 !important;
     border: none !important;
   }
-
-  /* Header adjustments */
   header {
     flex-wrap: wrap;
     gap: 6px;
@@ -43,8 +40,6 @@
   header h1 {
     font-size: clamp(14px, 4vw, 18px) !important;
   }
-
-  /* Search inputs full width */
   .sidebar .search,
   .sidebar .search input,
   .sidebar .results {
@@ -52,14 +47,10 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-
-  /* Compact fieldsets */
   .sidebar fieldset {
     padding: 8px !important;
     margin: 4px 0 !important;
   }
-
-  /* Constrain popups */
   .leaflet-popup-content-wrapper {
     max-width: 280px !important;
   }
@@ -70,7 +61,6 @@
   }
 }
 
-/* Extra-small phones */
 @media (max-width: 480px) {
   .sidebar {
     max-height: 30vh !important;
