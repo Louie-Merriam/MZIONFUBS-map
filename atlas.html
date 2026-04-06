@@ -26,7 +26,7 @@
 
   /* Category colors */
   --birth:#2563eb;
-  --res:#059669;
+  --res:#059669
   --worship:#7c3aed;
   --death:#dc2626;
   --enslave:#f97316;
@@ -40,7 +40,7 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-  -webkit-tap-highlight-olor: transparent;;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .app{
@@ -713,7 +713,7 @@ label{font-weight:650; color:var(--muted)}
     let TIMELINE_YEAR = null;
 
     async function loadStatePolygons(){
-      try
+      try{
         const res = await fetch('./state_polygons_simplified.json');
         if(!res.ok) throw new Error('HTTP ' + res.status);
         const raw = await res.json();
