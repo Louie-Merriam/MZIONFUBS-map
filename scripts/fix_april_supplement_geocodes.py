@@ -160,6 +160,16 @@ NO_LOCALITY_FIXES = {
     "New Hampshire Ave btw F and G Sts": (38.898114, -77.048842),
 }
 
+# Historical broad-region fixes that should be preserved in the published data.
+# Wikidata lists the Kingdom of Prussia with coordinate location 53N, 14E.
+PERSON_LOCATION_FIXES = {
+    ("John William Frederick Heibner", "birth"): (53.0, 14.0),
+}
+
+PUBLIC_REMOVALS = {
+    "Mr. Louis Louie Merriam",
+}
+
 
 def clean_text(value: Any) -> str:
     if value is None:
@@ -280,6 +290,25 @@ def main() -> None:
                 changed += 1
                 by_rule["exact_override"] += 1
             continue
+
+    for person in after.get("people") or []:
+        for kind in LOCATION_KEYS:
+            target = PERSON_LOCATION_FIXES.get((person.get("name") or "", kind))
+            if not target or not person.get(kind):
+                continue
+            lat, lon = target
+            if set_coords(person[kind], lat, lon):
+                changed += 1
+                by_rule["person_specific_fix"] += 1
+
+    original_count = len(after.get("people") or [])
+    after["people"] = [
+        person for person in (after.get("people") or [])
+        if (person.get("name") or "") not in PUBLIC_REMOVALS
+    ]
+    removed = original_count - len(after["people"])
+    if removed:
+        by_rule["public_removal"] += removed
 
     args.dataset.write_text(json.dumps(after, indent=2))
     print(json.dumps({"changed_locations": changed, "rule_counts": dict(sorted(by_rule.items()))}, indent=2, sort_keys=True))

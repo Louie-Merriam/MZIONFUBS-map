@@ -23772,29 +23772,6 @@
       }
     },
     {
-      "name": "Mr. Louis Louie Merriam",
-      "residence": {
-        "address": "Georgetown, DC, United States",
-        "lat": 38.9051994,
-        "lon": -77.062785
-      },
-      "death": {
-        "address": "Georgetown, DC, United States",
-        "lat": 38.9051994,
-        "lon": -77.062785
-      },
-      "birth": {
-        "address": "",
-        "lat": 1.0,
-        "lon": 2.0
-      },
-      "worship": {
-        "address": "",
-        "lat": 5.0,
-        "lon": 6.0
-      }
-    },
-    {
       "name": "Patrick D Tisdale Jr",
       "residence": {
         "address": "Georgetown, DC, United States",
@@ -50387,8 +50364,8 @@
       },
       "birth": {
         "address": "Prussia",
-        "lat": 45.1784701,
-        "lon": 7.617716
+        "lat": 53.0,
+        "lon": 14.0
       },
       "worship": {
         "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
