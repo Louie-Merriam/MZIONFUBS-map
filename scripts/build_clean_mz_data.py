@@ -277,6 +277,8 @@ GEORGETOWN_HISTORICAL_RENAMES = [
     (r"\b4TH ST(?:REET)?(?:\s+NW)?(?:\s*\([^)]*\))?\b", "Volta Place NW"),
     (r"\bSTODD(?:A|E)RT ST(?:REET)?(?:\s+NW)?\b", "Q Street NW"),
     (r"\bFIFTH ST(?:REET)?(?:\s+NW)?\b", "Q Street NW"),
+    (r"\bMILL ST(?:REET)?(?:\s+NW)?\b", "27th Street NW"),
+    (r"\bROCK ST(?:REET)?(?:\s+NW)?\b", "27th Street NW"),
     (r"\bSIXTH ST(?:REET)?(?:\s+NW)?\b", "Dent Place NW"),
     (r"\bSEVENTH ST(?:REET)?(?:\s+NW)?\b", "Reservoir Road NW"),
     (r"\bROAD ST(?:REET)?(?:\s+NW)?\b", "R Street NW"),
@@ -1336,10 +1338,12 @@ def apply_verified_location_fix(loc: Location) -> bool:
             return True
 
     fix = VERIFIED_DISPLAY_FIXES.get(norm_key(loc.display_address() or ""))
-    if fix is None and loc.address:
-        fix = VERIFIED_ADDRESS_FIXES.get(loc.address_key())
-    if fix is None and loc.address:
-        fix = EXTERNAL_VERIFIED_ADDRESS_FIXES.get(loc.address_key())
+    if loc.address:
+        external_fix = EXTERNAL_VERIFIED_ADDRESS_FIXES.get(loc.address_key())
+        if external_fix is not None:
+            fix = external_fix
+        elif fix is None:
+            fix = VERIFIED_ADDRESS_FIXES.get(loc.address_key())
     if fix is None:
         return False
 

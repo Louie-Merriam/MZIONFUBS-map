@@ -175,6 +175,22 @@
     "lat": 38.8998563441,
     "lon": -77.0515022377
   },
+  "5TH STREET, BETWEEN MARKET AND FREDERICK STREETS": {
+    "address": "Q Street NW between 33rd Street NW and 34th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.909581,
+    "lon": -77.06514
+  },
+  "7TH ST BTW HIGH AND FREDERICK STS": {
+    "address": "Reservoir Road NW between Wisconsin Avenue NW and 34th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.9126035,
+    "lon": -77.0650635
+  },
   "916 25TH ST NW": {
     "lat": 38.9011867072,
     "lon": -77.0533868225
@@ -187,8 +203,48 @@
     "lat": 38.9429234995,
     "lon": -76.9913182199
   },
+  "RESIDENCE, 5TH STREET, BETWEEN MARKET AND FREDERICK STREETS": {
+    "address": "Q Street NW between 33rd Street NW and 34th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.909581,
+    "lon": -77.06514
+  },
+  "STODDARD ST BTW MILL AND ROCK STS": {
+    "address": "Q Street NW near 27th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.9105208,
+    "lon": -77.0551813
+  },
+  "STODDARD ST NEAR MILL ST": {
+    "address": "Q Street NW near 27th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.9105208,
+    "lon": -77.0551813
+  },
   "ST ALBANS EPISCOPAL CHURCH, 3001 WISCONSIN AVENUE NW": {
     "lat": 38.9290741166,
     "lon": -77.0730221341
+  },
+  "1357 5TH STREET, BETWEEN MARKET AND FREDERICK STREETS": {
+    "address": "1357 Q Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.909581,
+    "lon": -77.06514
+  },
+  "EAST STODDARD ST BTW MILL AND MONROE STS": {
+    "address": "Q Street NW near 27th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.9105208,
+    "lon": -77.0551813
   }
 }

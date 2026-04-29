@@ -1761,7 +1761,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Stoddard St near Mill St, Georgetown, DC, United States",
+        "address": "Q Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -23687,22 +23687,22 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "1357 5th Street, between Market and Frederick Streets, Georgetown, DC, United States",
+        "address": "1357 Q Street NW, Georgetown, DC, United States",
         "lat": 38.909581,
         "lon": -77.06514
       },
       "death": {
-        "address": "Residence, 5th Street, between Market and Frederick Streets, Georgetown, DC, United States",
-        "lat": 38.902358,
-        "lon": -77.031953
+        "address": "Q Street NW between 33rd Street NW and 34th Street NW, Georgetown, DC, United States",
+        "lat": 38.909581,
+        "lon": -77.06514
       }
     },
     {
       "name": "Unknown Child Johnson",
       "residence": {
-        "address": "5th Street, between Market and Frederick Streets, Georgetown, DC, United States",
-        "lat": 38.902358,
-        "lon": -77.031953
+        "address": "Q Street NW between 33rd Street NW and 34th Street NW, Georgetown, DC, United States",
+        "lat": 38.909581,
+        "lon": -77.06514
       },
       "death": {
         "address": "Georgetown, DC, United States",
@@ -31435,7 +31435,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Stoddard St near Mill St, Georgetown, DC, United States",
+        "address": "Q Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -60141,7 +60141,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "East Stoddard St btw Mill and Monroe Sts, Georgetown, DC, United States",
+        "address": "Q Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -77135,7 +77135,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Stoddard St btw Mill and Rock Sts, Georgetown, DC, United States",
+        "address": "Q Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -79997,7 +79997,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Stoddard St near Mill St, Georgetown, DC, United States",
+        "address": "Q Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -84052,7 +84052,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Stoddard St near Mill St, Georgetown, DC, United States",
+        "address": "Q Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -100541,9 +100541,9 @@
         "lon": -77.064275
       },
       "death": {
-        "address": "7th St btw High and Frederick Sts, Georgetown, DC, United States",
-        "lat": 38.9091767,
-        "lon": -77.064275
+        "address": "Reservoir Road NW between Wisconsin Avenue NW and 34th Street NW, Georgetown, DC, United States",
+        "lat": 38.9126035,
+        "lon": -77.0650635
       }
     },
     {
