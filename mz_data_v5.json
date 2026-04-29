@@ -117,7 +117,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "8 Monroe St, Georgetown, DC, United States",
+        "address": "8 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054667224,
         "lon": -77.05307748
       }
@@ -244,7 +244,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "8 Monroe St, Georgetown, DC, United States",
+        "address": "8 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054667224,
         "lon": -77.05307748
       }
@@ -371,7 +371,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "39 Monroe St, Georgetown, DC, United States",
+        "address": "39 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905526227,
         "lon": -77.05326976
       }
@@ -399,7 +399,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "47 North St, Georgetown, DC, United States",
+        "address": "47 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9108837,
         "lon": -77.0547912
       }
@@ -432,7 +432,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1521 Valley St, Georgetown, DC, United States",
+        "address": "1521 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9094393507,
         "lon": -77.04640282
       }
@@ -765,7 +765,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "rear 3047 M St btw 30 and 31 M and N Streets, Georgetown, DC, United States",
+        "address": "rear 3047 M St between 30 and 31 M and N Streets, Georgetown, DC, United States",
         "lat": 38.9053083246,
         "lon": -77.06049655
       }
@@ -1004,7 +1004,7 @@
         "lon": -77.3063733
       },
       "death": {
-        "address": "6th St btw Market and Frederick Sts, Washington, DC, United States",
+        "address": "Dent Place NW between 33rd Street NW and 34th Street NW, Washington, DC, United States",
         "lat": 38.8920621,
         "lon": -77.0199124
       }
@@ -1479,7 +1479,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1114 3rd St NW, Georgetown, DC, United States",
+        "address": "1114 P Street NW, Georgetown, DC, United States",
         "lat": 38.923881609,
         "lon": -77.03236393
       }
@@ -1672,7 +1672,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Olive St NW near Greene, Georgetown, DC, United States",
+        "address": "Prospect Street NW near 29th Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -1700,7 +1700,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "Beall St btw Montgomery and Monroe, Georgetown, DC, United States",
+        "address": "O Street NW between 28th Street NW and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -1982,7 +1982,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner Market and Water Streets, Georgetown, DC, United States",
+        "address": "Corner 33rd Street NW and K Street NW, Georgetown, DC, United States",
         "lat": 38.90365497,
         "lon": -77.06683115
       }
@@ -2043,7 +2043,7 @@
         "lon": -75.8817316
       },
       "death": {
-        "address": "27 West Street, Georgetown, DC, United States",
+        "address": "27 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -2122,7 +2122,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "112 Gay St, Georgetown, DC, United States",
+        "address": "112 N Street NW, Georgetown, DC, United States",
         "lat": 38.9055202629,
         "lon": -77.05472338
       }
@@ -2389,7 +2389,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2824 Olive St, Georgetown, DC, United States",
+        "address": "2824 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -2633,7 +2633,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Monroe St btw Beall and West, Georgetown, DC, United States",
+        "address": "27th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9079454123,
         "lon": -77.05680502
       }
@@ -2750,7 +2750,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "51 Beall St, Georgetown, DC, United States",
+        "address": "51 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -2839,7 +2839,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "51 Beall St, Georgetown, DC, United States",
+        "address": "51 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -2900,7 +2900,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "51 Beall Street (O Street), Georgetown, DC, United States",
+        "address": "51 O Street NW (O Street), Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -2928,12 +2928,12 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "51 Beall (O Street NW), Georgetown, DC, United States",
+        "address": "51 O Street NW (O Street NW), Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       },
       "death": {
-        "address": "51 Beall Street (O Street), Georgetown, DC, United States",
+        "address": "51 O Street NW (O Street), Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -3454,7 +3454,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1024 Jefferson Ave NW, Georgetown, DC, United States",
+        "address": "1024 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9004724704,
         "lon": -77.05112148
       }
@@ -3665,7 +3665,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "128 Valley St, Georgetown, DC, United States",
+        "address": "128 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -4349,7 +4349,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "68 Beall St, Georgetown, DC, United States",
+        "address": "68 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -4410,7 +4410,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "19 West St, Georgetown, DC, United States",
+        "address": "19 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -4603,7 +4603,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "K St btw 27th and Rock Creek, Georgetown, DC, United States",
+        "address": "K St between 27th and Rock Creek, Georgetown, DC, United States",
         "lat": 38.902531,
         "lon": -77.05645295
       }
@@ -4992,7 +4992,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "77 Beall St NW, Georgetown, DC, United States",
+        "address": "77 O Street NW, Georgetown, DC, United States",
         "lat": 38.9091936939,
         "lon": -77.0671158
       }
@@ -5053,7 +5053,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "26th St btw M and N Sts NW, Georgetown, DC, United States",
+        "address": "26th St between M and N Sts NW, Georgetown, DC, United States",
         "lat": 38.9054056386,
         "lon": -77.05446458
       }
@@ -5109,7 +5109,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Frederick btw 4th and 5th Sts, Georgetown, DC, United States",
+        "address": "34th Street NW between Volta Place NW and Q Street NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -5391,7 +5391,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "16 Greene Alley 18 and 19 F and M, Washington, DC, United States",
+        "address": "16 29th Street NW Alley 18 and 19 F and M, Washington, DC, United States",
         "lat": 38.90115,
         "lon": -77.04345
       }
@@ -5424,7 +5424,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2224 8th St NW, Georgetown, DC, United States",
+        "address": "2224 R Street NW, Georgetown, DC, United States",
         "lat": 38.89887811,
         "lon": -77.04850331
       }
@@ -5693,7 +5693,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1028 Jefferson St NW, Georgetown, DC, United States",
+        "address": "1028 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9123493715,
         "lon": -77.04654137
       }
@@ -5980,7 +5980,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Rear of High St near Water St, Georgetown, DC, United States",
+        "address": "Rear of Wisconsin Avenue NW near K Street NW, Georgetown, DC, United States",
         "lat": 38.9044260001,
         "lon": -77.06630747
       }
@@ -6399,7 +6399,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "76 Washington Street, Georgetown, DC, United States",
+        "address": "76 30th Street NW, Georgetown, DC, United States",
         "lat": 38.9052192139,
         "lon": -77.0591676977
       }
@@ -6572,7 +6572,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1624 Valley Street, Georgetown, DC, United States",
+        "address": "1624 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -7618,7 +7618,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "West St, Georgetown, DC, United States",
+        "address": "P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -7674,7 +7674,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "112 High St, Georgetown, DC, United States",
+        "address": "112 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9058119724,
         "lon": -77.04769758
       }
@@ -8022,7 +8022,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "34 Monroe St, Georgetown, DC, United States",
+        "address": "34 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9052869125,
         "lon": -77.05041252
       }
@@ -8525,7 +8525,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "3 Market St, Washington, DC, United States",
+        "address": "3 33rd Street NW, Washington, DC, United States",
         "lat": 38.9564578136,
         "lon": -77.06541543
       }
@@ -8789,7 +8789,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1535 4th St NW, Georgetown, DC, United States",
+        "address": "1535 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -8934,7 +8934,7 @@
         "lon": -76.9382069
       },
       "death": {
-        "address": "1416 Monroe St, Georgetown, DC, United States",
+        "address": "1416 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9095985,
         "lon": -77.0554969
       }
@@ -8995,7 +8995,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Market St Alley, Washington, DC, United States",
+        "address": "33rd Street NW Alley, Washington, DC, United States",
         "lat": 38.9042529104,
         "lon": -77.04997113
       }
@@ -9310,7 +9310,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "43 West St, Georgetown, DC, United States",
+        "address": "43 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -9757,7 +9757,7 @@
         "lon": -77.1588685
       },
       "death": {
-        "address": "Jefferson St btw Canal and Water, Georgetown, DC, United States",
+        "address": "Thomas Jefferson Street NW between Canal and K Street NW, Georgetown, DC, United States",
         "lat": 38.904561,
         "lon": -77.066007
       }
@@ -9968,7 +9968,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1812 Valley St NW, Georgetown, DC, United States",
+        "address": "1812 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -10052,7 +10052,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Stoddard rear of Monroe, Georgetown, DC, United States",
+        "address": "Q Street NW rear of 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -10217,7 +10217,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Rock St NW, Washington, DC, United States",
+        "address": "27th Street NW, Washington, DC, United States",
         "lat": 38.8852833847,
         "lon": -76.97759978
       }
@@ -10278,7 +10278,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "North St btw West and Stoddard, Washington, DC, United States",
+        "address": "26th Street NW between P Street NW and Q Street NW, Washington, DC, United States",
         "lat": 38.90741882,
         "lon": -77.07620648
       }
@@ -10372,7 +10372,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "6th btw Frederick and Fayette Sts, Georgetown, DC, United States",
+        "address": "Dent Place NW between 34th Street NW and 35th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -10545,7 +10545,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "113 High St, Georgetown, DC, United States",
+        "address": "113 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9001146483,
         "lon": -77.05160686
       }
@@ -10728,7 +10728,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "37 Monroe St NW, Georgetown, DC, United States",
+        "address": "37 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9095985,
         "lon": -77.0554969
       }
@@ -10756,7 +10756,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "25th St btw M St NW, Georgetown, DC, United States",
+        "address": "25th St between M St NW, Georgetown, DC, United States",
         "lat": 38.9055147164,
         "lon": -77.05339946
       }
@@ -10944,7 +10944,7 @@
         "lon": -74.0060152
       },
       "death": {
-        "address": "2 North St NW, Georgetown, DC, United States",
+        "address": "2 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9027945916,
         "lon": -77.05336096
       }
@@ -11132,7 +11132,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Alley btw High and Congress Sts, Georgetown, DC, United States",
+        "address": "Alley between Wisconsin Avenue NW and 31st Street NW, Georgetown, DC, United States",
         "lat": 38.90636039,
         "lon": -77.06098322
       }
@@ -11198,7 +11198,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Congress St Alley, Georgetown, DC, United States",
+        "address": "31st Street NW Alley, Georgetown, DC, United States",
         "lat": 38.9054508002,
         "lon": -77.0610942
       }
@@ -11226,7 +11226,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Corner Monroe and Beall Sts, Georgetown, DC, United States",
+        "address": "Corner 27th Street NW and O Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -11391,7 +11391,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2714 Olive Street, then Emergency Hospital, Georgetown, DC, United States",
+        "address": "2714 Prospect Street NW, then Emergency Hospital, Georgetown, DC, United States",
         "lat": 38.9060327,
         "lon": -77.05626461
       }
@@ -11782,7 +11782,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "SE Corner of Beall and Green Sts, Georgetown, DC, United States",
+        "address": "SE Corner of O Street NW and Green Sts, Georgetown, DC, United States",
         "lat": 38.908657,
         "lon": -77.05739349
       }
@@ -11904,7 +11904,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "22 Bell (Beall?) St, Georgetown, DC, United States",
+        "address": "22 Bell (O Street NW?) St, Georgetown, DC, United States",
         "lat": 38.9096161678,
         "lon": -77.0615793478
       }
@@ -12120,7 +12120,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "24 Bell (Beall?) St, Georgetown, DC, United States",
+        "address": "24 Bell (O Street NW?) St, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -12313,7 +12313,7 @@
         "label": "1804-1896"
       },
       "residence": {
-        "address": "105 West St, Georgetown, DC, United States",
+        "address": "105 P Street NW, Georgetown, DC, United States",
         "lat": 38.9051994,
         "lon": -77.062785
       },
@@ -12455,7 +12455,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Poplar St, south side btw 27 and 28 Sts, Georgetown, DC, United States",
+        "address": "Poplar St, south side between 27 and 28 Sts, Georgetown, DC, United States",
         "lat": 38.908987645,
         "lon": -77.05582805
       }
@@ -12714,7 +12714,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Fayette St near 8th St, Georgetown, DC, United States",
+        "address": "35th Street NW near R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -12803,7 +12803,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2722 Olive St NW, Georgetown, DC, United States",
+        "address": "2722 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -12869,7 +12869,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1722 Olive St NW, Georgetown, DC, United States",
+        "address": "1722 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9005653,
         "lon": -77.0560792
       }
@@ -13352,7 +13352,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Frederick St near High St, Georgetown, DC, United States",
+        "address": "34th Street NW near Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -13380,7 +13380,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "25 West St, Georgetown, DC, United States",
+        "address": "25 P Street NW, Georgetown, DC, United States",
         "lat": 38.9025297895,
         "lon": -77.05365294
       }
@@ -13708,7 +13708,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Monroe St btw West and Beall Sts, Georgetown, DC, United States",
+        "address": "27th Street NW between P Street NW and O Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -13815,7 +13815,7 @@
     {
       "name": "Martha Pryor",
       "residence": {
-        "address": "41 4th Street NW, Georgetown, DC, United States",
+        "address": "41 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -14496,7 +14496,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "9 Jefferson St, Georgetown, DC, United States",
+        "address": "9 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -14595,7 +14595,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "1073 Jefferson Ave NW, Georgetown, DC, United States",
+        "address": "1073 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -14618,7 +14618,7 @@
         "label": "1876-1877"
       },
       "death": {
-        "address": "High St near Reservoir, Georgetown, DC, United States",
+        "address": "Wisconsin Avenue NW near Reservoir, Georgetown, DC, United States",
         "lat": 38.896799,
         "lon": -77.04914008
       }
@@ -14646,7 +14646,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Road and Stoddard Congress and Washington Sts, Georgetown, DC, United States",
+        "address": "Road and Q Street NW 31st Street NW and Washington Sts, Georgetown, DC, United States",
         "lat": 38.90636039,
         "lon": -77.06098322
       }
@@ -14839,7 +14839,7 @@
         "lon": -77.209755
       },
       "death": {
-        "address": "27 West Street, Georgetown, DC, United States",
+        "address": "27 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -14867,7 +14867,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "32 Congress St, Georgetown, DC, United States",
+        "address": "32 31st Street NW, Georgetown, DC, United States",
         "lat": 38.90279336,
         "lon": -77.05324198
       }
@@ -14928,7 +14928,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "27 West Street, Georgetown, DC, United States",
+        "address": "27 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -15322,7 +15322,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "71 Montgomery St, Georgetown, DC, United States",
+        "address": "71 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -15383,7 +15383,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, 1230 Congress St Alley, Georgetown, DC, United States",
+        "address": "Alley, 1230 31st Street NW Alley, Georgetown, DC, United States",
         "lat": 38.905380919,
         "lon": -77.0609386615
       }
@@ -15543,7 +15543,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "83 Beall Street, Georgetown, DC, United States",
+        "address": "83 O Street NW, Georgetown, DC, United States",
         "lat": 38.907056,
         "lon": -77.060533
       }
@@ -15797,7 +15797,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Freedmen's Hospital, 22 Gay Street, Georgetown, DC, United States",
+        "address": "Freedmen's Hospital, 22 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       }
@@ -15914,7 +15914,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Tuberculosis Hospital, Alley btw High ?? Water and Cherry, Georgetown, DC, United States",
+        "address": "Tuberculosis Hospital, Alley between Wisconsin Avenue NW ?? K Street NW and Cherry, Georgetown, DC, United States",
         "lat": 38.9037351546,
         "lon": -77.0658889688
       }
@@ -16483,7 +16483,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "North St btw West and Stoddard, Washington, DC, United States",
+        "address": "26th Street NW between P Street NW and Q Street NW, Washington, DC, United States",
         "lat": 38.90741882,
         "lon": -77.07620648
       }
@@ -16557,7 +16557,7 @@
     {
       "name": "Louis Chisley",
       "residence": {
-        "address": "North Street NW, Georgetown, DC, United States",
+        "address": "26th Street NW, Georgetown, DC, United States",
         "lat": 38.9108837,
         "lon": -77.0547912
       }
@@ -16585,7 +16585,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Monroe St btw West and Stoddard, Washington, DC, United States",
+        "address": "27th Street NW between P Street NW and Q Street NW, Washington, DC, United States",
         "lat": 38.8920621,
         "lon": -77.0199124
       }
@@ -16847,7 +16847,7 @@
         "label": "1856-1879"
       },
       "residence": {
-        "address": "158 Monroe Street, Georgetown, DC, United States",
+        "address": "158 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9095985,
         "lon": -77.0554969
       }
@@ -16969,7 +16969,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Frederick btw 6th and 7th Sts, Georgetown, DC, United States",
+        "address": "34th Street NW between Dent Place NW and Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -17513,7 +17513,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Popular St near Montgomery St, Georgetown, DC, United States",
+        "address": "Popular St near 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9084751149,
         "lon": -77.05743471
       }
@@ -17541,7 +17541,7 @@
         "lon": -80.945007
       },
       "death": {
-        "address": "25 West St, Georgetown, DC, United States",
+        "address": "25 P Street NW, Georgetown, DC, United States",
         "lat": 38.9025297895,
         "lon": -77.05365294
       }
@@ -17569,7 +17569,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "25 West St, Georgetown, DC, United States",
+        "address": "25 P Street NW, Georgetown, DC, United States",
         "lat": 38.9025297895,
         "lon": -77.05365294
       }
@@ -18253,7 +18253,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner of Dumbarton and Monroe Sts, Georgetown, DC, United States",
+        "address": "Corner of Dumbarton and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.907906,
         "lon": -77.061232
       }
@@ -18352,7 +18352,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1520 Valley St NW, Georgetown, DC, United States",
+        "address": "1520 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -18380,7 +18380,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Beall St near Montgomery St, Georgetown, DC, United States",
+        "address": "O Street NW near 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9082682827,
         "lon": -77.05721167
       }
@@ -18619,7 +18619,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "47 Congress St, Georgetown, DC, United States",
+        "address": "47 31st Street NW, Georgetown, DC, United States",
         "lat": 38.905192214,
         "lon": -77.0611836971
       }
@@ -18647,7 +18647,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "64 High St, Georgetown, DC, United States",
+        "address": "64 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -19254,7 +19254,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner of Beall and Rock St, Georgetown, DC, United States",
+        "address": "Corner of O Street NW and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9073769366,
         "lon": -77.06132975
       }
@@ -19343,7 +19343,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "10 West St, Georgetown, DC, United States",
+        "address": "10 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -20022,7 +20022,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Frederick btw 6th and 7th Sts, Georgetown, DC, United States",
+        "address": "34th Street NW between Dent Place NW and Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -20083,7 +20083,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "102 Greene St, Washington, DC, United States",
+        "address": "102 29th Street NW, Washington, DC, United States",
         "lat": 38.9088673804,
         "lon": -77.0886563
       }
@@ -20172,7 +20172,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "2 North Street, Georgetown, DC, United States",
+        "address": "2 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9054230497,
         "lon": -77.05356959
       }
@@ -20256,7 +20256,7 @@
         "label": "1787-1819"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -20289,7 +20289,7 @@
         "lon": -77.0365427
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -20355,7 +20355,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Jefferson St near Canal Street, Georgetown, DC, United States",
+        "address": "Thomas Jefferson Street NW near Canal Street, Georgetown, DC, United States",
         "lat": 38.904561,
         "lon": -77.066007
       }
@@ -20774,7 +20774,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner of West and Montgomery Sts, Georgetown, DC, United States",
+        "address": "Corner of P Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -20868,7 +20868,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "8 Stoddard St, Georgetown, DC, United States",
+        "address": "8 Q Street NW, Georgetown, DC, United States",
         "lat": 38.9105206,
         "lon": -77.0599388
       }
@@ -21287,7 +21287,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "51 4th St, Georgetown, DC, United States",
+        "address": "51 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9050830126,
         "lon": -77.05303068
       }
@@ -21315,7 +21315,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Monroe St btw Beall and West, Georgetown, DC, United States",
+        "address": "27th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -21503,7 +21503,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1511 North St, Georgetown, DC, United States",
+        "address": "1511 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9050678961,
         "lon": -77.05304835
       }
@@ -22735,7 +22735,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Jefferson St btw Canal and Water, Georgetown, DC, United States",
+        "address": "Thomas Jefferson Street NW between Canal and K Street NW, Georgetown, DC, United States",
         "lat": 38.904561,
         "lon": -77.066007
       }
@@ -23027,7 +23027,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1064 Jefferson St, Georgetown, DC, United States",
+        "address": "1064 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9125901993,
         "lon": -77.04628594
       }
@@ -23324,7 +23324,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2808 Olive St NW, Georgetown, DC, United States",
+        "address": "2808 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -23802,7 +23802,7 @@
         "label": "1774-1827"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -24838,7 +24838,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1214 Monroe St, Georgetown, DC, United States",
+        "address": "1214 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9094215652,
         "lon": -77.04683895
       }
@@ -24866,7 +24866,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Beall St near Rock Creek, Georgetown, DC, United States",
+        "address": "O Street NW near Rock Creek, Georgetown, DC, United States",
         "lat": 38.9026660001,
         "lon": -77.05580553
       }
@@ -24927,7 +24927,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Frederick btw 6th and 7th Sts, Georgetown, DC, United States",
+        "address": "34th Street NW between Dent Place NW and Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -25092,7 +25092,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Btw M St and Canal and 33rd and 34th Sts, Georgetown, DC, United States",
+        "address": "between M St and Canal and 33rd and 34th Sts, Georgetown, DC, United States",
         "lat": 38.90500771,
         "lon": -77.07044019
       }
@@ -25153,7 +25153,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Btw Beall and Dumbarton Streets, Georgetown, DC, United States",
+        "address": "between O Street NW and Dumbarton Streets, Georgetown, DC, United States",
         "lat": 38.90766111,
         "lon": -77.05936673
       }
@@ -25654,7 +25654,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1157 8th St NW, Georgetown, DC, United States",
+        "address": "1157 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -25959,7 +25959,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Douglass Alley btw 4th and 5th G and H Sts, Georgetown, DC, United States",
+        "address": "Douglass Alley between Volta Place NW and Q Street NW G and H Sts, Georgetown, DC, United States",
         "lat": 38.8991529022,
         "lon": -77.01756259
       }
@@ -26058,7 +26058,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "4 Greene Ct btw 26th and 27th J and K Sts, Georgetown, DC, United States",
+        "address": "4 29th Street NW Ct between 26th and 27th J and K Sts, Georgetown, DC, United States",
         "lat": 38.91057421,
         "lon": -77.0549647
       }
@@ -26312,7 +26312,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Caters St btw High and Valley Sts, Georgetown, DC, United States",
+        "address": "Caters St between Wisconsin Avenue NW and 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9032108454,
         "lon": -77.06605503
       }
@@ -26569,7 +26569,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "51 Beall St, Georgetown, DC, United States",
+        "address": "51 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -27098,7 +27098,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "112 Market bet 5th and 6th St, Washington, DC, United States",
+        "address": "112 33rd Street NW bet Q Street NW and Dent Place NW, Washington, DC, United States",
         "lat": 38.9055057678,
         "lon": -77.05389766
       }
@@ -27225,7 +27225,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Beall St near North, Georgetown, DC, United States",
+        "address": "O Street NW near 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -27253,7 +27253,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "8 West St, Georgetown, DC, United States",
+        "address": "8 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -27502,7 +27502,7 @@
         "label": "d. 1875"
       },
       "death": {
-        "address": "North St, Georgetown, DC, United States",
+        "address": "26th Street NW, Georgetown, DC, United States",
         "lat": 38.9054996248,
         "lon": -77.05314377
       },
@@ -27700,7 +27700,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1620 Valley St, Georgetown, DC, United States",
+        "address": "1620 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9058754348,
         "lon": -77.04510094
       }
@@ -27756,7 +27756,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "223 Fayette St, Georgetown, DC, United States",
+        "address": "223 35th Street NW, Georgetown, DC, United States",
         "lat": 38.9140819,
         "lon": -77.069305
       }
@@ -27911,7 +27911,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "85 Greene St, Georgetown, DC, United States",
+        "address": "85 29th Street NW, Georgetown, DC, United States",
         "lat": 38.9083288,
         "lon": -77.0581586
       }
@@ -28150,7 +28150,7 @@
         "lon": -76.610759
       },
       "death": {
-        "address": "39 West St, Georgetown, DC, United States",
+        "address": "39 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -28338,7 +28338,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "24 Monroe St, Georgetown, DC, United States",
+        "address": "24 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9055239116,
         "lon": -77.05334833
       }
@@ -28407,7 +28407,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Frederick St btw 5th and 6th Sts, Georgetown, DC, United States",
+        "address": "34th Street NW between Q Street NW and Dent Place NW, Georgetown, DC, United States",
         "lat": 38.9055057678,
         "lon": -77.05414834
       }
@@ -28458,7 +28458,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Valley St btw Road and Stoddard Sts, Georgetown, DC, United States",
+        "address": "32nd Street NW between Road and Q Street NW, Georgetown, DC, United States",
         "lat": 38.9120502,
         "lon": -77.0640322
       }
@@ -28491,7 +28491,7 @@
         "lon": -77.0003
       },
       "residence": {
-        "address": "1221 28th Street N.W. (formerly Montgomery Street), Georgetown, DC, United States",
+        "address": "1221 28th Street N.W. (formerly 28th Street NW), Georgetown, DC, United States",
         "lat": 38.90590333,
         "lon": -77.05685736
       },
@@ -28529,7 +28529,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "109 Gay St, Georgetown, DC, United States",
+        "address": "109 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       }
@@ -28956,7 +28956,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Stoddard St, Georgetown, DC, United States",
+        "address": "Q Street NW, Georgetown, DC, United States",
         "lat": 38.9105206,
         "lon": -77.0599388
       }
@@ -29017,7 +29017,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "North St btw Beall and West, Georgetown, DC, United States",
+        "address": "26th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.90741882,
         "lon": -77.07620648
       }
@@ -29195,7 +29195,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Beall St near Montgomery St, Georgetown, DC, United States",
+        "address": "O Street NW near 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9082682827,
         "lon": -77.05721167
       }
@@ -29223,7 +29223,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Beall btw Montgomery and Rock Sts, Georgetown, DC, United States",
+        "address": "O Street NW between 28th Street NW and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -29251,7 +29251,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Lingan St btw 2nd and 3rd, Georgetown, DC, United States",
+        "address": "36th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.904017,
         "lon": -77.049498
       }
@@ -29373,7 +29373,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Monroe Street, Georgetown, DC, United States",
+        "address": "27th Street NW, Georgetown, DC, United States",
         "lat": 38.908758,
         "lon": -77.059219
       }
@@ -29472,7 +29472,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1048 Jefferson Ave NW, Georgetown, DC, United States",
+        "address": "1048 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -29906,7 +29906,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1223 7th St NW, Georgetown, DC, United States",
+        "address": "1223 Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.9060700646,
         "lon": -77.02181
       }
@@ -29967,7 +29967,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "68 Montgomery Street, Georgetown, DC, United States",
+        "address": "68 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -30084,7 +30084,7 @@
         "lon": -77.1516844
       },
       "death": {
-        "address": "Cherry Alley btw Grace and Water Sts, Georgetown, DC, United States",
+        "address": "Cherry Alley between Grace and K Street NW, Georgetown, DC, United States",
         "lat": 38.9033196224,
         "lon": -77.06625754
       }
@@ -30178,7 +30178,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2708 Olive St, Georgetown, DC, United States",
+        "address": "2708 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -30790,7 +30790,7 @@
         "lon": -79.44410982
       },
       "residence": {
-        "address": "1626 Valley Street, Georgetown, DC, United States",
+        "address": "1626 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9111636,
         "lon": -77.0640726
       },
@@ -31026,7 +31026,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "14 Stoddard St, Georgetown, DC, United States",
+        "address": "14 Q Street NW, Georgetown, DC, United States",
         "lat": 38.9105206,
         "lon": -77.0599388
       }
@@ -31054,7 +31054,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "39 Monroe St, Georgetown, DC, United States",
+        "address": "39 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905526227,
         "lon": -77.05326976
       }
@@ -31308,7 +31308,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "51 West St, Georgetown, DC, United States",
+        "address": "51 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -31336,7 +31336,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "55 Montgomery St, Georgetown, DC, United States",
+        "address": "55 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9027885672,
         "lon": -77.05321509
       }
@@ -31590,7 +31590,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1 Beall St, Washington, DC, United States",
+        "address": "1 O Street NW, Washington, DC, United States",
         "lat": 38.9094102,
         "lon": -77.06697617
       }
@@ -31689,7 +31689,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1670 Valley St NW, Georgetown, DC, United States",
+        "address": "1670 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -31717,7 +31717,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner of Rock and Beall Sts, Georgetown, DC, United States",
+        "address": "Corner of 27th Street NW and O Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -31778,7 +31778,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "26th St btw M and N Sts NW, Georgetown, DC, United States",
+        "address": "26th St between M and N Sts NW, Georgetown, DC, United States",
         "lat": 38.9054056386,
         "lon": -77.05446458
       }
@@ -32197,7 +32197,7 @@
         "lon": -76.9382069
       },
       "death": {
-        "address": "136 Frederick St NW, Washington, DC, United States",
+        "address": "136 34th Street NW, Washington, DC, United States",
         "lat": 38.9104650259,
         "lon": -77.0678609
       }
@@ -32413,7 +32413,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "114 Greene St, Washington, DC, United States",
+        "address": "114 29th Street NW, Washington, DC, United States",
         "lat": 38.9088673804,
         "lon": -77.0886563
       }
@@ -32611,7 +32611,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "721 3rd St SW, Georgetown, DC, United States",
+        "address": "721 P Street NW SW, Georgetown, DC, United States",
         "lat": 38.9046574046,
         "lon": -77.0503929
       }
@@ -32738,7 +32738,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Corner Monroe and Popular Alley, Washington, DC, United States",
+        "address": "Corner 27th Street NW and Popular Alley, Washington, DC, United States",
         "lat": 38.9036751,
         "lon": -77.06620207
       }
@@ -33416,7 +33416,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "30 Monroe St, Georgetown, DC, United States",
+        "address": "30 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9049964215,
         "lon": -77.05320514
       }
@@ -33932,7 +33932,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "69 Montgomery St, Georgetown, DC, United States",
+        "address": "69 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -33993,7 +33993,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "45 West St, Georgetown, DC, United States",
+        "address": "45 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -34021,7 +34021,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "45 West St, Georgetown, DC, United States",
+        "address": "45 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -34280,7 +34280,7 @@
         "lon": -76.492786
       },
       "death": {
-        "address": "116 Congress St, Georgetown, DC, United States",
+        "address": "116 31st Street NW, Georgetown, DC, United States",
         "lat": 38.9123897165,
         "lon": -77.04643135
       }
@@ -34369,7 +34369,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1530 3rd St NW, Georgetown, DC, United States",
+        "address": "1530 P Street NW, Georgetown, DC, United States",
         "lat": 38.8939178454,
         "lon": -76.98839402
       }
@@ -34463,7 +34463,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1238 4th St NW, Georgetown, DC, United States",
+        "address": "1238 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -34608,7 +34608,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "80 Frederick St, Georgetown, DC, United States",
+        "address": "80 34th Street NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -34669,7 +34669,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Monroe St, Btw West and Bell, West Side, Washington, DC, United States",
+        "address": "27th Street NW, between P Street NW and Bell, P Street NW Side, Washington, DC, United States",
         "lat": 38.91053362,
         "lon": -77.07581093
       }
@@ -34796,7 +34796,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "91 Washington St, Georgetown, DC, United States",
+        "address": "91 30th Street NW, Georgetown, DC, United States",
         "lat": 38.904999081,
         "lon": -77.06142934
       }
@@ -34890,7 +34890,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "17 Congress St, Georgetown, DC, United States",
+        "address": "17 31st Street NW, Georgetown, DC, United States",
         "lat": 38.905192214,
         "lon": -77.0611836971
       }
@@ -35012,7 +35012,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Brick Hill btw Grace High and Congress Sts, Georgetown, DC, United States",
+        "address": "Brick Hill between Grace Wisconsin Avenue NW and 31st Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -35172,7 +35172,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "West side of 25th btw J and K Sts NW, Washington, DC, United States",
+        "address": "P Street NW side of 25th between J and K Sts NW, Washington, DC, United States",
         "lat": 38.9023295652,
         "lon": -77.05600207
       }
@@ -35403,7 +35403,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "93 Washington St, Georgetown, DC, United States",
+        "address": "93 30th Street NW, Georgetown, DC, United States",
         "lat": 38.9050549999,
         "lon": -77.06088352
       }
@@ -35431,7 +35431,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Beall St btw Montgomery and Greene, Georgetown, DC, United States",
+        "address": "O Street NW between 28th Street NW and 29th Street NW, Georgetown, DC, United States",
         "lat": 38.9084978,
         "lon": -77.0635883
       }
@@ -35647,7 +35647,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2824 Olive St NW, Georgetown, DC, United States",
+        "address": "2824 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -35675,7 +35675,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "32 Monroe St, Georgetown, DC, United States",
+        "address": "32 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905352008,
         "lon": -77.05297123
       }
@@ -35731,7 +35731,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "51 West St, Georgetown, DC, United States",
+        "address": "51 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -35759,7 +35759,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Montgomery St, Georgetown, DC, United States",
+        "address": "28th Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -35820,7 +35820,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Olive Btw Greene and Montgomery Sts, Georgetown, DC, United States",
+        "address": "Prospect Street NW between 29th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -35848,7 +35848,7 @@
         "lon": -82.764915
       },
       "death": {
-        "address": "21 Stoddard St, Georgetown, DC, United States",
+        "address": "21 Q Street NW, Georgetown, DC, United States",
         "lat": 38.9105206,
         "lon": -77.0599388
       }
@@ -35970,7 +35970,7 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "455 West P Street, Georgetown, DC, United States",
+        "address": "455 P Street NW, Georgetown, DC, United States",
         "lat": 38.9093454,
         "lon": -77.0583594
       },
@@ -36580,7 +36580,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Fayette St near High, Georgetown, DC, United States",
+        "address": "35th Street NW near Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9140819,
         "lon": -77.069305
       }
@@ -36697,7 +36697,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Market St btw Bridge and Water, Georgetown, DC, United States",
+        "address": "33rd Street NW between Bridge and K Street NW, Georgetown, DC, United States",
         "lat": 38.9037351546,
         "lon": -77.06588897
       }
@@ -36857,7 +36857,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2822 Olive St NW, Georgetown, DC, United States",
+        "address": "2822 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -37233,7 +37233,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Dumbarton St near Monroe, Georgetown, DC, United States",
+        "address": "Dumbarton St near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9077388851,
         "lon": -77.0574147
       }
@@ -37589,7 +37589,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner of Dumbarton and Rock Sts, Georgetown, DC, United States",
+        "address": "Corner of Dumbarton and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9073769366,
         "lon": -77.06132975
       }
@@ -37928,7 +37928,7 @@
         "lon": -77.04709697
       },
       "death": {
-        "address": "27 Greene St, Georgetown, DC, United States",
+        "address": "27 29th Street NW, Georgetown, DC, United States",
         "lat": 38.9109622863,
         "lon": -77.05715739
       }
@@ -38299,7 +38299,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Barrett Row Stoddard St, Georgetown, DC, United States",
+        "address": "Barrett Row Q Street NW, Georgetown, DC, United States",
         "lat": 38.907962,
         "lon": -77.057073
       }
@@ -38355,7 +38355,7 @@
         "label": "d. 1818"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -38632,7 +38632,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "31 7th St, Georgetown, DC, United States",
+        "address": "31 Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.890798,
         "lon": -76.995946
       }
@@ -38655,7 +38655,7 @@
         "label": "d. 1828"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -38693,7 +38693,7 @@
         "label": "d. 1830"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -38731,7 +38731,7 @@
         "label": "1789-1833"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -38807,7 +38807,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Beall St. Btw Montgomery and Olive Streets, Georgetown, DC, United States",
+        "address": "O Street NW. between 28th Street NW and Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -39018,7 +39018,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "1418 Montgomery Street, near Beall Street, Georgetown, DC, United States",
+        "address": "1418 28th Street NW, near O Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       },
@@ -39028,7 +39028,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1418 Montgomery Street, near Beall Street, Georgetown, DC, United States",
+        "address": "1418 28th Street NW, near O Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -39191,7 +39191,7 @@
         "label": "1815-1894"
       },
       "residence": {
-        "address": "1418 28th (Montgomery) Street, near O (Beall) Street, Georgetown, DC, United States",
+        "address": "1418 28th (28th Street NW) Street, near O (O Street NW) Street, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       },
@@ -39359,7 +39359,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Market St btw 3rd and 4th Sts, Georgetown, DC, United States",
+        "address": "33rd Street NW between P Street NW and Volta Place NW, Georgetown, DC, United States",
         "lat": 38.895621,
         "lon": -77.050129
       }
@@ -39420,7 +39420,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "56 Montgomery St, Georgetown, DC, United States",
+        "address": "56 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9022633194,
         "lon": -77.05323747
       }
@@ -39448,7 +39448,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner GA and Montgomery Sts, Georgetown, DC, United States",
+        "address": "Corner GA and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -39542,7 +39542,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Olive St btw Green and Montgomery, Georgetown, DC, United States",
+        "address": "Prospect Street NW between Green and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.908792,
         "lon": -77.057093
       }
@@ -39598,7 +39598,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "10 West St, Georgetown, DC, United States",
+        "address": "10 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -39654,7 +39654,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "68 Valley St, Georgetown, DC, United States",
+        "address": "68 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -39715,7 +39715,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "85 Valley St, Georgetown, DC, United States",
+        "address": "85 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -39842,7 +39842,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "4 1/2 West St, Georgetown, DC, United States",
+        "address": "4 1/2 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -39898,7 +39898,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "4th btw Pennsylvania Ave and C NW, Georgetown, DC, United States",
+        "address": "Volta Place NW between Pennsylvania Ave and C NW, Georgetown, DC, United States",
         "lat": 38.8930470981,
         "lon": -77.00883996
       }
@@ -39959,7 +39959,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Alley rear of Water near Potomac, Georgetown, DC, United States",
+        "address": "Alley rear of K Street NW near Potomac, Georgetown, DC, United States",
         "lat": 38.9034404551,
         "lon": -77.06562758
       }
@@ -40053,7 +40053,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1524 Valley St NW, Georgetown, DC, United States",
+        "address": "1524 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -40724,7 +40724,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2104 8th St NW, Georgetown, DC, United States",
+        "address": "2104 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -41143,7 +41143,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "34 Gay Street, Georgetown, DC, United States",
+        "address": "34 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       },
@@ -41176,7 +41176,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "47 Beall Street (now O Street NW); 1219 New Hampshire Ave NW, Georgetown, DC, United States",
+        "address": "47 O Street NW (now O Street NW); 1219 New Hampshire Ave NW, Georgetown, DC, United States",
         "lat": 38.9051994,
         "lon": -77.062785
       },
@@ -41285,7 +41285,7 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "47 Beall Street; 1219 New Hampshire Avenue NW, Georgetown, DC, United States",
+        "address": "47 O Street NW; 1219 New Hampshire Avenue NW, Georgetown, DC, United States",
         "lat": 38.9051994,
         "lon": -77.062785
       },
@@ -41450,7 +41450,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Montgomery St btw Bell and West, Georgetown, DC, United States",
+        "address": "28th Street NW between Bell and P Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -41976,7 +41976,7 @@
         "lon": -77.3063733
       },
       "death": {
-        "address": "6th St btw Market and Frederick Sts, Georgetown, DC, United States",
+        "address": "Dent Place NW between 33rd Street NW and 34th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -42195,7 +42195,7 @@
         "lon": -76.9382069
       },
       "death": {
-        "address": "Valley St, Georgetown, DC, United States",
+        "address": "32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -42223,7 +42223,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Browns Alley bet High and Valley Sts, Georgetown, DC, United States",
+        "address": "Browns Alley bet Wisconsin Avenue NW and 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9137971,
         "lon": -77.06599685
       }
@@ -42251,7 +42251,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Btw West and Stoddard near North, Georgetown, DC, United States",
+        "address": "between P Street NW and Q Street NW near 26th Street NW, Georgetown, DC, United States",
         "lat": 38.90741882,
         "lon": -77.07620648
       }
@@ -42279,7 +42279,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "Beall St btw Monroe and North, Georgetown, DC, United States",
+        "address": "O Street NW between 27th Street NW and 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -42340,7 +42340,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "55 Beall St, Georgetown, DC, United States",
+        "address": "55 O Street NW, Georgetown, DC, United States",
         "lat": 38.90931739,
         "lon": -77.06710659
       }
@@ -42500,7 +42500,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "5 Stoddard St, Georgetown, DC, United States",
+        "address": "5 Q Street NW, Georgetown, DC, United States",
         "lat": 38.9105206,
         "lon": -77.0599388
       }
@@ -42528,7 +42528,7 @@
         "lon": -77.0470229
       },
       "death": {
-        "address": "5 Stoddard St, Georgetown, DC, United States",
+        "address": "5 Q Street NW, Georgetown, DC, United States",
         "lat": 38.9105206,
         "lon": -77.0599388
       }
@@ -42716,7 +42716,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1072 Washington St, Georgetown, DC, United States",
+        "address": "1072 30th Street NW, Georgetown, DC, United States",
         "lat": 38.905325,
         "lon": -77.06088352
       }
@@ -42744,7 +42744,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "32 Beall St, Georgetown, DC, United States",
+        "address": "32 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -42772,7 +42772,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Valley St btw West and Road Sts, Georgetown, DC, United States",
+        "address": "32nd Street NW between P Street NW and Road Sts, Georgetown, DC, United States",
         "lat": 38.908657,
         "lon": -77.05679251
       }
@@ -42800,7 +42800,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Btw Congress and High, Water, Canal Sts, Georgetown, DC, United States",
+        "address": "between 31st Street NW and Wisconsin Avenue NW, K Street NW, Canal Sts, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -43237,7 +43237,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Mill St btw West and Stoddard Sts, Georgetown, DC, United States",
+        "address": "27th Street NW between P Street NW and Q Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -43392,7 +43392,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "24 Monroe St, Georgetown, DC, United States",
+        "address": "24 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9055239116,
         "lon": -77.05334833
       }
@@ -43420,7 +43420,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Valley St btw Road and Stoddard Sts, Georgetown, DC, United States",
+        "address": "32nd Street NW between Road and Q Street NW, Georgetown, DC, United States",
         "lat": 38.9120502,
         "lon": -77.0640322
       }
@@ -43804,7 +43804,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1611 Mill St, Georgetown, DC, United States",
+        "address": "1611 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054345652,
         "lon": -77.03772094
       }
@@ -44119,7 +44119,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Olive St btw Greene and Montgomery Sts, Georgetown, DC, United States",
+        "address": "Prospect Street NW between 29th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -44147,7 +44147,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "25 4th St, Georgetown, DC, United States",
+        "address": "25 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9050190317,
         "lon": -77.05313208
       }
@@ -44180,7 +44180,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "3169 Beall St, Georgetown, DC, United States",
+        "address": "3169 O Street NW, Georgetown, DC, United States",
         "lat": 38.9085204406,
         "lon": -77.06302337
       }
@@ -44927,7 +44927,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Cissell Alley btw Water and Grace Sts, Georgetown, DC, United States",
+        "address": "Cissell Alley between K Street NW and Grace Sts, Georgetown, DC, United States",
         "lat": 38.9032709019,
         "lon": -77.06574193
       }
@@ -45214,7 +45214,7 @@
         "lon": -77.4486772
       },
       "death": {
-        "address": "123 High St, Georgetown, DC, United States",
+        "address": "123 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9058349681,
         "lon": -77.04786992
       }
@@ -45374,7 +45374,7 @@
         "lon": -76.747398
       },
       "death": {
-        "address": "West St near P St Bridge, Georgetown, DC, United States",
+        "address": "P Street NW near P St Bridge, Georgetown, DC, United States",
         "lat": 38.9049871931,
         "lon": -77.05330913
       }
@@ -45435,7 +45435,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "24 4th Street (Volta Street / Place), Georgetown, DC, United States",
+        "address": "24 Volta Place NW (Volta Street / Place), Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       },
@@ -45577,7 +45577,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Mill St btw P and Q Sts, Georgetown, DC, United States",
+        "address": "27th Street NW between P and Q Sts, Georgetown, DC, United States",
         "lat": 38.9123429,
         "lon": -77.04658124
       }
@@ -45671,7 +45671,7 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "24 4th Street (Volta Street/Place), Georgetown, DC, United States",
+        "address": "24 Volta Place NW (Volta Street/Place), Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       },
@@ -45864,7 +45864,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "22 Congress St, Georgetown, DC, United States",
+        "address": "22 31st Street NW, Georgetown, DC, United States",
         "lat": 38.9023929999,
         "lon": -77.05300553
       }
@@ -46019,7 +46019,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Monroe St btw Beall and West, Georgetown, DC, United States",
+        "address": "27th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -46075,7 +46075,7 @@
         "lon": -76.9382069
       },
       "death": {
-        "address": "27 Monroe St, Georgetown, DC, United States",
+        "address": "27 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9051339674,
         "lon": -77.05298715
       }
@@ -46296,7 +46296,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "At Charles Afford's (home?) near RR Stables, South side of P Street, West Street, Washington, DC, United States",
+        "address": "At Charles Afford's (home?) near RR Stables, South side of P Street, P Street NW, Washington, DC, United States",
         "lat": 38.9635698418,
         "lon": -77.0607116787
       },
@@ -46446,7 +46446,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Congress St Alley btw High and Bridge Sts, Georgetown, DC, United States",
+        "address": "31st Street NW Alley between Wisconsin Avenue NW and Bridge Sts, Georgetown, DC, United States",
         "lat": 38.90546,
         "lon": -77.061184
       }
@@ -46900,7 +46900,7 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "110 Market Street, Georgetown, DC, United States",
+        "address": "110 33rd Street NW, Georgetown, DC, United States",
         "lat": 38.9096445,
         "lon": -77.0661012
       },
@@ -47058,7 +47058,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Congress St Alley, Georgetown, DC, United States",
+        "address": "31st Street NW Alley, Georgetown, DC, United States",
         "lat": 38.9054508002,
         "lon": -77.0610942
       }
@@ -47317,7 +47317,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "32 Congress St, Georgetown, DC, United States",
+        "address": "32 31st Street NW, Georgetown, DC, United States",
         "lat": 38.90279336,
         "lon": -77.05324198
       }
@@ -47345,7 +47345,7 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "295 Frederick St, Georgetown, DC, United States",
+        "address": "295 34th Street NW, Georgetown, DC, United States",
         "lat": 38.9051994,
         "lon": -77.062785
       }
@@ -48039,7 +48039,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner of Beall and High Sts, Georgetown, DC, United States",
+        "address": "Corner of O Street NW and Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -48128,7 +48128,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "158 Frederick St, Washington, DC, United States",
+        "address": "158 34th Street NW, Washington, DC, United States",
         "lat": 38.9560166971,
         "lon": -77.06684721
       }
@@ -48156,7 +48156,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "M St btw 25th and 26th Sts, Georgetown, DC, United States",
+        "address": "M St between 25th and 26th Sts, Georgetown, DC, United States",
         "lat": 38.9053743495,
         "lon": -77.05371241
       }
@@ -48184,7 +48184,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "76 Washington St, Georgetown, DC, United States",
+        "address": "76 30th Street NW, Georgetown, DC, United States",
         "lat": 38.9052192139,
         "lon": -77.0591676977
       }
@@ -48212,7 +48212,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "East St near West, Georgetown, DC, United States",
+        "address": "East St near P Street NW, Georgetown, DC, United States",
         "lat": 38.9126689761,
         "lon": -77.04629338
       }
@@ -48487,7 +48487,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "74 Beall Street, Georgetown, DC, United States",
+        "address": "74 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       },
@@ -48660,7 +48660,7 @@
         "lon": -77.3098177
       },
       "residence": {
-        "address": "Wilberforce Street at High Street (today's Wisconsin Avenue), Wilberforce village (today's Glover Park), DC, United States",
+        "address": "Wilberforce Street at Wisconsin Avenue NW (today's Wisconsin Avenue), Wilberforce village (today's Glover Park), DC, United States",
         "lat": 38.8950368,
         "lon": -77.0365427
       },
@@ -48924,7 +48924,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "5 West St, Georgetown, DC, United States",
+        "address": "5 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -48985,7 +48985,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "10 Greene Ct btw J and K 26th and 27th Sts, Georgetown, DC, United States",
+        "address": "10 29th Street NW Ct between J and K 26th and 27th Sts, Georgetown, DC, United States",
         "lat": 38.91057421,
         "lon": -77.0549647
       }
@@ -49323,7 +49323,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "3210 Cherry Hill btw 32nd and 33rd Canal and Water, Georgetown, DC, United States",
+        "address": "3210 Cherry Hill between 32nd and 33rd Canal and K Street NW, Georgetown, DC, United States",
         "lat": 38.9035687434,
         "lon": -77.06564759
       }
@@ -49539,7 +49539,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "10 Market St, Georgetown, DC, United States",
+        "address": "10 33rd Street NW, Georgetown, DC, United States",
         "lat": 38.9096445,
         "lon": -77.0661012
       }
@@ -49745,7 +49745,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Market St and Canal, Washington, DC, United States",
+        "address": "33rd Street NW and Canal, Washington, DC, United States",
         "lat": 38.9054238271,
         "lon": -77.06101052
       }
@@ -49839,7 +49839,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "28 Monroe St, Georgetown, DC, United States",
+        "address": "28 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905312803,
         "lon": -77.05363547
       }
@@ -49895,7 +49895,7 @@
         "label": "d. 1945"
       },
       "residence": {
-        "address": "1427 27th St NW., O Street btw Wisconsin Avenue and 33rd Street, Georgetown, DC, United States",
+        "address": "1427 27th St NW., O Street between Wisconsin Avenue and 33rd Street, Georgetown, DC, United States",
         "lat": 38.9091786,
         "lon": -77.0556169
       }
@@ -49951,7 +49951,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "btw Bridge and Canal Streets, Georgetown, DC, Washington",
+        "address": "between Bridge and Canal Streets, Georgetown, DC, Washington",
         "lat": 38.90426298,
         "lon": -77.06065268
       }
@@ -50368,7 +50368,7 @@
         "lon": 14.0
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -50871,7 +50871,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Valley St near Stoddard and West, Georgetown, DC, United States",
+        "address": "32nd Street NW near Q Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -51257,7 +51257,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "117 High St, Georgetown, DC, United States",
+        "address": "117 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9000901334,
         "lon": -77.05153878
       }
@@ -51285,7 +51285,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Paxsons Alley Beall St, Georgetown, DC, United States",
+        "address": "Paxsons Alley O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -51374,7 +51374,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Valley St near rode, Georgetown, DC, United States",
+        "address": "32nd Street NW near rode, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -51740,7 +51740,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "29 High St (?), Georgetown, DC, United States",
+        "address": "29 Wisconsin Avenue NW (?), Georgetown, DC, United States",
         "lat": 38.896799,
         "lon": -77.04983392
       }
@@ -51969,7 +51969,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Jefferson St, Georgetown, DC, United States",
+        "address": "Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -52353,7 +52353,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "132 High St NW, Georgetown, DC, United States",
+        "address": "132 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -52414,7 +52414,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "132 High St NW, Georgetown, DC, United States",
+        "address": "132 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -52556,7 +52556,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1669 Valley Street, Georgetown, DC, United States",
+        "address": "1669 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -52584,7 +52584,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "35 Olive St NW, Georgetown, DC, United States",
+        "address": "35 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -52932,12 +52932,12 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Stoddard St near North St, Georgetown, DC, United States",
+        "address": "Q Street NW near 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9105742126,
         "lon": -77.0549646987
       },
       "residence": {
-        "address": "Stoddard Street near North Street, Georgetown, DC, United States",
+        "address": "Q Street NW near 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -52965,7 +52965,7 @@
         "lon": -77.7319766
       },
       "death": {
-        "address": "Frederick St btw 6th and 7th Sts in the rear, Georgetown, DC, United States",
+        "address": "34th Street NW between Dent Place NW and Reservoir Road NW in the rear, Georgetown, DC, United States",
         "lat": 38.8993559,
         "lon": -77.05244213
       }
@@ -53026,7 +53026,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "39 Olive St NW, Georgetown, DC, United States",
+        "address": "39 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -53615,7 +53615,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Paxtons Alley Btw Dumbarton Alley and D St 28 and 29 Streets NW, Georgetown, DC, United States",
+        "address": "Paxtons Alley between Dumbarton Alley and D St 28 and 29 Streets NW, Georgetown, DC, United States",
         "lat": 38.9078212,
         "lon": -77.0578676
       }
@@ -53671,7 +53671,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "534 Mill St near Rock Creek, Georgetown, DC, United States",
+        "address": "534 27th Street NW near Rock Creek, Georgetown, DC, United States",
         "lat": 38.902396,
         "lon": -77.05580553
       }
@@ -53732,7 +53732,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "23 West St, Georgetown, DC, United States",
+        "address": "23 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -54027,7 +54027,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "104 Greene Street, Washington, DC, United States",
+        "address": "104 29th Street NW, Washington, DC, United States",
         "lat": 38.9088673804,
         "lon": -77.0886563
       }
@@ -54383,7 +54383,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Monroe St extreme end, Georgetown, DC, United States",
+        "address": "27th Street NW extreme end, Georgetown, DC, United States",
         "lat": 38.9086001622,
         "lon": -77.05890338
       }
@@ -54411,7 +54411,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Beall St near Rock St, Georgetown, DC, United States",
+        "address": "O Street NW near 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9078988322,
         "lon": -77.05684997
       }
@@ -54637,7 +54637,7 @@
         "lon": -77.0555151
       },
       "death": {
-        "address": "31 West St, Georgetown, DC, United States",
+        "address": "31 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       },
@@ -54960,7 +54960,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Montgomery St NW, Georgetown, DC, United States",
+        "address": "28th Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -55219,7 +55219,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "10 Monroe St NW, Georgetown, DC, United States",
+        "address": "10 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054215621,
         "lon": -77.05501797
       }
@@ -55280,7 +55280,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Rock St btw Gay and Dumbarton, Georgetown, DC, United States",
+        "address": "27th Street NW between Gay and Dumbarton, Georgetown, DC, United States",
         "lat": 38.9077481622,
         "lon": -77.06154762
       }
@@ -55440,7 +55440,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "61 Montgomery St, Georgetown, DC, United States",
+        "address": "61 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -55539,7 +55539,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner of Montgomery and Beall Streets, Georgetown, DC, United States",
+        "address": "Corner of 28th Street NW and O Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -55567,7 +55567,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Stoddard St near Rock Creek, Georgetown, DC, United States",
+        "address": "Q Street NW near Rock Creek, Georgetown, DC, United States",
         "lat": 38.9105208,
         "lon": -77.0551813
       }
@@ -55689,7 +55689,7 @@
         "lon": -77.1516844
       },
       "death": {
-        "address": "132 High St NW, Georgetown, DC, United States",
+        "address": "132 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -56141,7 +56141,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1669 Valley St NW, Georgetown, DC, United States",
+        "address": "1669 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -56192,7 +56192,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "14 Bridge St NW, Georgetown, DC, United States",
+        "address": "14 M Street NW, Georgetown, DC, United States",
         "lat": 38.905234,
         "lon": -77.0586415
       }
@@ -56444,7 +56444,7 @@
         "lon": -80.954453
       },
       "residence": {
-        "address": "1669 Valley St NW, Georgetown, DC, United States",
+        "address": "1669 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -57249,7 +57249,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Rock St near Rock Creek, Georgetown, DC, United States",
+        "address": "27th Street NW near Rock Creek, Georgetown, DC, United States",
         "lat": 38.9027648271,
         "lon": -77.05627947
       }
@@ -57277,7 +57277,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "7 Olive St NW, Georgetown, DC, United States",
+        "address": "7 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -57338,12 +57338,12 @@
         "label": "d. 1874"
       },
       "birth": {
-        "address": "39 Jefferson St, Georgetown, DC, United States",
+        "address": "39 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9047369,
         "lon": -77.0601644
       },
       "death": {
-        "address": "39 Jefferson St, Georgetown, DC, United States",
+        "address": "39 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9047369,
         "lon": -77.0601644
       }
@@ -57371,7 +57371,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Congress St Alley btw Bridge Gay and High Sts, Georgetown, DC, United States",
+        "address": "31st Street NW Alley between Bridge Gay and Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -57465,7 +57465,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Beall btw High and Congress Sts, Georgetown, DC, United States",
+        "address": "O Street NW between Wisconsin Avenue NW and 31st Street NW, Georgetown, DC, United States",
         "lat": 38.90636039,
         "lon": -77.06098322
       }
@@ -57498,7 +57498,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2816 Olive Street, Georgetown, DC, United States",
+        "address": "2816 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059415,
         "lon": -77.05765387
       }
@@ -57653,7 +57653,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "27th btw Olive and Gay, Georgetown, DC, United States",
+        "address": "27th between Prospect Street NW and Gay, Georgetown, DC, United States",
         "lat": 38.90609599,
         "lon": -77.05579503
       }
@@ -57681,7 +57681,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "223 Fayette St, Georgetown, DC, United States",
+        "address": "223 35th Street NW, Georgetown, DC, United States",
         "lat": 38.9140819,
         "lon": -77.069305
       }
@@ -57709,7 +57709,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "15 4th St, Georgetown, DC, United States",
+        "address": "15 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9054064726,
         "lon": -77.05358494
       }
@@ -57973,7 +57973,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "2 North St, Georgetown, DC, United States",
+        "address": "2 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9054230497,
         "lon": -77.05356959
       }
@@ -58367,7 +58367,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2247 8th St NW, Georgetown, DC, United States",
+        "address": "2247 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -58560,7 +58560,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1524 Valley St NW, Georgetown, DC, United States",
+        "address": "1524 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -58827,7 +58827,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "923 3rd St NW, Georgetown, DC, United States",
+        "address": "923 P Street NW, Georgetown, DC, United States",
         "lat": 38.9046822456,
         "lon": -77.049855
       }
@@ -58855,7 +58855,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner of Dumbarton and Monroe Sts, Georgetown, DC, United States",
+        "address": "Corner of Dumbarton and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.907906,
         "lon": -77.061232
       }
@@ -58944,7 +58944,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "74 Beall St, Georgetown, DC, United States",
+        "address": "74 O Street NW, Georgetown, DC, United States",
         "lat": 38.90921775,
         "lon": -77.06732475
       }
@@ -59432,7 +59432,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "68 Montgomery St, Georgetown, DC, United States",
+        "address": "68 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -60230,7 +60230,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "22 Monroe St, Georgetown, DC, United States",
+        "address": "22 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9050991257,
         "lon": -77.05301453
       }
@@ -60446,7 +60446,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Alley off Beall below Greene and Montgomery, Georgetown, DC, United States",
+        "address": "Alley off O Street NW below 29th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -60535,7 +60535,7 @@
         "lon": -78.4927721
       },
       "death": {
-        "address": "55 Frederick St, Georgetown, DC, United States",
+        "address": "55 34th Street NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -60812,7 +60812,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "26th St btw M and N Sts NW, Georgetown, DC, United States",
+        "address": "26th St between M and N Sts NW, Georgetown, DC, United States",
         "lat": 38.9054056386,
         "lon": -77.05446458
       }
@@ -60906,7 +60906,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Montgomery St, Georgetown, DC, United States",
+        "address": "28th Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -60972,7 +60972,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2712 Olive St NW, Georgetown, DC, United States",
+        "address": "2712 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -61005,7 +61005,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley btw 32and33 and Grace and Coater, Georgetown, DC, United States",
+        "address": "Alley between 32and33 and Grace and Coater, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -61033,7 +61033,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "3 North St, Georgetown, DC, United States",
+        "address": "3 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9108837,
         "lon": -77.0547912
       }
@@ -61297,7 +61297,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "Ally btw U and Canal and 33 and Potomoc, Georgetown, DC, United States",
+        "address": "Ally between U and Canal and 33 and Potomoc, Georgetown, DC, United States",
         "lat": 38.9056702,
         "lon": -77.0653833
       }
@@ -61617,7 +61617,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "West St, Georgetown, DC, United States",
+        "address": "P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -61975,7 +61975,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "1018 Jefferson St NW, Georgetown, DC, United States",
+        "address": "1018 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -62059,7 +62059,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1018 Jefferson St NW, Georgetown, DC, United States",
+        "address": "1018 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -62181,7 +62181,7 @@
         "lon": -77.062785
       },
       "residence": {
-        "address": "1038 Jefferson Avenue, Georgetown, DC, United States",
+        "address": "1038 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       }
@@ -62524,7 +62524,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "617 7th St NW, Georgetown, DC, United States",
+        "address": "617 Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.8975317347,
         "lon": -77.02180925
       }
@@ -62590,7 +62590,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2706 Olive St NW, Georgetown, DC, United States",
+        "address": "2706 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -62618,7 +62618,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "26th btw M and N St NW, Georgetown, DC, United States",
+        "address": "26th between M and N St NW, Georgetown, DC, United States",
         "lat": 38.9054056386,
         "lon": -77.05446458
       }
@@ -62707,7 +62707,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "above P St and Bridge St, Georgetown, DC, United States",
+        "address": "above P St and M Street NW, Georgetown, DC, United States",
         "lat": 38.9022582132,
         "lon": -77.05331979
       }
@@ -62806,7 +62806,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1522 Valley St, Georgetown, DC, United States",
+        "address": "1522 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.90994635,
         "lon": -77.05493507
       }
@@ -62872,7 +62872,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1844 8th St NW, Georgetown, DC, United States",
+        "address": "1844 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -63220,7 +63220,7 @@
         "lon": -79.44410982
       },
       "residence": {
-        "address": "1860 lived on Mill Street, now Mill Road NW. 1864 West (now P St NW) Street. Then Seventh St. (now Reservoir Road) NW, Georgetown, DC, United States",
+        "address": "1860 lived on 27th Street NW, now Mill Road NW. 1864 West (now P St NW) Street. Then Reservoir Road NW. (now Reservoir Road) NW, Georgetown, DC, United States",
         "lat": 38.9051994,
         "lon": -77.062785
       },
@@ -63413,7 +63413,7 @@
         "lon": -78.169968
       },
       "residence": {
-        "address": "1038 Jefferson Avenue / Street, Georgetown, DC, United States",
+        "address": "1038 Thomas Jefferson Street NW / Street, Georgetown, DC, United States",
         "lat": 38.9035719,
         "lon": -77.0602296
       },
@@ -63423,7 +63423,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Residence, 1038 Jefferson Ave NW, Georgetown, DC, United States",
+        "address": "Residence, 1038 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9002460626,
         "lon": -77.0511057033
       }
@@ -64401,7 +64401,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1513 Frederick St, Washington, DC, United States",
+        "address": "1513 34th Street NW, Washington, DC, United States",
         "lat": 38.90917914,
         "lon": -77.067698
       }
@@ -64462,7 +64462,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Alley btw Montgomery and Monroe Beall Sts, Georgetown, DC, United States",
+        "address": "Alley between 28th Street NW and 27th Street NW O Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -64947,7 +64947,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "104 Greene St, Washington, DC, United States",
+        "address": "104 29th Street NW, Washington, DC, United States",
         "lat": 38.9088673804,
         "lon": -77.0886563
       }
@@ -65125,7 +65125,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Congress St Alley, Georgetown, DC, United States",
+        "address": "31st Street NW Alley, Georgetown, DC, United States",
         "lat": 38.9054508002,
         "lon": -77.0610942
       }
@@ -65153,7 +65153,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner Montgomery and Olive Sts, Georgetown, DC, United States",
+        "address": "Corner 28th Street NW and Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -65265,7 +65265,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, Congress St btw 31 and 32 M and N, Georgetown, DC, United States",
+        "address": "Alley, 31st Street NW between 31 and 32 M and N, Georgetown, DC, United States",
         "lat": 38.90519,
         "lon": -77.061530961
       }
@@ -65458,7 +65458,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "17 Bridge St, Georgetown, DC, United States",
+        "address": "17 M Street NW, Georgetown, DC, United States",
         "lat": 38.905234,
         "lon": -77.0586415
       }
@@ -65486,7 +65486,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "60 M St and Greene St, Georgetown, DC, United States",
+        "address": "60 M St and 29th Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -65758,7 +65758,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Lingan St btw 2nd and 3rd Sts, Georgetown, DC, United States",
+        "address": "36th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.904017,
         "lon": -77.049498
       }
@@ -66005,7 +66005,7 @@
         "lon": -77.046646
       },
       "death": {
-        "address": "22 Monroe St NW, Georgetown, DC, United States",
+        "address": "22 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054751499,
         "lon": -77.05455557
       }
@@ -66288,7 +66288,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Beall St, Georgetown, DC, United States",
+        "address": "O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -66349,7 +66349,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "12 Monroe St, Georgetown, DC, United States",
+        "address": "12 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905231489,
         "lon": -77.05364141
       }
@@ -66720,7 +66720,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "120 West St, Georgetown, DC, United States",
+        "address": "120 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -66865,7 +66865,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Congress btw Beall and West Sts, Georgetown, DC, United States",
+        "address": "31st Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -67200,7 +67200,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "27 Montgomery St, Georgetown, DC, United States",
+        "address": "27 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9109622863,
         "lon": -77.05715739
       }
@@ -67261,7 +67261,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "3 Rock St NW, Washington, DC, United States",
+        "address": "3 27th Street NW, Washington, DC, United States",
         "lat": 38.88510893,
         "lon": -76.9771018
       }
@@ -67378,7 +67378,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "25th St btw M and N Sts NW, Georgetown, DC, United States",
+        "address": "25th St between M and N Sts NW, Georgetown, DC, United States",
         "lat": 38.9055147164,
         "lon": -77.05319254
       }
@@ -67439,7 +67439,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "74 Montgomery St, Georgetown, DC, United States",
+        "address": "74 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -67726,7 +67726,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Mill St btw West and Stoddard Sts, Georgetown, DC, United States",
+        "address": "27th Street NW between P Street NW and Q Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -67853,7 +67853,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "???? St btw 4th and 5th Sts, ???? St btw 4th and 5th, Georgetown, DC, United States",
+        "address": "???? St between Volta Place NW and Q Street NW, ???? St between Volta Place NW and Q Street NW, Georgetown, DC, United States",
         "lat": 38.8991529022,
         "lon": -77.0175625875
       }
@@ -67881,7 +67881,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Btw 27th and 28th I and K NW, Georgetown, DC, United States",
+        "address": "between 27th and 28th I and K NW, Georgetown, DC, United States",
         "lat": 38.9016118576,
         "lon": -77.05610925
       }
@@ -67909,7 +67909,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Corner, Monroe and Dumbarton St, Georgetown, DC, United States",
+        "address": "Corner, 27th Street NW and Dumbarton St, Georgetown, DC, United States",
         "lat": 38.9079060003,
         "lon": -77.061232
       }
@@ -68102,7 +68102,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, 1230 Congress St, Georgetown, DC, United States",
+        "address": "Alley, 1230 31st Street NW, Georgetown, DC, United States",
         "lat": 38.9062260003,
         "lon": -77.061794
       }
@@ -68196,7 +68196,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Congress Street Alley, Georgetown, DC, United States",
+        "address": "31st Street NW Alley, Georgetown, DC, United States",
         "lat": 38.9054508002,
         "lon": -77.0610942
       }
@@ -68224,7 +68224,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "5 U St btw Market and Frederick, Washington, DC, United States",
+        "address": "5 U St between 33rd Street NW and 34th Street NW, Washington, DC, United States",
         "lat": 38.890787,
         "lon": -76.988481
       }
@@ -68313,7 +68313,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "20 Bell (Beall?) St, Georgetown, DC, United States",
+        "address": "20 Bell (O Street NW?) St, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -68346,7 +68346,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1028 Jefferson Ave NW, Georgetown, DC, United States",
+        "address": "1028 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.90588607,
         "lon": -77.04748692
       }
@@ -68374,7 +68374,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "67 Washington St, Georgetown, DC, United States",
+        "address": "67 30th Street NW, Georgetown, DC, United States",
         "lat": 38.9052192139,
         "lon": -77.0591676977
       }
@@ -68468,7 +68468,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "High St, Georgetown, DC, United States",
+        "address": "Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.900616,
         "lon": -77.051428
       }
@@ -68534,7 +68534,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Parents residence, 2814 Olive Street, Georgetown, DC, United States",
+        "address": "Parents residence, 2814 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.905942,
         "lon": -77.0575936
       }
@@ -68567,7 +68567,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2814 Olive Street, Georgetown, DC, United States",
+        "address": "2814 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.905942,
         "lon": -77.0575936
       }
@@ -68633,7 +68633,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2814 Olive Street, Georgetown, DC, United States",
+        "address": "2814 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.905942,
         "lon": -77.0575936
       }
@@ -68666,7 +68666,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, 1229 Congress St. Alley, Georgetown, DC, United States",
+        "address": "Alley, 1229 31st Street NW. Alley, Georgetown, DC, United States",
         "lat": 38.9049291998,
         "lon": -77.0610941999
       }
@@ -68694,7 +68694,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "8 Monroe St, Georgetown, DC, United States",
+        "address": "8 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054667224,
         "lon": -77.05307748
       }
@@ -69098,7 +69098,7 @@
         "lon": -89.678696
       },
       "death": {
-        "address": "71 Montgomery St, Georgetown, DC, United States",
+        "address": "71 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -69131,7 +69131,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Freemans Alley, Btw N and O, 6 and 7th NW, Georgetown, DC, United States",
+        "address": "Freemans Alley, between N and O, 6 and Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.9076,
         "lon": -77.0669
       }
@@ -69365,7 +69365,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Corner of High and 3rd Sts, Georgetown, DC, United States",
+        "address": "Corner of Wisconsin Avenue NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -69464,7 +69464,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Factory Hill near Harris Mill, Washington, DC, United States",
+        "address": "Factory Hill near Harris 27th Street NW, Washington, DC, United States",
         "lat": 38.9035055449,
         "lon": -77.06562758
       }
@@ -69594,7 +69594,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Washington St near West, Georgetown, DC, United States",
+        "address": "30th Street NW near P Street NW, Georgetown, DC, United States",
         "lat": 38.9082289366,
         "lon": -77.05912125
       }
@@ -69754,7 +69754,7 @@
         "lon": -86.692345
       },
       "death": {
-        "address": "3rd btw High and Market Sts, Georgetown, DC, United States",
+        "address": "P Street NW between Wisconsin Avenue NW and 33rd Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -70605,7 +70605,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Rock St near Olive St, Georgetown, DC, United States",
+        "address": "27th Street NW near Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9078988322,
         "lon": -77.05684997
       }
@@ -70930,7 +70930,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Olive St btw Green and Montgomery St, Georgetown, DC, United States",
+        "address": "Prospect Street NW between Green and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.908792,
         "lon": -77.057093
       }
@@ -71052,7 +71052,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Olive St btw Green and Montgomery St, Georgetown, DC, United States",
+        "address": "Prospect Street NW between Green and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.908792,
         "lon": -77.057093
       }
@@ -71080,7 +71080,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "SE corner of Frederick and 5th Sts, Washington, DC, United States",
+        "address": "SE corner of 34th Street NW and Q Street NW, Washington, DC, United States",
         "lat": 38.922783,
         "lon": -77.030867
       }
@@ -71489,7 +71489,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, Congress St btw MandN 31and32, Georgetown, DC, United States",
+        "address": "Alley, 31st Street NW between MandN 31and32, Georgetown, DC, United States",
         "lat": 38.907645,
         "lon": -77.061236
       }
@@ -71619,7 +71619,7 @@
     {
       "name": "John Lee",
       "residence": {
-        "address": "Resided at 20 Beall Street, Georgetown, DC, United States",
+        "address": "Resided at 20 O Street NW, Georgetown, DC, United States",
         "lat": 38.907056,
         "lon": -77.060533
       }
@@ -71670,7 +71670,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "20 Beall St, Georgetown, DC, United States",
+        "address": "20 O Street NW, Georgetown, DC, United States",
         "lat": 38.9026955417,
         "lon": -77.05357807
       }
@@ -71736,7 +71736,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Water St btw Market and Fayette Sts, Georgetown, DC, United States",
+        "address": "K Street NW between 33rd Street NW and 35th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -71764,7 +71764,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "1073 Jefferson St, Georgetown, DC, United States",
+        "address": "1073 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9047721,
         "lon": -77.060155
       },
@@ -71924,7 +71924,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Olive St btw Monroe and Montgomery, Georgetown, DC, United States",
+        "address": "Prospect Street NW between 27th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -72018,7 +72018,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "6th St btw Frederick and Fayette Sts NW, Georgetown, DC, United States",
+        "address": "Dent Place NW between 34th Street NW and 35th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -72079,7 +72079,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "West St near North St, Washington, DC, United States",
+        "address": "P Street NW near 26th Street NW, Washington, DC, United States",
         "lat": 38.9026314347,
         "lon": -77.05653597
       }
@@ -72455,7 +72455,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "10 West St, Georgetown, DC, United States",
+        "address": "10 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -72694,7 +72694,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Rock Creek btw Dumbarton and Beall Sts, Georgetown, DC, United States",
+        "address": "Rock Creek between Dumbarton and O Street NW, Georgetown, DC, United States",
         "lat": 38.91086428,
         "lon": -77.05105188
       }
@@ -72849,7 +72849,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Prospect Btw High and, Georgetown, DC, United States",
+        "address": "Prospect between Wisconsin Avenue NW and, Georgetown, DC, United States",
         "lat": 38.90590236,
         "lon": -77.06884167
       }
@@ -73672,7 +73672,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Alley btw Congress and High Bridge and Gay Sts, Georgetown, DC, United States",
+        "address": "Alley between 31st Street NW and Wisconsin Avenue NW Bridge and Gay Sts, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -73705,7 +73705,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2806 Olive St NW, Georgetown, DC, United States",
+        "address": "2806 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -73827,7 +73827,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "40 Gay St, Georgetown, DC, United States",
+        "address": "40 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       }
@@ -74887,7 +74887,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Alley btw Water and Cherry Market and High Sts, Georgetown, DC, United States",
+        "address": "Alley between K Street NW and Cherry 33rd Street NW and Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -74938,7 +74938,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Rock St btw Bell and West Sts, Washington, DC, United States",
+        "address": "27th Street NW between Bell and P Street NW, Washington, DC, United States",
         "lat": 38.91783385,
         "lon": -77.0201005
       }
@@ -74999,7 +74999,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Monroe btw Bell and West Streets, Washington, DC, United States",
+        "address": "27th Street NW between Bell and P Street NW, Washington, DC, United States",
         "lat": 38.901838,
         "lon": -77.053311
       }
@@ -75065,7 +75065,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "225 3rd St NW, Georgetown, DC, United States",
+        "address": "225 P Street NW, Georgetown, DC, United States",
         "lat": 38.90922344,
         "lon": -77.05667237
       }
@@ -75093,7 +75093,7 @@
         "lon": -76.641271
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       }
@@ -75418,7 +75418,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "30 Beall St, Georgetown, DC, United States",
+        "address": "30 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -75484,7 +75484,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "30 Beall Street, Georgetown, DC, United States",
+        "address": "30 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       },
@@ -75987,7 +75987,7 @@
         "lon": -90.0782127
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -76020,7 +76020,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "32 Beall Street, Georgetown, DC, United States",
+        "address": "32 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       },
@@ -76086,7 +76086,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "36 Beall Street, Georgetown, DC, United States",
+        "address": "36 O Street NW, Georgetown, DC, United States",
         "lat": 38.907056,
         "lon": -77.060533
       }
@@ -76213,7 +76213,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "32 Beall Street, Georgetown, DC, United States",
+        "address": "32 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       },
@@ -76317,7 +76317,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "88 West St, Georgetown, DC, United States",
+        "address": "88 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -76467,7 +76467,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "6th St btw Frederick and Market Sts, Washington, DC, United States",
+        "address": "Dent Place NW between 34th Street NW and 33rd Street NW, Washington, DC, United States",
         "lat": 38.8920621,
         "lon": -77.0199124
       }
@@ -76820,7 +76820,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1716 4th St NWGeorgetown, Georgetown, DC, United States",
+        "address": "1716 Volta Place NW NWGeorgetown, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -77079,7 +77079,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Market St btw 5th and 6th, Washington, DC, United States",
+        "address": "33rd Street NW between Q Street NW and Dent Place NW, Washington, DC, United States",
         "lat": 38.9055057678,
         "lon": -77.05389766
       }
@@ -77107,7 +77107,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Montgomery St btw Bridge and Olive Sts, Georgetown, DC, United States",
+        "address": "28th Street NW between Bridge and Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -77562,7 +77562,7 @@
         "lon": -77.0365427
       },
       "residence": {
-        "address": "1670 Valley Street NW, Georgetown, DC, United States",
+        "address": "1670 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9123525,
         "lon": -77.0642166
       },
@@ -77572,7 +77572,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1670 Valley Street, Georgetown, DC, United States",
+        "address": "1670 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -77633,7 +77633,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Prospect Alley near High St, Georgetown, DC, United States",
+        "address": "Prospect Alley near Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9057405652,
         "lon": -77.06627894
       }
@@ -77661,7 +77661,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "North St bet Bell and West Sts, Washington, DC, United States",
+        "address": "26th Street NW bet Bell and P Street NW, Washington, DC, United States",
         "lat": 38.90741882,
         "lon": -77.07620648
       }
@@ -78267,7 +78267,7 @@
     {
       "name": "Ebenezer Eliason",
       "residence": {
-        "address": "302 High Street, Georgetown, DC, United States",
+        "address": "302 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -78290,7 +78290,7 @@
         "label": "d. 1834"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -78323,7 +78323,7 @@
         "lon": -77.062785
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -78351,7 +78351,7 @@
         "label": "1771-1817"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -78384,7 +78384,7 @@
         "lon": -76.641271
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -78417,7 +78417,7 @@
         "label": "1767-1823"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -78450,12 +78450,12 @@
         "lon": -76.9382069
       },
       "residence": {
-        "address": "Bridge at Foxall Row; 141 Market Street, Georgetown, DC, United States",
+        "address": "Bridge at Foxall Row; 141 33rd Street NW, Georgetown, DC, United States",
         "lat": 38.9051994,
         "lon": -77.062785
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       }
@@ -78694,7 +78694,7 @@
         "label": "d. 1938"
       },
       "residence": {
-        "address": "1524 8th St NW, Georgetown, DC, United States",
+        "address": "1524 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       },
@@ -79131,7 +79131,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Valley St btw Stoddard and West Sts, Georgetown, DC, United States",
+        "address": "32nd Street NW between Q Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -79159,7 +79159,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Beall St near Rock Creek, Georgetown, DC, United States",
+        "address": "O Street NW near Rock Creek, Georgetown, DC, United States",
         "lat": 38.9026660001,
         "lon": -77.05580553
       }
@@ -79192,7 +79192,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, 3210 Cissels Alley btw 32nd and 33rd Sts, Georgetown, DC, United States",
+        "address": "Alley, 3210 Cissels Alley between 32nd and 33rd Sts, Georgetown, DC, United States",
         "lat": 38.9043709999,
         "lon": -77.0491785259
       }
@@ -79286,7 +79286,7 @@
         "lon": -77.058772
       },
       "worship": {
-        "address": "Gay Street Baptist Church, now Georgetown Baptist Church, 3101 N Street NW, Georgetown, DC, United States",
+        "address": "N Street NW Baptist Church, now Georgetown Baptist Church, 3101 N Street NW, Georgetown, DC, United States",
         "lat": 38.9070401,
         "lon": -77.0614384
       },
@@ -79545,7 +79545,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Greene btw Bell and Dumbarton Sts, Georgetown, DC, United States",
+        "address": "29th Street NW between Bell and Dumbarton Sts, Georgetown, DC, United States",
         "lat": 38.90766111,
         "lon": -77.05936673
       }
@@ -80465,7 +80465,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "604 7th St NW, Georgetown, DC, United States",
+        "address": "604 Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.897432141,
         "lon": -77.0220215
       }
@@ -80785,7 +80785,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Beall Street, btw Greene and Montgomery Sts, Georgetown, DC, United States",
+        "address": "O Street NW, between 29th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -81021,7 +81021,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "North St, Georgetown, DC, United States",
+        "address": "26th Street NW, Georgetown, DC, United States",
         "lat": 38.9054996248,
         "lon": -77.05314377
       }
@@ -81270,7 +81270,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Eastside of 3rd btw K and L Sts NW, Georgetown, DC, United States",
+        "address": "Eastside of P Street NW between K and L Sts NW, Georgetown, DC, United States",
         "lat": 38.9031242739,
         "lon": -77.00861001
       }
@@ -81397,7 +81397,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Beall Street, Georgetown, DC, United States",
+        "address": "O Street NW, Georgetown, DC, United States",
         "lat": 38.907056,
         "lon": -77.060533
       }
@@ -81547,7 +81547,7 @@
         "lon": -77.43428
       },
       "death": {
-        "address": "Corner Beall and Montgomery St, Georgetown, DC, United States",
+        "address": "Corner O Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -81580,7 +81580,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2017 3rd St NW, Georgetown, DC, United States",
+        "address": "2017 P Street NW, Georgetown, DC, United States",
         "lat": 38.904630354,
         "lon": -77.04980716
       }
@@ -81796,7 +81796,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "8 Monroe St, Georgetown, DC, United States",
+        "address": "8 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054667224,
         "lon": -77.05307748
       }
@@ -81824,7 +81824,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "71 Montgomery St, Georgetown, DC, United States",
+        "address": "71 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -82182,7 +82182,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Congress St btw Bell and West Sts, Georgetown, DC, United States",
+        "address": "31st Street NW between Bell and P Street NW, Georgetown, DC, United States",
         "lat": 38.90636039,
         "lon": -77.06098322
       }
@@ -82299,7 +82299,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "5 West St, Georgetown, DC, United States",
+        "address": "5 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -82393,7 +82393,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Alley btw High and Congress Water and Canal Sts, Georgetown, DC, United States",
+        "address": "Alley between Wisconsin Avenue NW and 31st Street NW K Street NW and Canal Sts, Georgetown, DC, United States",
         "lat": 38.90473701,
         "lon": -77.07096787
       }
@@ -82609,7 +82609,7 @@
         "lon": -76.9896507
       },
       "residence": {
-        "address": "2910 O (Beall) Street NW, Georgetown, DC, United States",
+        "address": "2910 O (O Street NW) Street NW, Georgetown, DC, United States",
         "lat": 38.9084139,
         "lon": -77.0583925
       },
@@ -82680,7 +82680,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "2910 O (Beall) Street NW, Georgetown, DC, United States",
+        "address": "2910 O (O Street NW) Street NW, Georgetown, DC, United States",
         "lat": 38.9084139,
         "lon": -77.0583925
       },
@@ -82703,7 +82703,7 @@
         "lon": -77.05283076
       },
       "residence": {
-        "address": "77 Beall Street, Georgetown, DC, United States",
+        "address": "77 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -82825,7 +82825,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "High St, Georgetown, DC, United States",
+        "address": "Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.900616,
         "lon": -77.051428
       }
@@ -82853,7 +82853,7 @@
         "lon": -89.4337288
       },
       "death": {
-        "address": "Beall and High Sts, Georgetown, DC, United States",
+        "address": "O Street NW and Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -83130,7 +83130,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Stoddard St btw West and Mill, Georgetown, DC, United States",
+        "address": "Q Street NW between P Street NW and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905502,
         "lon": -77.057012
       }
@@ -83379,7 +83379,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "87 Frederick St, Georgetown, DC, United States",
+        "address": "87 34th Street NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -83539,7 +83539,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "30 Monroe St, Georgetown, DC, United States",
+        "address": "30 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9049964215,
         "lon": -77.05320514
       }
@@ -83765,7 +83765,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "3219 Water St NW, Georgetown, DC, United States",
+        "address": "3219 K Street NW, Georgetown, DC, United States",
         "lat": 38.9025885,
         "lon": -77.0627708
       }
@@ -84408,7 +84408,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, Alley btw 27th and 28th J and K Sts, Georgetown, DC, United States",
+        "address": "Alley, Alley between 27th and 28th J and K Sts, Georgetown, DC, United States",
         "lat": 38.9023959999,
         "lon": -77.0564064658
       }
@@ -84799,7 +84799,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "34 Monroe St, Georgetown, DC, United States",
+        "address": "34 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9052869125,
         "lon": -77.05041252
       }
@@ -84860,7 +84860,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "8 Monroe St, Georgetown, DC, United States",
+        "address": "8 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9054667224,
         "lon": -77.05307748
       }
@@ -84888,7 +84888,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "28 Beall St, Georgetown, DC, United States",
+        "address": "28 O Street NW, Georgetown, DC, United States",
         "lat": 38.90240558,
         "lon": -77.05361524
       }
@@ -85028,7 +85028,7 @@
         "label": "1815-1894"
       },
       "residence": {
-        "address": "1418 Montgomery Street near Beall Street, Georgetown, DC, United States",
+        "address": "1418 28th Street NW near O Street NW, Georgetown, DC, United States",
         "lat": 38.9087494,
         "lon": -77.0572017
       }
@@ -85056,7 +85056,7 @@
         "lon": -86.692345
       },
       "residence": {
-        "address": "111 Gay (Wise) Street, Georgetown, DC, United States",
+        "address": "111 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       },
@@ -85099,7 +85099,7 @@
         "lon": -77.062785
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -85442,7 +85442,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "50 Monroe St, Georgetown, DC, United States",
+        "address": "50 27th Street NW, Georgetown, DC, United States",
         "lat": 38.90499182,
         "lon": -77.05323073
       }
@@ -85470,7 +85470,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "87 Frederick St, Georgetown, DC, United States",
+        "address": "87 34th Street NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -85717,7 +85717,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Canal, Near Washington St NW, Georgetown, DC, United States",
+        "address": "Canal, Near 30th Street NW, Georgetown, DC, United States",
         "lat": 38.9082289366,
         "lon": -77.0591212453
       }
@@ -86055,7 +86055,7 @@
         "label": "c. 1801-1876"
       },
       "death": {
-        "address": "West St near Rock Creek, Georgetown, DC, United States",
+        "address": "P Street NW near Rock Creek, Georgetown, DC, United States",
         "lat": 38.9027648271,
         "lon": -77.05593253
       },
@@ -86479,7 +86479,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Montgomery St, Georgetown, DC, United States",
+        "address": "28th Street NW, Georgetown, DC, United States",
         "lat": 38.9048728,
         "lon": -77.0571659
       }
@@ -86578,7 +86578,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "34 Beall St, Georgetown, DC, United States",
+        "address": "34 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -86629,7 +86629,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1 North St, Georgetown, DC, United States",
+        "address": "1 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9108837,
         "lon": -77.0547912
       }
@@ -86812,7 +86812,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Washington St btw Bridge and Canal, Georgetown, DC, United States",
+        "address": "30th Street NW between Bridge and Canal, Georgetown, DC, United States",
         "lat": 38.9035687434,
         "lon": -77.06564759
       }
@@ -86868,7 +86868,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Alley btw Congress and Washington Bridge and Canal Sts, Georgetown, DC, United States",
+        "address": "Alley between 31st Street NW and Washington Bridge and Canal Sts, Georgetown, DC, United States",
         "lat": 38.904861,
         "lon": -77.060918
       }
@@ -86957,7 +86957,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "881 Frederick St, Washington, DC, United States",
+        "address": "881 34th Street NW, Washington, DC, United States",
         "lat": 38.9560166971,
         "lon": -77.06684721
       }
@@ -86985,7 +86985,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Cassell Alley btw Water and Grace Sts NW, Georgetown, DC, United States",
+        "address": "Cassell Alley between K Street NW and Grace Sts NW, Georgetown, DC, United States",
         "lat": 38.9033196224,
         "lon": -77.06568646
       }
@@ -87361,7 +87361,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1671 Valley St NW, Georgetown, DC, United States",
+        "address": "1671 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -87864,7 +87864,7 @@
         "lon": -78.659823
       },
       "death": {
-        "address": "40 Gay Street, Georgetown, DC, United States",
+        "address": "40 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       }
@@ -88042,7 +88042,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2808 Olive St NW, Georgetown, DC, United States",
+        "address": "2808 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -88192,7 +88192,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "10 North St, Georgetown, DC, United States",
+        "address": "10 26th Street NW, Georgetown, DC, United States",
         "lat": 38.9108837,
         "lon": -77.0547912
       }
@@ -88220,7 +88220,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner of High and 5th Sts, Georgetown, DC, United States",
+        "address": "Corner of Wisconsin Avenue NW and Q Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -88248,7 +88248,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "32 Monroe St, Georgetown, DC, United States",
+        "address": "32 27th Street NW, Georgetown, DC, United States",
         "lat": 38.905352008,
         "lon": -77.05297123
       }
@@ -88276,7 +88276,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "btw Fayette and Frederick St from H St btw 3rd and 4th Sts, Georgetown, DC, United States",
+        "address": "between 35th Street NW and 34th Street NW from H St between P Street NW and Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -88690,7 +88690,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "??? Beall St, Georgetown, DC, United States",
+        "address": "??? O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -88855,7 +88855,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "54 3rd St, Georgetown, DC, United States",
+        "address": "54 P Street NW, Georgetown, DC, United States",
         "lat": 38.9055239116,
         "lon": -77.05324367
       }
@@ -88916,7 +88916,7 @@
         "lon": -77.062785
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -88987,7 +88987,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, Alley btw Grace and Water 32nd and 33rd Sts, Georgetown, DC, United States",
+        "address": "Alley, Alley between Grace and K Street NW 32nd and 33rd Sts, Georgetown, DC, United States",
         "lat": 38.9037120734,
         "lon": -77.0658107631
       }
@@ -89053,7 +89053,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1050 Jefferson Ave NW, Georgetown, DC, United States",
+        "address": "1050 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.9005609453,
         "lon": -77.05121804
       }
@@ -89081,7 +89081,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "184 High St NW, Georgetown, DC, United States",
+        "address": "184 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -89279,7 +89279,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "43 Beall St, Georgetown, DC, United States",
+        "address": "43 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -89411,7 +89411,7 @@
         "lon": -77.387642
       },
       "death": {
-        "address": "North (26th) Street, btw West (P) and Mill, Georgetown, DC, United States",
+        "address": "26th Street NW (26th) Street, between P Street NW (P) and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.91019431,
         "lon": -77.05477333
       }
@@ -89472,7 +89472,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "North St btw West and Rock Sts, Washington, DC, United States",
+        "address": "26th Street NW between P Street NW and 27th Street NW, Washington, DC, United States",
         "lat": 38.9083869999,
         "lon": -77.05739349
       }
@@ -89660,7 +89660,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Valley St btw High and Road Sts, Georgetown, DC, United States",
+        "address": "32nd Street NW between Wisconsin Avenue NW and Road Sts, Georgetown, DC, United States",
         "lat": 38.908657,
         "lon": -77.05679251
       }
@@ -89754,7 +89754,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "45 Valley St, Georgetown, DC, United States",
+        "address": "45 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -89937,7 +89937,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "123 High St, Georgetown, DC, United States",
+        "address": "123 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9058349681,
         "lon": -77.04786992
       }
@@ -90284,7 +90284,7 @@
         "lon": -77.0535891
       },
       "residence": {
-        "address": "115 High Street, Georgetown, DC, United States",
+        "address": "115 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9158362,
         "lon": -77.0678491
       }
@@ -90350,7 +90350,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1549 4th St NW, Georgetown, DC, United States",
+        "address": "1549 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -90739,7 +90739,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "West St btw Rock and Monroe Sts, Georgetown, DC, United States",
+        "address": "P Street NW between 27th Street NW and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.904889919,
         "lon": -77.04192534
       }
@@ -91166,7 +91166,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1517 4th St NW, Georgetown, DC, United States",
+        "address": "1517 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -91293,7 +91293,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Valley St btw Stoddard and 8th, Georgetown, DC, United States",
+        "address": "32nd Street NW between Q Street NW and R Street NW, Georgetown, DC, United States",
         "lat": 38.9120502,
         "lon": -77.0640322
       }
@@ -91420,7 +91420,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Valley St, Georgetown, DC, United States",
+        "address": "32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -91547,7 +91547,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Rock St North of West, Washington, DC, United States",
+        "address": "27th Street NW North of West, Washington, DC, United States",
         "lat": 38.90871514,
         "lon": -77.05903141
       }
@@ -91649,7 +91649,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Stoddard and Valley Sts, Georgetown, DC, United States",
+        "address": "Q Street NW and 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -92119,7 +92119,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Corner of Grace and High Sts, Georgetown, DCDC, United States",
+        "address": "Corner of Grace and Wisconsin Avenue NW, Georgetown, DCDC, United States",
         "lat": 38.90398002,
         "lon": -77.06277104
       }
@@ -92147,7 +92147,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "31 High St, Georgetown, DC, United States",
+        "address": "31 Wisconsin Avenue NW, Georgetown, DC, United States",
         "lat": 38.9005207945,
         "lon": -77.05169242
       }
@@ -92419,7 +92419,7 @@
         "lon": -80.954453
       },
       "death": {
-        "address": "Beall St btw Greene and Montgomery, Georgetown, DCDC, United States",
+        "address": "O Street NW between 29th Street NW and 28th Street NW, Georgetown, DCDC, United States",
         "lat": 38.9084978,
         "lon": -77.0635883
       }
@@ -92668,12 +92668,12 @@
         "label": "d. 1878"
       },
       "death": {
-        "address": "Monroe St btw Dumbarton and Beall Sts, Georgetown, DC, United States",
+        "address": "27th Street NW between Dumbarton and O Street NW, Georgetown, DC, United States",
         "lat": 38.9073769366,
         "lon": -77.06113425
       },
       "birth": {
-        "address": "Monroe St btw Dumbarton and Beall Sts",
+        "address": "27th Street NW between Dumbarton Street NW and O Street NW, Georgetown, DC, United States",
         "lat": 38.9073769366,
         "lon": -77.06113425
       }
@@ -92943,7 +92943,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Olive Btw Greene and Montgomery Sts, Georgetown, DC, United States",
+        "address": "Prospect Street NW between 29th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -92999,7 +92999,7 @@
         "lon": -76.641271
       },
       "residence": {
-        "address": "24 4th Street (Volta Street), Georgetown, DC, United States",
+        "address": "24 Volta Place NW (Volta Street), Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       },
@@ -93037,7 +93037,7 @@
         "lon": -77.4605399
       },
       "death": {
-        "address": "Dumbarton btw Rock and Montgomery Sts, Georgetown, DC, United States",
+        "address": "Dumbarton between 27th Street NW and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -93093,7 +93093,7 @@
         "label": "c. 1860-1877"
       },
       "death": {
-        "address": "6 West St, Georgetown, DC, United States",
+        "address": "6 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       },
@@ -93568,7 +93568,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Market St btw Bridge and Water Sts, Georgetown, DC, United States",
+        "address": "33rd Street NW between Bridge and K Street NW, Georgetown, DC, United States",
         "lat": 38.9037351546,
         "lon": -77.06588897
       }
@@ -93822,7 +93822,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "21 West St, Georgetown, DC, United States",
+        "address": "21 P Street NW, Georgetown, DC, United States",
         "lat": 38.9088900082,
         "lon": -77.05922652
       }
@@ -93911,7 +93911,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1050 Jefferson St NW, Georgetown, DC, United States",
+        "address": "1050 Thomas Jefferson Street NW, Georgetown, DC, United States",
         "lat": 38.8973319193,
         "lon": -77.05315178
       }
@@ -94221,7 +94221,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "9 Frederick St btw Prospect and First, Georgetown, DC, United States",
+        "address": "9 34th Street NW between Prospect and First, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -94315,7 +94315,7 @@
         "lon": -78.4927721
       },
       "residence": {
-        "address": "2706 Olive Street NW, Georgetown, DC, United States",
+        "address": "2706 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.90597375,
         "lon": -77.05613232
       },
@@ -94325,7 +94325,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "2706 Olive St NW, Georgetown, DC, United States",
+        "address": "2706 Prospect Street NW, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -94414,7 +94414,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "43 Beall St, Georgetown, DC, United States",
+        "address": "43 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -94503,7 +94503,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "btw 33rd and 32nd Water and Canal, Georgetown, DC, United States",
+        "address": "between 33rd and 32nd K Street NW and Canal, Georgetown, DC, United States",
         "lat": 38.9035687434,
         "lon": -77.06564759
       }
@@ -94531,7 +94531,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Washington St near Canal, Georgetown, DC, United States",
+        "address": "30th Street NW near Canal, Georgetown, DC, United States",
         "lat": 38.9032709019,
         "lon": -77.06620207
       }
@@ -94653,7 +94653,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "9 West Street, Georgetown, DC, United States",
+        "address": "9 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       },
@@ -94709,7 +94709,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "9 West St, Georgetown, DC, United States",
+        "address": "9 P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       },
@@ -94780,7 +94780,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1808 4th St NW, Georgetown, DC, United States",
+        "address": "1808 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -94808,7 +94808,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Alley, Alley btw ?? and Montgomery St, Washington, DC, United States",
+        "address": "Alley, Alley between ?? and 28th Street NW, Washington, DC, United States",
         "lat": 38.9210270003,
         "lon": -77.012553
       }
@@ -95255,7 +95255,7 @@
         "lon": -77.43428
       },
       "death": {
-        "address": "Alley, Btw Prospect and 1st, Georgetown, DC, United States",
+        "address": "Alley, between Prospect and N Street NW, Georgetown, DC, United States",
         "lat": 38.9206219999,
         "lon": -77.0128535429
       }
@@ -95926,7 +95926,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "Alley, 1230 Congress St, Georgetown, DC, United States",
+        "address": "Alley, 1230 31st Street NW, Georgetown, DC, United States",
         "lat": 38.9062260003,
         "lon": -77.061794
       }
@@ -96152,7 +96152,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "1520 Valley St NW, Georgetown, DC, United States",
+        "address": "1520 32nd Street NW, Georgetown, DC, United States",
         "lat": 38.911758,
         "lon": -77.0641446
       }
@@ -96213,7 +96213,7 @@
         "lon": -77.0569970683
       },
       "death": {
-        "address": "Valley St near West Street, Georgetown, DC, United States",
+        "address": "32nd Street NW near P Street NW, Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       },
@@ -96373,7 +96373,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "35 Gay St, Georgetown, DC, United States",
+        "address": "35 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068107,
         "lon": -77.0624425
       }
@@ -96599,7 +96599,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1124 8th St NW, Georgetown, DC, United States",
+        "address": "1124 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -96693,7 +96693,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "1124 8th St NW, Georgetown, DC, United States",
+        "address": "1124 R Street NW, Georgetown, DC, United States",
         "lat": 38.9135422,
         "lon": -77.0638911
       }
@@ -96721,7 +96721,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Btw Fayette and Frederick St and K St, Georgetown, DC, United States",
+        "address": "between 35th Street NW and 34th Street NW and K St, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -96861,7 +96861,7 @@
         "lon": -78.169968
       },
       "death": {
-        "address": "Olive St btw Montgomery and ???, Georgetown, DC, United States",
+        "address": "Prospect Street NW between 28th Street NW and ???, Georgetown, DC, United States",
         "lat": 38.9059426,
         "lon": -77.0575317
       }
@@ -96978,7 +96978,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Monroe St btw Bell and West, Washington, DC, United States",
+        "address": "27th Street NW between Bell and P Street NW, Washington, DC, United States",
         "lat": 38.90483,
         "lon": -77.06248
       }
@@ -97006,7 +97006,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Monroe St btw Bell and West, Washington, DC, United States",
+        "address": "27th Street NW between Bell and P Street NW, Washington, DC, United States",
         "lat": 38.90483,
         "lon": -77.06248
       }
@@ -97034,7 +97034,7 @@
         "lon": -77.0365427
       },
       "death": {
-        "address": "Fayette St btw 2nd and 3rd Sts, Georgetown, DC, United States",
+        "address": "35th Street NW between O Street NW and P Street NW, Georgetown, DC, United States",
         "lat": 38.903937919,
         "lon": -77.04925267
       }
@@ -97179,7 +97179,7 @@
         "label": "1822-1887"
       },
       "residence": {
-        "address": "Frederick Street, Georgetown, DC, United States",
+        "address": "34th Street NW, Georgetown, DC, United States",
         "lat": 38.9104643,
         "lon": -77.0678609
       }
@@ -97230,7 +97230,7 @@
         "label": "1798-1826"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -97543,7 +97543,7 @@
         "label": "d. 1840"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -97614,7 +97614,7 @@
         "label": "d. 1817"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -97642,7 +97642,7 @@
         "label": "d. 1819"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -97680,7 +97680,7 @@
         "label": "d. 1819"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -97718,7 +97718,7 @@
         "label": "d. 1821"
       },
       "worship": {
-        "address": "Montgomery Street Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
+        "address": "28th Street NW Methodist Congregation, 1219 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9057138,
         "lon": -77.0593552
       },
@@ -97998,7 +97998,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "Washington St, Georgetown, DC, United States",
+        "address": "30th Street NW, Georgetown, DC, United States",
         "lat": 38.9052192139,
         "lon": -77.0591676977
       }
@@ -98026,7 +98026,7 @@
         "lon": -77.062785
       },
       "death": {
-        "address": "81 Monroe St, Georgetown, DC, United States",
+        "address": "81 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9098206654,
         "lon": -77.04689286
       }
@@ -98087,7 +98087,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "North Capitol and Pierce Streets NW, Washington, DC, United States",
+        "address": "26th Street NW Capitol and Pierce Streets NW, Washington, DC, United States",
         "lat": 38.90468821,
         "lon": -77.00906921
       }
@@ -98613,7 +98613,7 @@
         "lon": -77.0584
       },
       "death": {
-        "address": "743 4th St NW, Georgetown, DC, United States",
+        "address": "743 Volta Place NW, Georgetown, DC, United States",
         "lat": 38.9097718,
         "lon": -77.0668751
       }
@@ -99684,7 +99684,7 @@
         "lon": -77.0611837
       },
       "enslavement": {
-        "address": "Riley family residence at 91 Gay Street, renamed 3088 N Street NW, Georgetown, DC, United States",
+        "address": "Riley family residence at 91 N Street NW, renamed 3088 N Street NW, Georgetown, DC, United States",
         "lat": 38.9068117,
         "lon": -77.0611837
       }
@@ -99879,7 +99879,7 @@
         "lon": -77.0609845
       },
       "death": {
-        "address": "1223 7th St NW, Georgetown, DC, United States",
+        "address": "1223 Reservoir Road NW, Georgetown, DC, United States",
         "lat": 38.912574,
         "lon": -77.068697
       }
@@ -100603,7 +100603,7 @@
     {
       "name": "Robert Johnson",
       "residence": {
-        "address": "20 Montgomery Street, Georgetown, DC, United States",
+        "address": "20 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -100898,7 +100898,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "corner of Beall and Greene Sts, Georgetown, DC, United States",
+        "address": "corner of O Street NW and 29th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -103246,7 +103246,7 @@
     {
       "name": "John Brown",
       "residence": {
-        "address": "32nd Street (Valley Street) N.W., Washington, DC, United States",
+        "address": "32nd Street (32nd Street NW) N.W., Washington, DC, United States",
         "lat": 38.9115146,
         "lon": -76.9623413
       }
@@ -104458,7 +104458,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "49 Beall St, Georgetown, DC, United States",
+        "address": "49 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -104727,7 +104727,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "51 Beall St, Georgetown, DC, United States",
+        "address": "51 O Street NW, Georgetown, DC, United States",
         "lat": 38.9084951,
         "lon": -77.0593482
       }
@@ -106519,7 +106519,7 @@
         "lon": -77.0583815
       },
       "residence": {
-        "address": "72 West Street (P Street NW), Georgetown, DC, United States",
+        "address": "72 P Street NW (P Street NW), Georgetown, DC, United States",
         "lat": 38.9086667,
         "lon": -77.0715563
       }
@@ -107170,12 +107170,12 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "20 Beall St, Georgetown, DC, United States",
+        "address": "20 O Street NW, Georgetown, DC, United States",
         "lat": 38.90269554172346,
         "lon": -77.0535780721712
       },
       "residence": {
-        "address": "20 Beall Street, Georgetown, DC, United States",
+        "address": "20 O Street NW, Georgetown, DC, United States",
         "lat": 38.907056,
         "lon": -77.060533
       }
@@ -107268,7 +107268,7 @@
         "lon": -77.064275
       },
       "death": {
-        "address": "Greene St btw Canal and Bridge, Georgetown, DC, United States",
+        "address": "29th Street NW between Canal and Bridge, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -107741,7 +107741,7 @@
         "lon": -77.064275
       },
       "death": {
-        "address": "Beall St (North side) and Monroe Street, Georgetown, DC, United States",
+        "address": "O Street NW (26th Street NW side) and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -108267,7 +108267,7 @@
         "lon": -77.064275
       },
       "death": {
-        "address": "Beall St btw Rock and Monroe Sts, Georgetown, DC, United States",
+        "address": "O Street NW between 27th Street NW and 27th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -109456,7 +109456,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "Alley btw M and N 25 and 26th Sts, Georgetown, DC, United States",
+        "address": "Alley between M and N 25 and 26th Sts, Georgetown, DC, United States",
         "lat": 38.9045678671,
         "lon": -77.05402556
       }
@@ -110972,7 +110972,7 @@
         "lon": -77.0199124
       },
       "death": {
-        "address": "Olive St btw Green and Montgomery St, Georgetown, DC, United States",
+        "address": "Prospect Street NW between Green and 28th Street NW, Georgetown, DC, United States",
         "lat": 38.9091767,
         "lon": -77.064275
       }
@@ -111018,7 +111018,7 @@
         "lon": -76.641271
       },
       "death": {
-        "address": "Snows Row btw J and K Streets, and 24th and 25th Street, Georgetown, DC, United States",
+        "address": "Snows Row between J and K Streets, and 24th and 25th Street, Georgetown, DC, United States",
         "lat": 38.90243821,
         "lon": -77.0516122
       }
@@ -111446,7 +111446,7 @@
         "lon": -77.7189406
       },
       "death": {
-        "address": "Olive St NW, 2nd door from Greene St, Georgetown, DC, United States",
+        "address": "Prospect Street NW, 2nd door from 29th Street NW, Georgetown, DC, United States",
         "lat": 38.90608789,
         "lon": -77.05747939
       }
@@ -111519,7 +111519,7 @@
         "lon": -77.064275
       },
       "death": {
-        "address": "West Market Space near Canal, Washington, DC, United States",
+        "address": "P Street NW 33rd Street NW Space near Canal, Washington, DC, United States",
         "lat": 38.90095,
         "lon": -77.04581
       }

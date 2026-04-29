@@ -269,21 +269,57 @@ GEORGETOWN_HISTORICAL_RENAMES = [
     (r"\bGAY(?:\s*\([^)]*\))?\s+STREET(?:\s+NW)?\b", "N Street NW"),
     (r"\bGAY(?:\s*\([^)]*\))?\s+ST(?:REET)?(?:\s+NW)?\b", "N Street NW"),
     (r"\bFIRST ST(?:REET)?(?:\s+NW)?\b", "N Street NW"),
+    (r"\b1ST ST(?:REET)?S?(?:\s+NW)?\b", "N Street NW"),
     (r"\bBEALL(?:\s+ST(?:REET)?)?(?:\s*\([^)]*\))?(?:\s+NW)?\b", "O Street NW"),
     (r"\bSECOND ST(?:REET)?(?:\s+NW)?\b", "O Street NW"),
+    (r"\b2ND ST(?:REET)?S?(?:\s+NW)?\b", "O Street NW"),
     (r"\bWEST ST(?:REET)?(?:\s+NW)?\b", "P Street NW"),
     (r"\bTHIRD ST(?:REET)?(?:\s+NW)?\b", "P Street NW"),
+    (r"\b3RD ST(?:REET)?S?(?:\s+NW)?\b", "P Street NW"),
     (r"\bWEST P STREET\b", "P Street NW"),
-    (r"\b4TH ST(?:REET)?(?:\s+NW)?(?:\s*\([^)]*\))?\b", "Volta Place NW"),
-    (r"\bSTODD(?:A|E)RT ST(?:REET)?(?:\s+NW)?\b", "Q Street NW"),
+    (r"\b4TH ST(?:REET)?S?(?:\s+NW)?(?:\s*\([^)]*\))?\b", "Volta Place NW"),
+    (r"\bSTODD(?:A|E)R(?:D|T) ST(?:REET)?(?:\s+NW)?\b", "Q Street NW"),
     (r"\bFIFTH ST(?:REET)?(?:\s+NW)?\b", "Q Street NW"),
+    (r"\b5TH ST(?:REET)?S?(?:\s+NW)?\b", "Q Street NW"),
     (r"\bMILL ST(?:REET)?(?:\s+NW)?\b", "27th Street NW"),
     (r"\bROCK ST(?:REET)?(?:\s+NW)?\b", "27th Street NW"),
     (r"\bSIXTH ST(?:REET)?(?:\s+NW)?\b", "Dent Place NW"),
+    (r"\b6TH ST(?:REET)?S?(?:\s+NW)?\b", "Dent Place NW"),
     (r"\bSEVENTH ST(?:REET)?(?:\s+NW)?\b", "Reservoir Road NW"),
+    (r"\b7TH ST(?:REET)?S?(?:\s+NW)?\b", "Reservoir Road NW"),
     (r"\bROAD ST(?:REET)?(?:\s+NW)?\b", "R Street NW"),
-    (r"\b8TH ST(?:REET)?(?:\s+NW)?\b", "R Street NW"),
+    (r"\b8TH ST(?:REET)?S?(?:\s+NW)?\b", "R Street NW"),
     (r"\bJEFFERSON (?:ST|STREET|AVE|AVENUE)(?:\s+NW)?\b", "Thomas Jefferson Street NW"),
+]
+
+GEORGETOWN_HISTORICAL_DISPLAY_SHORTHANDS = [
+    (r"\b1ST(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "N Street NW"),
+    (r"\b2ND(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "O Street NW"),
+    (r"\b3RD(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "P Street NW"),
+    (r"\b4TH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Volta Place NW"),
+    (r"\b5TH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Q Street NW"),
+    (r"\b6TH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Dent Place NW"),
+    (r"\b7TH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Reservoir Road NW"),
+    (r"\b8TH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "R Street NW"),
+    (r"\bNORTH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "26th Street NW"),
+    (r"\bMONROE(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "27th Street NW"),
+    (r"\bMONTGOMERY(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "28th Street NW"),
+    (r"\bGREENE(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "29th Street NW"),
+    (r"\bCONGRESS(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "31st Street NW"),
+    (r"\bVALLEY(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "32nd Street NW"),
+    (r"\bHIGH(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Wisconsin Avenue NW"),
+    (r"\bMARKET(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "33rd Street NW"),
+    (r"\bFREDERICK(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "34th Street NW"),
+    (r"\bFAYETTE(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "35th Street NW"),
+    (r"\bLINGAN(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "36th Street NW"),
+    (r"\bWARREN(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "37th Street NW"),
+    (r"\bWATER(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "K Street NW"),
+    (r"\bOLIVE(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Prospect Street NW"),
+    (r"\bBEALL(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "O Street NW"),
+    (r"\bWEST(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "P Street NW"),
+    (r"\bSTODD(?:A|E)R(?:D|T)(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "Q Street NW"),
+    (r"\bMILL(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b", "27th Street NW"),
+    (r"\bROCK(?:\s+ST(?:REET)?S?)?(?:\s+NW)?\b(?!\s+CREEK)", "27th Street NW"),
 ]
 
 GEORGETOWN_OUTLIER_OVERRIDES = [
@@ -1076,7 +1112,7 @@ def leading_address_fragment(text: str) -> str:
 
 
 def georgetown_historical_variants(loc: Location) -> list[str]:
-    if norm_key(loc.city) != "GEORGETOWN" or not loc.address or has_multiple_address_parts(loc.address):
+    if not is_georgetown_display_context(loc) or not loc.address or has_multiple_address_parts(loc.address):
         return []
 
     seeds = {clean_text(loc.address)}
@@ -1116,6 +1152,55 @@ def has_georgetown_historical_name(text: str) -> bool:
     if not text:
         return False
     return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern, _ in GEORGETOWN_HISTORICAL_RENAMES)
+
+
+def has_georgetown_historical_reference(text: str) -> bool:
+    if has_georgetown_historical_name(text):
+        return True
+    if not text:
+        return False
+    return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern, _ in GEORGETOWN_HISTORICAL_DISPLAY_SHORTHANDS)
+
+
+def is_georgetown_display_context(loc: Location) -> bool:
+    if norm_key(loc.city) == "GEORGETOWN":
+        return True
+    if loc.current_json_address and "GEORGETOWN" in norm_key(loc.current_json_address):
+        return True
+    return False
+
+
+def modernize_georgetown_historical_address_text(text: str) -> str:
+    current = clean_text(text)
+    if not current:
+        return current
+
+    if re.search(r"\b(?:BTW|BETWEEN|BTWN|NEAR|CORNER|AND)\b", current, flags=re.IGNORECASE):
+        for pattern, replacement in GEORGETOWN_HISTORICAL_DISPLAY_SHORTHANDS:
+            current = re.sub(pattern, replacement, current, flags=re.IGNORECASE)
+
+    for pattern, replacement in GEORGETOWN_HISTORICAL_RENAMES:
+        current = re.sub(pattern, replacement, current, flags=re.IGNORECASE)
+
+    current = re.sub(r"\bBTW\b", "between", current, flags=re.IGNORECASE)
+    current = re.sub(r"\bBTWN\b", "between", current, flags=re.IGNORECASE)
+    return clean_text(current)
+
+
+def apply_georgetown_historical_display_fix(loc: Location) -> bool:
+    if not loc.address or not is_georgetown_display_context(loc):
+        return False
+    if not has_georgetown_historical_reference(loc.address):
+        return False
+
+    modern = modernize_georgetown_historical_address_text(loc.address)
+    if not modern or norm_key(modern) == norm_key(loc.address):
+        return False
+
+    loc.address = modern
+    loc.changed = True
+    loc.notes.append("modernized_georgetown_historical_address")
+    return True
 
 
 def centroid_for_city(city: str, state: str) -> tuple[float, float] | None:
@@ -1631,6 +1716,9 @@ def build_clean_dataset(
     conflicts = conflicting_keys(all_locations)
     for loc in all_locations:
         loc.issues = classify_issue(loc, polygons, conflicts)
+
+    for loc in all_locations:
+        apply_georgetown_historical_display_fix(loc)
 
     report = {
         "source_workbook": str(workbook_path),

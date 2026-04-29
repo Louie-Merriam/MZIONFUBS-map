@@ -246,5 +246,21 @@
     "country": "United States",
     "lat": 38.9105208,
     "lon": -77.0551813
+  },
+  "STODDARD REAR OF MONROE": {
+    "address": "Q Street NW rear of 27th Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.9105208,
+    "lon": -77.0551813
+  },
+  "MONROE ST BTW DUMBARTON AND BEALL STS": {
+    "address": "27th Street NW between Dumbarton Street NW and O Street NW",
+    "city": "Georgetown",
+    "state": "DC",
+    "country": "United States",
+    "lat": 38.9073769366,
+    "lon": -77.06113425
   }
 }
